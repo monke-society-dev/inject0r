@@ -22,8 +22,9 @@ As mentioned in the Features tab, the App Store is a place for third party devel
 
 ##### Purchase Injector 
 
-Injector is free, and can be gotten if you contact me. Contact me on by raising a request on this github info to get Injector. Download the client from the 
-releases tab, please note you need an account to use.
+Injector is free, and can be gotten if you contact me. Contact me on by raising a request on this github info to get Injector. Download the client from the releases tab, please note you need an account to use.
+
+If you have gotten your single-use code, go [here](https://inject0r.littleclaw.repl.co/register) to register.
 
 ***
 <img src="images/marketing/exdesktop.png" width="100%"/>
