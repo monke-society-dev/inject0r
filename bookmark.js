@@ -1,6 +1,6 @@
 
 var Injector = {
-  serverURL:"https://inject0r.littleclaw.repl.co/"
+  serverURL:"https://inject0r.littleclaw.repl.co"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {
@@ -14,7 +14,7 @@ Injector.info = {
   <h3> General Changes </h3>
   <p> Registration page </p>
   <p> Better backend </p>
-  <p> Injector now has a server for the backend <a href="https://inject0r.littleclaw.repl.co/">here</a> </p>
+  <p> Injector now has a name server for the backend <a href="https://inject0r.littleclaw.repl.co">here</a> </p>
   
   <h3> Chatbox </h3>
   <p> Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
@@ -1629,7 +1629,6 @@ fullScreenBtn.addEventListener("mouseout", function(){
   urlbar.style.borderWidth = "2px";
   urlbar.style.color = "white";
   urlbar.style.borderStyle = "none none solid none";
-  urlbar.style.placeholder = "Enter target URL"
 
   urlbar.addEventListener("keydown", function(e){
     if(e.key === "Enter"){
@@ -1709,7 +1708,7 @@ function app5(){
   // app download button
   
     devnamer.style.position = "absolute";
-  devnamer.textContent = "bobthehairman";
+  devnamer.textContent = "animecat7";
   devnamer.style.width = "200px";
   devnamer.style.height = "30px";
   devnamer.style.fontSize = "20px";
