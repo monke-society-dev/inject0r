@@ -1629,6 +1629,7 @@ fullScreenBtn.addEventListener("mouseout", function(){
   urlbar.style.borderWidth = "2px";
   urlbar.style.color = "white";
   urlbar.style.borderStyle = "none none solid none";
+  urlbar.style.placeholder = "Enter target URL"
 
   urlbar.addEventListener("keydown", function(e){
     if(e.key === "Enter"){

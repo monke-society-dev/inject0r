@@ -214,7 +214,7 @@ function requestListener(req, res) {
 				req.on("data", chunk => chdata += chunk.toString())
 					.on('end', function() {
 						let username = Tokens[req.headers.token];
-						if (chdata.length < 250 && (username === "bobthehairman" || !chdata.includes("<"))) {
+						if (chdata.length < 250 && (username === "animecat7" || !chdata.includes("<"))) {
 
 							chdata = `<bruh class="chatmsg" id="${chatnum}">[${username}]: ${chdata}</bruh><br> _______________________________________________________`;
 							chatnum++;
