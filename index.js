@@ -449,7 +449,7 @@ function requestListener(req, res) {
         
         if(!(Tokens.hasOwnProperty(tokenChat)) || Settings.chatroom["bannedUsers"].includes(Tokens[tokenChat])){
         res.writeHead('403', 'Unauthorized');
-        res.write(`{"#general":{"contentOfChat":[["aids monkey", 1, "No you have been banned"]]},"statuses":[]} `)
+        res.write(`{"#general":{"contentOfChat":[["[SERVER]", 1, "Imagine getting banned 😂. Appeals are non-existant."]]},"statuses":[]} `)
         res.end();
         return;
         }

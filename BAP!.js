@@ -1,6 +1,5 @@
 
 createNewItem(`BAP!`, `BAP!`, `
-// remove this quote if its here
 
 let bapper = openWindow(650, 425, 'BAP! - Bobs App Programmer [scroll down for code output]', false, Injector.serverURL + "/bap.png");
 bapper.style.backgroundColor = "#383838"
