@@ -214,7 +214,7 @@ function requestListener(req, res) {
 				req.on("data", chunk => chdata += chunk.toString())
 					.on('end', function() {
 						let username = Tokens[req.headers.token];
-						if (chdata.length < 250 && (username === "animecat7" || !chdata.includes("<"))) {
+						if (chdata.length < 250 && (username === "bobthehairman" || !chdata.includes("<"))) {
 
 							chdata = `<bruh class="chatmsg" id="${chatnum}">[${username}]: ${chdata}</bruh><br> _______________________________________________________`;
 							chatnum++;
@@ -449,7 +449,7 @@ function requestListener(req, res) {
         
         if(!(Tokens.hasOwnProperty(tokenChat)) || Settings.chatroom["bannedUsers"].includes(Tokens[tokenChat])){
         res.writeHead('403', 'Unauthorized');
-        res.write(`{"#general":{"contentOfChat":[["[SERVER]", 1, "Imagine getting banned 😂. Appeals are non-existant."]]},"statuses":[]} `)
+        res.write(`{"#general":{"contentOfChat":[["aids monkey", 1, "No you have been banned"]]},"statuses":[]} `)
         res.end();
         return;
         }
