@@ -1,6 +1,6 @@
 
 var Injector = {
-  serverURL:"https://inject0r.littleclaw.repl.co"
+  serverURL:"https://inject0r.xyz"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {

@@ -5,18 +5,17 @@
     "NotePad",
     "Module2.0",
     "JuanAnime",
-    "InjectorCloud",
     "InjectorCloud"
   ],
   "appsReadable": [
     [
       "NotePad",
-      "animecat7",
+      "bobthehairman",
       "A JS notepad. Used as a test app to test the App Store. Not super useful, but for whatever reason half the userbase has this app installed."
     ],
     [
       "Game Hub",
-      "animecat7",
+      "bobthehairman",
       "A selection of games to play which will not appear and your history and will likely never be blocked. Currently only has Friday Night Funkin'. Note: when Friday Night Funkin finishes the blue screen loading, make sure to click or it will just stay a blank screen"
     ],
     [
@@ -26,18 +25,13 @@
     ],
     [
       "Module2.0",
-      "animecat7",
+      "bobthehairman",
       "A UI overhaul for Injector that allows for a more multitasked style of Injector where the desktop is made transparent over the page, turning it into a more module-style UI. Requires a refresh to uninstall."
     ],
     [
       "JuanAnime",
-      "Juan",
-      "An app Juan requested. Basically just Game Hub but anime sites. Currently only has some Anime."
-    ],
-    [
-      "InjectorCloud",
-      "animecat7",
-      "Injector Cloud panel."
+      "bobthehairman",
+      "An app Juan requested. Basically just Game Hub but anime sites. Currently only has Array Anime."
     ]
   ]
 }

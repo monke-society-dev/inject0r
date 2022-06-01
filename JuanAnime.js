@@ -1,6 +1,7 @@
 createNewItem("Juan's Anime List", "JuanAnime", `
 
 try{
+// remove this it fixes syntax highlighting
 let autoWin = openWindow(550, 300, 'JuanAnimeList', true, 'https://img.icons8.com/bubbles/2x/list.png');
 autoWin.style.backgroundColor = 'white';
 autoWin.style.overflowY = "hidden";

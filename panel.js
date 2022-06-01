@@ -8,7 +8,7 @@ function newElement(type, parent){
 let nameText = document.getElementById("nameChangingTxt");
 injectionPoint.style.visibility = "visible";
 injectionPoint.style.opacity = "1";
-nameText.textContent = "Injector cannot be ran on inject0r marketing page, sorry.";
+nameText.textContent = "Injector cannot be ran on marketting page!";
   launcher.style.opacity = "0";
   launcher.style.visibility = "hidden";
 // vertical scaling and pre-initialization
