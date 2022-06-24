@@ -51,7 +51,7 @@ gameChooseDD.style.backgroundColor = 'gray';
 gameChooseDD.style.left = '5px';
 gameChooseDD.style.top = '30px';
 let gameNames = ["FNF [Week 7 Included!]", "Minecraft", "Advanced Pixel Apocalypse 3"];
-let gameVals = ["https://inject0r.littleclaw.repl.co/fnf", "https://mikesproxy.herokuapp.com/main/https://classic.minecraft.net", "https://inject0r.littleclaw.repl.co/apoc"]
+let gameVals = ["https://inject0r.xyz/fnf", "https://willard.fun/minekhan", "https://inject0r.xyz/apoc"]
 for(i=0; i<gameNames.length; i++){
   let newOp = new Option(gameNames[i], gameVals[i]);
   gameChooseDD.appendChild(newOp);

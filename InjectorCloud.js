@@ -1,5 +1,4 @@
 createNewItem(`Injector Cloud`, `InjectorCloud`, `
-// delete this ! 
  try{
 let autoWin = openWindow(500, 325, 'Injector Cloud', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png');
 autoWin.style.backgroundColor = '#1f1f1f';
@@ -178,5 +177,5 @@ newFile:hover{
   background-color: #2f2f2f;
   cursor: pointer;
 }\`
-`);
+`, "https://inject0r.littleclaw.repl.co/Cloudimagething");
 

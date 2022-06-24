@@ -1,5 +1,16 @@
+alert("Injector cannot be ran on marketing page!");
+if (window.confirm('continue with whatever you were doing?'))
+{
+	location.reload()
+}
+else
+{
+	window.close()
+}
+
+
 // functions n shit
-function newElement(type, parent){
+/*function newElement(type, parent){
   let newElem = document.createElement(type);
   parent.appendChild(newElem);
   newElem.className = "TransThis";

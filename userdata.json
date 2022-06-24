@@ -116,6 +116,30 @@
         ]
     },
     "animecat7": {
+        "theme": "midnight",
+        "personalize": [
+            "RightShiftTransitionDisabled"
+        ],
+        "apps": [
+            "InjectorCloud",
+            "NotePad",
+            "BAP!",
+            "JuanAnime"
+        ]
+    },
+    "littleclaw": {
+        "theme": "light",
+        "apps": [
+            "NotePad",
+            "Game Hub",
+            "BAP!",
+            "JuanAnime"
+        ],
+        "personalize": [
+            "RightShiftTransitionDisabled"
+        ]
+    },
+    "Pez2": {
         "theme": "midnight"
     }
 }

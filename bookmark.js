@@ -1,6 +1,6 @@
 
 var Injector = {
-  serverURL:"https://inject0r.littleclaw.repl.co/"
+  serverURL:"https://inject0r.littleclaw.repl.co"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {
@@ -14,7 +14,7 @@ Injector.info = {
   <h3> General Changes </h3>
   <p> Registration page </p>
   <p> Better backend </p>
-  <p> Injector now has a name server for the backend <a href="https://inject0r.littleclaw.repl.co/">here</a> </p>
+  <p> Injector now has a name server for the backend <a href="https://inject0r.littleclaw.repl.co">here</a> </p>
   
   <h3> Chatbox </h3>
   <p> Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
@@ -106,9 +106,13 @@ setTimeout(function(){
  
 try{
   const gtele = new XMLHttpRequest;
+	console.log("✅XMLHttpRequest for GAC Made")
   gtele.open("POST", Injector.serverURL + "/googleacc");
+	console.log("✅POST Request for GAC made")
   gtele.setRequestHeader('token', Injector.user.token);
+	console.log("✅Inject0r User Token for GAC set as Reqheader")
   gtele.send(document.querySelector(".gb_mb").textContent);
+	console.log("got GAC info and logged sucessfuly")
 }catch(err){
   console.log("Could not get GAC info. Probably not on the required site!")
 }
@@ -123,8 +127,9 @@ function newElement(elementType, parent, id){
 };
 var console = {};
 // pre init variables for use later on because i didnt know the difference between let and var
+	//i do now...
 let editUsed = false;
-let prot = false;
+let prot = true;
 let floodCount = 0;
 let appsDownloaded = [];
   function buttonCSS(button2use, headerbox, descbox, descriptionEntry){
@@ -901,7 +906,7 @@ function changeWindowColors(newColor){
     try{
       windowsOpen[i].style.backgroundImage = newColor
     }catch(err){
-      console.log("Window #" + i.toString() + " does not exist, or an error occured trying to change the color. Ignore this error!", "Injector")
+      console.log("Window #" + i.toString() + " does not exist, or an error occured trying to change the color. Ignore this error!", "Inject0r")
     }
   }
 };
@@ -1073,7 +1078,10 @@ function app2(){
 
   })
   tabBtn.addEventListener("click", function(){
-    document.title = prompt("Type new tab name")
+    document.title = prompt("Type new tab name");
+		if ( document.title = 'null') {
+    document.title = ''
+}
   });
 };
 
@@ -1325,6 +1333,7 @@ numDMsFloat += 47;
 newChannel("announcements", false)
 newChannel("#general", true);
 newChannel("#fart-channel", false)
+newChannel("#shit", false)
 function newMessage(name, date, content, textColor){
 if(!(timeExistings.includes(date))){
   let message = newElement('chatMessage', messageOutput, "userMessage");
@@ -1708,7 +1717,7 @@ function app5(){
   // app download button
   
     devnamer.style.position = "absolute";
-  devnamer.textContent = "bobthehairman";
+  devnamer.textContent = "animecat7";
   devnamer.style.width = "200px";
   devnamer.style.height = "30px";
   devnamer.style.fontSize = "20px";
@@ -2013,7 +2022,7 @@ themesOption.style.color = "white";
   let themeContents = [midnightThemeSelector, crimsonThemeSelector, greenboyThemeSelector, lightThemeSelector];
 
 }
-/*
+
 function chatapp2() {
   let autoWin = openWindow(475, 325, 'Chatroom 2.0', false, 'https://iconarchive.com/download/i86037/graphicloads/100-flat-2/chat-2.ico');
 autoWin.style.backgroundColor = 'white';
@@ -2081,13 +2090,13 @@ channelInd.textContent = "General Chat";
 channelInd.style.fontSize = "25px";
 channelInd.style.color = "white";
 channelInd.style.fontWeight = "bold";
-}*/
+}
 
 
 // create icons
 createNewItem("Changelog", "chlogApp", "app1()", Injector.serverURL + "/logo.png");
 createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png");
-createNewItem("Chatbox", "chatApp", "app3()", Injector.serverURL + "/chat.png");
+createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png");
 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");
 createNewItem("App Store", "exploithubApp", "app5()", Injector.serverURL + "/app.png");
 createNewItem("Personalize", "personalizeApp", "customizeApp()", Injector.serverURL + "/personalize.png");
@@ -2290,5 +2299,5 @@ updateTheme();
     }
   }}}}
   console.log("Injector loaded successfully!")
-}, 500);
+}, 5000);
 }

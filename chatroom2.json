@@ -2,7 +2,7 @@
     "#general": {
         "contentOfChat": [
             [
-                "bobthehairman",
+                "animecat7",
                 1,
                 "Restarted the chatroom. We're having some issues with the server, so unexpected brief outages and database rollbacks should be expected."
             ],
@@ -42,22 +42,22 @@
                 "hello"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620133138457,
                 "hi"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620133155561,
                 "i am currently trying to think of what to do"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620133175828,
-                "the chatroom is kind of royally fucked, i'd have to rewrite the whole thing to make it not brokey which uhhhhhhhhh no"
+                "the chatroom is kind of fucked, i'd have to rewrite the whole thing to make it not brokeyn which no"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620133261362,
                 "i am currently working on a prototype bookmark called c0mms"
             ],
@@ -82,22 +82,22 @@
                 "when will c0mms come out"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620134129095,
                 "Not sure"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620134138037,
                 "I have to learn websockets"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620134153207,
                 "It's sort of like a HTTP request, but it stays open rather than ending once the data is sent"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1620134182159,
                 "The chatroom uses standard HTTP requests which is not very good, but it was the only way I knew at tthe time"
             ],
@@ -170,6 +170,11 @@
                 "Elongated",
                 1647617351242,
                 "e"
+            ],
+            [
+                "Pez2",
+                1655841589217,
+                "hello"
             ]
         ]
     },
@@ -204,28 +209,33 @@
                 "Rasb",
                 1619656554198,
                 "a"
+            ],
+            [
+                "littleclaw",
+                1654222646340,
+                "hi"
             ]
         ]
     },
     "announcements": {
         "contentOfChat": [
             [
-                "bobthehairman",
+                "animecat7",
                 1619300162570,
                 "This is the Announcements channel.  Messsages with important information related to Injector or Chatbox will be posted here."
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1619300365086,
                 "Chatbox update 2.1.0: Removed \"2\" in Chatbox2, added Channels and Important Channels, added Admin system, chatlog no longer cleared on server restart"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1619386903329,
                 "Chatbox update 2.1.1: Made the time indicators readable"
             ],
             [
-                "bobthehairman",
+                "animecat7",
                 1619559401897,
                 "Chatbox update 2.2.0: We have Direct Messaging now! Use the black search bar on the left to search for a user, then click on their name to start or read your DMs with them."
             ]
