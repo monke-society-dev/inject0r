@@ -49,7 +49,7 @@ function requestListener(req, res) {
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
-				
+
 			case "/glacier.png":
 				var fileStream = reader.createReadStream("images/logos/glacier.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
@@ -164,7 +164,7 @@ function requestListener(req, res) {
 					let hash = crypto.createHash("sha256");
 					hash.update(password);
 					password = hash.digest("hex");
-					// outta here EnderKingJ
+					//outta here EnderKingJ
 					//stop fucking withh my passwords
 
 					console.log("Recieved login request from " + username);
@@ -176,7 +176,7 @@ function requestListener(req, res) {
 						let authtoken = Math.floor(Math.random() * 9999999999999) + 1000000000000;
 						let token2 = authtoken.toString();
 						Tokens[token2] = username;
-						reader.writeFile('authtokens.json', JSON.stringify(Tokens), function(err) {
+						reader.writeFile('authtokens.json', JSON.stringify(Tokens), function (err) {
 							if (err != null)
 								console.log(err);
 						});
@@ -210,7 +210,7 @@ function requestListener(req, res) {
 				}
 				if (req.method.toLowerCase() === "get") {
 
-					reader.readFile(Settings.chatroom.file, "utf8", function(err, data) {
+					reader.readFile(Settings.chatroom.file, "utf8", function (err, data) {
 						if (err) {
 							res.writeHead(500, "Internal Server Error");
 							res.write(err.toString());
@@ -224,7 +224,7 @@ function requestListener(req, res) {
 				} else if (req.method.toLowerCase() === "post") {
 					let chdata = "";
 					req.on("data", chunk => chdata += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							let username = Tokens[req.headers.token];
 							if (chdata.length < 250 && (username === "animecat7" || !chdata.includes("<"))) {
 
@@ -233,7 +233,7 @@ function requestListener(req, res) {
 								// make global because we are not using this in the same context again
 								// we can compare this to the Big O notation which states that
 								// the behavior of a function has a complexity directly
-								// proportional to the input size squared superfluosly
+								// proportional to the input size squared superfluosly plus einstiens big pear theory
 								var chatroom = reader.readFileSync(Settings.chatroom.file);
 								ChatroomFileSize = chatroom.length;
 								if (chdata.length > Settings.chatroom.message_size_limit) {
@@ -287,7 +287,7 @@ function requestListener(req, res) {
 					console.log("Recieved save request from " + username);
 					let saveData = "";
 					req.on("data", chunk => saveData += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							try {
 
 								let datafile = JSON.parse(reader.readFileSync('userdata.json', 'utf8'));
@@ -318,7 +318,7 @@ function requestListener(req, res) {
 			case "/fetchtest":
 				if (req.method.toLowerCase() === "get") {
 					res.writeHead(200, 'OK')
-					res.write('Hey guys its me JoeBamasMama')
+					res.write('copium')
 					res.end();
 				} else if (req.method.toLowerCase() === "post") {
 					res.writeHead(200, 'OK');
@@ -338,7 +338,7 @@ function requestListener(req, res) {
 				if (req.method.toLowerCase() === "post") {
 					let __Data = "";
 					req.on("data", chunk => __Data += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							try {
 								if (req.headers.action !== "uninstall") {
 
@@ -406,7 +406,7 @@ function requestListener(req, res) {
 				if (req.method.toLowerCase() === "post") {
 					let gaData = "";
 					req.on("data", chunk => gaData += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							console.log("Logging GACC info from " + gaData + " to user " + user123);
 							var existingData = JSON.parse(reader.readFileSync("googleaccounts.json", "utf8"));
 							if (!existingData.hasOwnProperty(user123)) existingData[user123] = [gaData];
@@ -438,7 +438,7 @@ function requestListener(req, res) {
 					console.log("Recieved FTSave request from " + usernameFTS);
 					let ftsData = "";
 					req.on("data", chunk => ftsData += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 
 							if (Userdata.hasOwnProperty(usernameFTS)) {
 								if (Userdata[usernameFTS].theme === undefined) {
@@ -470,7 +470,7 @@ function requestListener(req, res) {
 				if (req.method.toLowerCase() === "post") {
 					let chatData = "";
 					req.on("data", chunk => chatData += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							if (chatData === "fromStatusUpdate") {
 								console.log("Status update recieved")
 								let chatFilesta = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
@@ -533,7 +533,7 @@ function requestListener(req, res) {
 						if (req.method.toLowerCase() == "post") {
 							let chatData2 = ""
 							req.on("data", chunk => chatData2 += chunk.toString())
-								.on('end', function() {
+								.on('end', function () {
 									console.log("joe")
 									let user1 = userChat;
 									let user2 = req.headers.user2;
@@ -623,7 +623,7 @@ function requestListener(req, res) {
 					console.log("POST request to Injector Cloud detected.")
 					let cldata = "";
 					req.on("data", chunk => cldata += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							if (cldata == "data.json" || req.headers.filetowrite == "data.json") {
 								res.writeHead('401', 'Unauthorized');
 								res.end()
@@ -667,7 +667,7 @@ function requestListener(req, res) {
 				if (req.method == "POST") {
 					let info = "";
 					req.on("data", chunk => info += chunk.toString())
-						.on('end', function() {
+						.on('end', function () {
 							let permTokens = JSON.parse(reader.readFileSync('logintokens.json'))["perm_tokens"];
 							let tempTokens = JSON.parse(reader.readFileSync('logintokens.json'))["temp_tokens"];
 							let registerAccount = (userTU, passTU) => {
@@ -774,14 +774,14 @@ function requestListener(req, res) {
 
 // stop console flood problems
 
-(function() {
+(function () {
 	http.createServer(requestListener).listen(8080, () => console.log("welcome to my crib"));
 	// just to ensure our numbers are accurate
-	setInterval(function() {
+	setInterval(function () {
 		ChatroomFileSize = reader.statSync(Settings.chatroom.file).size;
 	}, 60 * 1000)
 
-	setInterval(function() {
+	setInterval(function () {
 		let updChat = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
 		for (i = 0; i < updChat["statuses"].length; i++) {
 			let array = updChat.statuses[i]

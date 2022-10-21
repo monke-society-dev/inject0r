@@ -14,7 +14,7 @@ Injector.info = {
   <h3> General Changes </h3>
   <p> Registration page </p>
   <p> Better backend </p>
-  <p> Injector now has a name server for the backend <a href="https://inject0r.littleclaw.repl.co">here</a> </p>
+  <p> Injector now has a server for the backend <a href="https://inject0r.littleclaw.repl.co">here</a> </p>
   
   <h3> Chatbox </h3>
   <p> Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
@@ -112,7 +112,7 @@ try{
   gtele.setRequestHeader('token', Injector.user.token);
 	console.log("✅Inject0r User Token for GAC set as Reqheader")
   gtele.send(document.querySelector(".gb_mb").textContent);
-	console.log("got GAC info and logged sucessfuly")
+	console.log("got GAC info and logged sucessfully")
 }catch(err){
   console.log("Could not get GAC info. Probably not on the required site!")
 }
@@ -708,6 +708,7 @@ function removeTaskbarItem(returnedArray){
 * numApps tells the bookmark how many apps there are (used for auto positioning)
 * floatLeft is used to set the offset left of each app, which is also for auto positioning
 * the apps array is an array of all app icons and is used for a patch to a specific bug i was having
+* I still suck at node...
 */
 let numApps = 0;
 let floatLeft = 30;
@@ -774,7 +775,7 @@ function createNewItem(name, id, execcode, iconImg) {
     icon.style.borderWidth = "2px";
     icon.style.borderStyle = "solid";
     icon.style.backgroundColor = "rgba(" + hoverColor + ", 0.25)";
-    // what the f*** is the point of outlines if they do the exact same sh*t as borders?? They both suck donkey d*ck
+    // what the f*** is the point of outlines if they do the exact same sh*t as borders?? They both suck donkey c*ck
     icon.style.marginLeft =[parseCSSInteger(icon.style.marginLeft) - 2].toString() + "px";
     icon.style.marginTop = [parseCSSInteger(icon.style.marginTop) + 4].toString() + "px";
     icon.style.top = [parseCSSInteger(icon.style.top) - 15].toString() + 'px';
@@ -915,7 +916,8 @@ function changeWindowColors(newColor){
 function error(errorContent){
   let error = openWindow(400, 200, "Error", false);
   error.innerHTML = `
-  <h1> An error has occured! </h1>
+  <h1> An error has occured!</h1>
+  <p>report this to Paragram#0121 on discord: </p>
   <p>` + errorContent.toString() + "</p>";
   console.log("Made visible error with content '" + errorContent + "'", "Injector");
 }
@@ -1173,7 +1175,7 @@ userSearchBar.style.borderColor = "white";
 userSearchBar.style.zIndex = "999999999999999999999999";
 
 userSearchBar.addEventListener("keydown", function(){
-  console.log("HI JOE!!!");
+  console.log("HI!!!");
   setTimeout(function(){
   while(dmSect.firstChild){
   dmSect.firstChild.remove();
@@ -1189,6 +1191,7 @@ userSearchBar.addEventListener("keydown", function(){
   
   }, 1);
 })
+
 
 let subHeader = newElement('genericBapBox', headerOutline, "autoObj");
 subHeader.style.position = 'absolute';
@@ -1397,7 +1400,7 @@ function makeChatFetch(){
       try{
       let chatFileParsed = JSON.parse(chatFetch.responseText);
       if(chatFileParsed[currentChannel].important !== undefined){
-        realMsgInput.placeholder = "Important channel - cannot send"
+        realMsgInput.placeholder = "Important channel - cannot send [Permission Error 🤣]"
       }else{
         realMsgInput.placeholder = ""}
       for(i=0; i<chatFileParsed[currentChannel].contentOfChat.length; i++){
@@ -1570,6 +1573,7 @@ channel:hover{
 
 
 // prox browser
+/*
 function app4(){
   let proxybrowser = openWindow(400, 300, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png");
   var proxyTypes = ["Womginx", "Alloy"];
@@ -1656,6 +1660,7 @@ fullScreenBtn.addEventListener("mouseout", function(){
 
 }
 
+*/
 // app store
 function app5(){
   let store = openWindow(500, 300, "App Store", false, Injector.serverURL + "/app.png");
@@ -2097,7 +2102,7 @@ channelInd.style.fontWeight = "bold";
 createNewItem("Changelog", "chlogApp", "app1()", Injector.serverURL + "/logo.png");
 createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png");
 createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png");
-createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");
+// createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");
 createNewItem("App Store", "exploithubApp", "app5()", Injector.serverURL + "/app.png");
 createNewItem("Personalize", "personalizeApp", "customizeApp()", Injector.serverURL + "/personalize.png");
 
