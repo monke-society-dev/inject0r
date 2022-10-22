@@ -177,5 +177,5 @@ newFile:hover{
   background-color: #2f2f2f;
   cursor: pointer;
 }\`
-`, "https://inject0r.littleclaw.repl.co/Cloudimagething");
+`, "https://inject0r.paragram.repl.co/Cloudimagething");
 

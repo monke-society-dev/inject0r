@@ -1,4 +1,4 @@
-alert("Injector cannot be ran on marketing page!");
+/* alert("Injector cannot be ran on marketing page!");
 if (window.confirm('continue with whatever you were doing?'))
 {
 	location.reload()
@@ -7,10 +7,10 @@ else
 {
 	window.close()
 }
-
+*/
 
 // functions n shit
-/*function newElement(type, parent){
+function newElement(type, parent){
   let newElem = document.createElement(type);
   parent.appendChild(newElem);
   newElem.className = "TransThis";
@@ -23,7 +23,7 @@ nameText.textContent = "Injector cannot be ran on marketting page!";
   launcher.style.opacity = "0";
   launcher.style.visibility = "hidden";
 // vertical scaling and pre-initialization
-/*
+
 setTimeout(function(){
   launcher.style.opacity = "0";
   launcher.style.visibility = "hidden";
@@ -38,4 +38,3 @@ setTimeout(function(){
   nameText.textContent = "User detected! Username: " + user;
     }, 500);
 }, 1)
-*/

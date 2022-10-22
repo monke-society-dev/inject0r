@@ -2,7 +2,6 @@ var http = require('http');
 var reader = require('fs');
 var crypto = require('crypto');
 var fetch = require('node-fetch');
-
 const Settings = require("./settings.json");
 const Auths = require("./auths.json");
 var Userdata = require("./userdata.json");
@@ -38,20 +37,31 @@ function requestListener(req, res) {
 	}
 	try {
 		switch (req.url) {
-
-
-			case "/go":
-				res.write(reader.readFileSync('/code.html', 'utf8'));
+				case "/dev":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./developer.html', "utf8"))
+					res.end();
 				return;
-
-			case "/logo":
-				var fileStream = reader.createReadStream("./logo.jpg");
+				case "/disclogo":
+				var fileStream = reader.createReadStream("./images/icons/discord.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
-
+				case "/logo":
+				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
+				fileStream.pipe(res);
+				return;
+				case "/logo.png":
+				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
+				fileStream.pipe(res);
+				return;
 			case "/glacier.png":
-				var fileStream = reader.createReadStream("images/logos/glacier.png");
+				var fileStream = reader.createReadStream("./images/logos/glacier.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -71,6 +81,8 @@ function requestListener(req, res) {
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
+
+				
 			case "/Cloudimagething":
 				var fileStream = reader.createReadStream("images/icons/Cloudthing.jpg");
 				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
@@ -168,7 +180,7 @@ function requestListener(req, res) {
 					//stop fucking withh my passwords
 
 					console.log("Recieved login request from " + username);
-					let Auths2 = JSON.parse(reader.readFileSync('auths.json'));
+					let Auths2 = JSON.parse(reader.readFileSync('./auths.json'));
 					if (username in Auths2 && Auths2[username] === password) {
 						console.log("Credentials for " + username + " correct");
 
@@ -176,7 +188,7 @@ function requestListener(req, res) {
 						let authtoken = Math.floor(Math.random() * 9999999999999) + 1000000000000;
 						let token2 = authtoken.toString();
 						Tokens[token2] = username;
-						reader.writeFile('authtokens.json', JSON.stringify(Tokens), function (err) {
+						reader.writeFile('./authtokens.json', JSON.stringify(Tokens), function (err) {
 							if (err != null)
 								console.log(err);
 						});
@@ -189,11 +201,12 @@ function requestListener(req, res) {
 
 						} else { // otherwise it is from the bookmark
 							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./bookmark.js', 'utf8'));
+							console.log("Loaded bookmark content for " + username)
 						} // write the contents of bookmark.js as the response
 						res.end(); // then end the response
 
 					} else { // otherwise the credentials were wrong
-						console.log("cred incorrect:" + password);
+						console.log("cred incorrect: " + password);
 						res.writeHead(401, "Unauthorized");
 						res.write("loginBtn.textContent = 'Incorrect!'");
 
@@ -226,7 +239,7 @@ function requestListener(req, res) {
 					req.on("data", chunk => chdata += chunk.toString())
 						.on('end', function () {
 							let username = Tokens[req.headers.token];
-							if (chdata.length < 250 && (username === "animecat7" || !chdata.includes("<"))) {
+							if (chdata.length < 250 && (username === "paragram" || !chdata.includes("<"))) {
 
 								chdata = `<bruh class="chatmsg" id="${chatnum}">[${username}]: ${chdata}</bruh><br> _______________________________________________________`;
 								chatnum++;
@@ -720,6 +733,7 @@ function requestListener(req, res) {
 					});
 					res.write(reader.readFileSync('register.html', "utf8"))
 					res.end();
+					
 				}
 				return;
 			case "/token":
