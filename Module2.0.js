@@ -1,5 +1,5 @@
 changeWindowParents(document.body);
 backgroundImage.style.visibility = "hidden";
-nameColor = "black";
-nameBg = "white";
+nameColor = "Peru";
+nameBg = "AliceBlue";
 let joe = newElement("joebrudo923", background, "Module2.0");

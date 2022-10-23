@@ -19,7 +19,7 @@ function newElement(type, parent){
 let nameText = document.getElementById("nameChangingTxt");
 injectionPoint.style.visibility = "visible";
 injectionPoint.style.opacity = "1";
-nameText.textContent = "Injector cannot be ran on marketting page!";
+nameText.textContent = "Injector cannot be ran on marketting page, sorry. Reload tab to access the site...";
   launcher.style.opacity = "0";
   launcher.style.visibility = "hidden";
 // vertical scaling and pre-initialization
@@ -31,6 +31,7 @@ setTimeout(function(){
   injectionPoint.style.top = "calc(100% - 410px)";
     injectionPoint.style.height = "400px";
     document.getElementById("openingLogo").style.backgroundColor = "transparent";
+
 
 // full scaling
     setTimeout(function(){

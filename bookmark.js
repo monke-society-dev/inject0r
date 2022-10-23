@@ -1851,8 +1851,9 @@ let devIndc = newElement("devname", appbtn, "storedevc");
         downloadAppBtn.textContent = "Downloaded!";
         appsDownloaded.push(namer.textContent);
         setTimeout(function(){
-          downloadAppBtn.textContent = "Download";
-        }, 2000)
+					downloadAppBtn.style.backgroundColor = "red";
+          downloadAppBtn.textContent = "Uninstall";
+        }, 1000)
         } catch(err) {
           error(err);
           downloadAppBtn.textContent = "Error downloading";
@@ -2107,7 +2108,7 @@ createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png")
 createNewItem("App Store", "exploithubApp", "app5()", Injector.serverURL + "/app.png");
 createNewItem("Personalize", "personalizeApp", "customizeApp()", Injector.serverURL + "/personalize.png");
 
-
+	
 	
 background.style.left = "0px";
 backgroundImage.style.right = "0px";
