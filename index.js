@@ -45,9 +45,19 @@ function requestListener(req, res) {
 					res.write(reader.readFileSync('./developer.html', "utf8"))
 					res.end();
 				return;
+				case "/wipgif":
+				var fileStream = reader.createReadStream("images/logos/ggif.gif");
+				res.writeHead(200, { "Content-Type": "image/gif", "Cache-Control": "max-age=3600" });
+				fileStream.pipe(res);
+				return;
 				case "/disclogo":
 				var fileStream = reader.createReadStream("./images/icons/discord.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
+				fileStream.pipe(res);
+				return;
+				case "/deskperson":
+				var fileStream = reader.createReadStream("./images/icons/cloudthing.jpg");
+				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/logo":
