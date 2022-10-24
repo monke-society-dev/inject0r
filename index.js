@@ -83,10 +83,11 @@ function requestListener(req, res) {
 				return;
 
 				
-			case "/Cloudimagething":
-				var fileStream = reader.createReadStream("images/icons/Cloudthing.jpg");
-				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
+			case "/cloudlogo":
+				var fileStream = reader.createReadStream("images/icons/injcloud.png");
+				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
+				return;
 			case "/notepad.png":
 				var fileStream = reader.createReadStream("images/icons/notepad.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });

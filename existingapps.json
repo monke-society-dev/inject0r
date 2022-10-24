@@ -1,6 +1,6 @@
 {
   "existingApps": [
-    "BAP!",
+    "TAP",
     "Game Hub",
     "NotePad",
     "Module2.0",
@@ -24,7 +24,7 @@
       "A selection of games to play which will not appear and your history and will likely never be blocked. Currently only has Friday Night Funkin'. Note: when Friday Night Funkin finishes the blue screen loading, make sure to click or it will just stay a blank screen"
     ],
     [
-      "BAP!",
+      "TAP",
       "paragram",
       "Automatically creates a basic UI so I can create new programs easily. Mostly just used for a basic idea of an app's UI since it lacks advanced element types such as text boxes and buttons, but is still a powerful tool."
     ],

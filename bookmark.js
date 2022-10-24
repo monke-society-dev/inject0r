@@ -954,7 +954,7 @@ function app2(){
   // lets me create more buttons later on without cancer
    buttonCSS(floodBtn, headerText, descText, "Floods your history with the page you are currently visiting. Keep in mind they can still scroll down far enough, so reliance on this is discouraged.");
    buttonCSS(editBtn,  headerText, descText, "Allows you to edit the page you're currently visiting. You cannot edit the contents of Injector. After editing the page, disabling this will lock in your changes to the page. Keep in mind this is only for you, and refreshing will revert these changes.");
-   buttonCSS(tabBtn, headerText, descText, "Changes the current name of the tab you're on. Can be used to trick teachers (make game sites look like Google Classroom, ect).")
+   buttonCSS(tabBtn, headerText, descText, "Changes the current name of the tab you're on. Can be used to trick teachers (make game sites look like Google Classroom, ect). If you dont set anything than it defaults to Google Drive, your welcome ;)")
    buttonCSS(driveCloak, headerText, descText, "Cloaks the tab as Google Drive. Similar use of the Change Tab Name exploit, but more convincing as it changes the icon.");
   floodBtn.style.top = "60px"; 
   editBtn.style.top = "110px";
@@ -1082,7 +1082,15 @@ function app2(){
   tabBtn.addEventListener("click", function(){
     document.title = prompt("Type new tab name");
 		if ( document.title = 'null') {
-    document.title = ''
+link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'icon';
+         document.getElementsByTagName('head')[0].appendChild(link);
+         ico = ""
+        }
+      link.href = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1147px-Google_Drive_icon_%282020%29.svg.png';
+      document.title = "My Drive - Google Drive";
 }
   });
 };

@@ -1,8 +1,6 @@
 
-createNewItem(`BAP!`, `BAP!`, `
-// remove this quote if its here
-
-let bapper = openWindow(650, 425, 'BAP! - Bobs App Programmer [scroll down for code output]', false, Injector.serverURL + "/bap.png");
+createNewItem(`TAP`, `TAP`, `
+let bapper = openWindow(650, 425, 'TAP - The App Programmer [scroll down for code output]', false, Injector.serverURL + "/bap.png");
 bapper.style.backgroundColor = "#383838"
 let frame = newElement("demobox", bapper, "AppDemo");
 frame.style.borderColor = "lime";
@@ -46,7 +44,7 @@ codeOutput.style.left = "0px";
 codeOutput.style.color = "black";
 codeOutput.style.overflowY = "auto";
 
-let defaultProps = "let autoWin = openWindow(300, 225, 'BAP AutoWindow', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png'); <br>"
+let defaultProps = "let autoWin = openWindow(300, 225, 'TAP AutoWindow', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png'); <br>"
 codeOutput.innerHTML = defaultProps;
 
 // the rest of the shit
