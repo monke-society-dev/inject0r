@@ -212,7 +212,7 @@ function requestListener(req, res) {
 
 						} else { // otherwise it is from the bookmark
 							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./bookmark.js', 'utf8'));
-							console.log("Loaded bookmark content for " + username)
+							console.log("Requesting bookmarklet content for " + username)
 						} // write the contents of bookmark.js as the response
 						res.end(); // then end the response
 
@@ -228,7 +228,7 @@ function requestListener(req, res) {
 			case "/chat":
 				if (!("token" in req.headers) || !(Tokens.hasOwnProperty(req.headers.token))) {
 					res.writeHead(401, "Unauthorized");
-					res.write("Error code 401: Unauthorized.                                                           This error normally happens if I'm running maintenance on the servers. Just refresh the page, and it should be fixed.")
+					res.write("Error code 401: Unauthorized.               This error normally happens if I'm running maintenance on the servers. Just refresh the page, and it should be fixed.")
 					res.end();
 					return;
 				}
@@ -799,25 +799,25 @@ function requestListener(req, res) {
 
 // stop console flood problems
 
-(function () {
+(function() {
 	http.createServer(requestListener).listen(8080, () => console.log("welcome to my crib"));
 	// just to ensure our numbers are accurate
-	setInterval(function () {
+	setInterval(function() {
 		ChatroomFileSize = reader.statSync(Settings.chatroom.file).size;
 	}, 60 * 1000)
 
-	setInterval(function () {
-		let updChat = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
-		for (i = 0; i < updChat["statuses"].length; i++) {
-			let array = updChat.statuses[i]
-			if ((array[1] - (new Date().getTime()) / 1000) <= -30) {
-				console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
-				let removalIndex = updChat["statuses"].indexOf(array);
-				let splicedResult = updChat["statuses"].splice(removalIndex, 1);
-				reader.writeFileSync('chatroom2.json', JSON.stringify(updChat));
-
-
-			}
-		}
-	}, 5000)
+  setInterval(function(){
+    let updChat = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
+    for(i=0; i<updChat["statuses"].length; i++){
+      let array = updChat.statuses[i]
+      if((array[1] - (new Date().getTime()) / 1000) <= -30){
+        // console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
+        let removalIndex = updChat["statuses"].indexOf(array);
+        let splicedResult = updChat["statuses"].splice(removalIndex, 1);
+        reader.writeFileSync('chatroom2.json', JSON.stringify(updChat));
+       
+        
+      }
+    }
+  }, 5000)
 })();

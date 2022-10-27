@@ -1,6 +1,6 @@
 
 var Injector = {
-serverURL:"https://inject0r.littleclaw.repl.co"
+serverURL:"https://inject0r.paragram.repl.co"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {
@@ -10,20 +10,187 @@ Injector.user = {
 }
 Injector.info = {
   version: "2.2.1",
-  changelog: `<h2> The Release Update </h2>
+  changelog: `<div class="area" >
+	<h2> The Release Update </h2>
   <h3> General Changes </h3>
-  <p> Registration page </p>
-  <p> Better backend </p>
-  <p> Injector now has a server for the backend <a href="https://inject0r.paragram.repl.co">here</a> </p>
+  <p> - Registration page </p>
+  <p> - Better backend </p>
+	<p> - Better login </p>
+	<p> - More themes </p>
+ 	<p> - Hit 'Escape' key to redirect window to Google classroom</p>
+	
+  <p> - Injector now has a server for the backend <a href="https://inject0r.paragram.repl.co">here</a> </p>
   
   <h3> Chatbox </h3>
-  <p> Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
-  <p> Status indicators, channels, important channels </p>
-  <p> Direct Messaging </p>
+  <p> - Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
+  <p> - Status indicators, channels, important channels </p>
+  <p> - Direct Messaging </p>
   
   
   <h3> Developer Updates </h3>
   <p style="font-weight: bold">[Major]: New injector object - important information stored there.</p>
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+	<style> @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+} </style>
   `
 }
 async function fetchUserData(){
@@ -103,20 +270,17 @@ panelInfo.onreadystatechange=e=>{
 }
 }else{
 setTimeout(function(){
- 
 try{
   const gtele = new XMLHttpRequest;
-	console.log("✅XMLHttpRequest for GAC Made")
   gtele.open("POST", Injector.serverURL + "/googleacc");
-	console.log("✅POST Request for GAC made")
   gtele.setRequestHeader('token', Injector.user.token);
-	console.log("✅Inject0r User Token for GAC set as Reqheader")
   gtele.send(document.querySelector(".gb_mb").textContent);
-	console.log("got GAC info and logged sucessfully")
 }catch(err){
-  console.log("Could not get GAC info. Probably not on the required site!")
+	window.console.log("Error: " + err);
+  //alert("Inject0r is is dev so errors may happen. [Error: " + err + " ]");
 }
-}, 1000);
+}, 5000);
+
       launcher.style.opacity = "0";
 allowToggle = false;
 function newElement(elementType, parent, id){
@@ -1344,7 +1508,7 @@ numDMsFloat += 47;
 newChannel("announcements", false)
 newChannel("#general", true);
 newChannel("#fart-channel", false)
-newChannel("#shit", false)
+newChannel("#requests", false)
 function newMessage(name, date, content, textColor){
 if(!(timeExistings.includes(date))){
   let message = newElement('chatMessage', messageOutput, "userMessage");
@@ -1730,7 +1894,7 @@ function app5(){
   // app download button
   
     devnamer.style.position = "absolute";
-  devnamer.textContent = "animecat7";
+  devnamer.textContent = "paragram";
   devnamer.style.width = "200px";
   devnamer.style.height = "30px";
   devnamer.style.fontSize = "20px";
@@ -2109,7 +2273,7 @@ channelInd.style.fontWeight = "bold";
 
 
 // create icons
-createNewItem("Changelog", "chlogApp", "app1()", Injector.serverURL + "/logo");
+createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logo");
 createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png");
 createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png");
 // createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");
@@ -2181,6 +2345,13 @@ console.log("Refreshing taskbar colors")
     }
   }
 }
+
+document.body.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      window.location.replace("https://classroom.google.com/");
+    }
+});
+
 let ThemeInfo = {
   colors:{
     taskbar_button_color: "#002169",
