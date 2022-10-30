@@ -1,1 +1,1 @@
-createNewItem(`NotePad`, `NotePad`, `let ide = openWindow(450, 300, 'NotePad', true, Injector.serverURL + "/notepad.png"); ide.contentEditable = true;`, Injector.serverURL + "/notepad.png");
+createNewItem(`NotePad`, `NotePad`, `let ide = openWindow(450, 300, 'NotePad', true, Injector.serverURL + "/notepad.png"); ide.innerHTML = 'notepad doesnt save your work'; ide.contentEditable = true;`, Injector.serverURL + "/notepad.png");

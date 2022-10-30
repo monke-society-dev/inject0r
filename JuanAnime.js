@@ -52,16 +52,16 @@ gameChooseDD.style.backgroundColor = 'red';
 gameChooseDD.style.left = '5px';
 gameChooseDD.style.top = '30px';
 gameChooseDD.style.color = 'white';
-let gameNames = ["Array Anime", "AniMixPlay"];
-let gameVals = ["https://mikesproxy.herokuapp.com/main/https://arrayanime.com/", "https://alloyinject.herokuapp.com/web/_aHR0cHM6Ly9hbmltaXhwbGF5LnRv_/"]
+let gameNames = ["Array Anime"];
+let gameVals = ["https://arrayanime.com/"]
 for(i=0; i<gameNames.length; i++){
   let newOp = new Option(gameNames[i], gameVals[i]);
   gameChooseDD.appendChild(newOp);
 }
 playGameBtn.addEventListener("click", function(){
   gameFrame.src = gameChooseDD.value;
-  if(gameChooseDD.value == "https://mikesproxy.herokuapp.com/main/https://arrayanime.com/"){
-    alert("For ArrayAnime, you must do the following for it to work: "+"\\n"+"Step 1: Click the anime"+"\\n"+" Step 2: Press the Sandbox button twice" + "\\n" +"Step 3: Press Switch" +"\\n"+"Step 4: If it doesn't work, toggle Switch and repeat from Step 2" + "\\n" + "Enjoy!")
+  if(gameChooseDD.value == "https://arrayanime.com/"){
+    alert("Anime is currently broken :( I will try to fix this but this is low priority as I am integrating a tool to uninstall school admin extensions.")
   }
   gameSelBar.style.opacity = "0";
   gameSelBar.style.visibility = "hidden";

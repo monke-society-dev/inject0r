@@ -55,6 +55,11 @@ function requestListener(req, res) {
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
+				case "/adalert":
+				var fileStream = reader.createReadStream("./images/icons/advertise.jpg");
+				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
+				fileStream.pipe(res);
+				return;
 				case "/deskperson":
 				var fileStream = reader.createReadStream("./images/icons/cloudthing.jpg");
 				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
