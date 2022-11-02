@@ -5,7 +5,15 @@ The official repository for Inject0r's backend
 
 #### What is Injector? 
 
-Injector is a JavaScript bookmark developed by paragram. It creates a pseudo-desktop environment on any page you run it on which has multiple apps for games, proxying, chatting, ect, and it can be hidden at any time by simply pressing Right Shift. Its primary use is to circumvent school security mechanisms like iBoss, GoGuardian, Securly, Harpara, ect.
+Injector is a JavaScript bookmark developed by paragram. It creates a pseudo-desktop environment on any page you run it on which has multiple apps for games, proxying, chatting, ect, and it can be hidden at any time by simply pressing Right Shift. Its primary use is to circumvent school security mechanisms like iBoss, GoGuardian, Securly, Harpara, ect.\
+
+#### Want to try?
+
+Guest account is :
+
+username: ```guest```
+
+pass: ```pass```
 
 #### Features
 
