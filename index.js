@@ -805,6 +805,7 @@ function requestListener(req, res) {
 // stop console flood problems
 
 (function() {
+	
 	http.createServer(requestListener).listen(8080, () => console.log("welcome to my crib"));
 	// just to ensure our numbers are accurate
 	setInterval(function() {
