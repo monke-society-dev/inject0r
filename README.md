@@ -30,7 +30,7 @@ As mentioned in the Features tab, the App Store is a place for third party devel
 
 ##### Purchase Injector 
 
-Injector is free, and can be gotten if you contact me. Contact me on by raising a request on this github info to get Injector. Download the client from the releases tab, please note you need an account to use.
+Inject0r is free, but no new accounts will be currently added, sorry.
 
 If you have gotten your single-use code, go [here](https://inject0r.paragram.repl.co/register) to register.
 
