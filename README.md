@@ -1,11 +1,11 @@
 # inject0r
-The official repository for Inject0r's backend
+The official repository for Inject0r backend
 <img src="images/logos/logo.png" width="50%"/>
 *** 
 
 #### What is Injector? 
 
-Injector is a JavaScript bookmark developed by paragram. It creates a pseudo-desktop environment on any page you run it on which has multiple apps for games, proxying, chatting, ect, and it can be hidden at any time by simply pressing Right Shift. Its primary use is to circumvent school security mechanisms like iBoss, GoGuardian, Securly, Harpara, ect.\
+Injector is a JavaScript bookmarklet developed by Paragram and some other people. It creates a pseudo desktop environment on the active page. It has multiple apps for games, proxying, chatting, ect, and it can be hidden at any time by simply pressing Right Shift. Its primary use is to circumvent school security mechanisms like iBoss, GoGuardian, Securly, Harpara, ect.
 
 #### Want to try?
 
@@ -30,7 +30,7 @@ As mentioned in the Features tab, the App Store is a place for third party devel
 
 ##### Purchase Injector 
 
-Inject0r is free, but no new accounts will be currently added, sorry.
+Inject0r is free, but a token will be needed upon registering for it.
 
 If you have gotten your single-use code, go [here](https://inject0r.paragram.repl.co/register) to register.
 
