@@ -3,7 +3,7 @@ name: Register Token Request
 about: Request a register token in this format
 title: Token Request
 labels: Token Request
-assignees: Paragramex ironswordX-dev
+assignees: Paragramex, ironswordX-dev
 
 ---
 
