@@ -11,9 +11,11 @@ Injector is a JavaScript bookmarklet developed by Paragram and some other people
 
 Guest account is :
 
-username: ```guest```
+***username:*** ```guest```
 
-pass: ```pass```
+***pass:*** ```pass```
+
+Token: not needed
 
 #### Features
 
