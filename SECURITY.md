@@ -13,4 +13,4 @@ These are the versions that security updates will be supported:
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, dm Paragram#0121 on discord with a video of what you did and the steps to reproduce it.
+To report a vulnerability, dm Paragram#0121 or ironswordX#1594 on discord with a video of what you did and the steps to reproduce it.

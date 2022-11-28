@@ -1,20 +1,3 @@
 {
-  "files": {
-    "bookmark.js": [
-      {
-        "id": "befa0719-6605-4e91-bdb0-5f0ef25ceeac",
-        "line": 2527,
-        "version": 4989,
-        "index": 80591
-      }
-    ],
-    "index.js": [
-      {
-        "id": "dbd1da22-7b6a-4f24-8dc6-9ac83090b90a",
-        "line": 830,
-        "version": 2322,
-        "index": 30723
-      }
-    ]
-  }
+  "files": {}
 }
