@@ -1,12 +1,14 @@
+// Fetch data & modules
 var http = require('http');
 var reader = require('fs');
 var crypto = require('crypto');
 var fetch = require('node-fetch');
-const Settings = require("./settings.json");
-const Auths = require("./auths.json");
 var Userdata = require("./userdata.json");
 var rimraf = require("rimraf");
+const Settings = require("./settings.json");
+const Auths = require("./auths.json");
 rimraf("/some/directory", function () { console.log("Load Sucessful"); });
+//Delete guest data as it is not needed
 rimraf.sync("./inCloud/users/guest/");
 
 async function getRandomCharstream() {
@@ -400,7 +402,7 @@ function requestListener(req, res) {
 										reader.writeFileSync('./userdata.json', JSON.stringify(parsedFile));
 									} else {
 										res.writeHead("404", "Not Found");
-										res.write("alert('This shit is bussin RESPECTFULLY sir!')");
+										res.write("alert('Welcome devs!')");
 										res.end();
 									};
 

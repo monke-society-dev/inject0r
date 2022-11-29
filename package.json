@@ -12,6 +12,7 @@
   "dependencies": {
     "encoding": "^0.1.13",
     "node-fetch": "^2.6.7",
+    "replit-client": "^0.25.0",
     "rimraf": "^3.0.2"
   }
 }
