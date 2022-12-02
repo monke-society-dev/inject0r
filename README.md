@@ -1,5 +1,5 @@
 # inject0r
-The official repository for Inject0r backend
+The official repository for Inject0r's backend
 <img src="images/logos/logo.png" width="50%"/>
 *** 
 
