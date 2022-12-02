@@ -1,4 +1,4 @@
-process.emitWarning("The .es.js file is deprecated. Use .mjs instead.");
+process.emitWarning("The .es.js file is deprecated. Please use .mjs when possible.");
 
 import Stream from 'stream';
 import http from 'http';
