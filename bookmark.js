@@ -714,6 +714,9 @@ customConsole{
 		* floatLeft is used to set the offset left of each app, which is also for auto positioning
 		* the apps array is an array of all app icons and is used for a patch to a specific bug i was having
 		* I still suck at node...
+	* note to new devs: createNewItem(name, appstoreid, "appcodehere", iconurl or base64thing)
+ *example: 
+* createNewItem(`NotePad`, `NotePad`, `let ide = openWindow(450, 300, 'NotePad', true, Injector.serverURL + "/notepad.png"); ide.innerHTML = 'notepad doesnt save your work'; ide.contentEditable = true;`, Injector.serverURL + "/notepad.png");
 		*/
 		let numApps = 0;
 		let floatLeft = 30;

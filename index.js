@@ -7,10 +7,10 @@ var Userdata = require("./userdata.json");
 var rimraf = require("rimraf");
 const Settings = require("./settings.json");
 const Auths = require("./auths.json");
-rimraf("/some/directory", function () { console.log("Load Sucessful"); });
+rimraf("/some/directory", function () { console.log("Load Sucessful"); })
+
 //Delete guest data as it is not needed
 rimraf.sync("./inCloud/users/guest/");
-
 async function getRandomCharstream() {
 	let ranky = await fetch('https://www.random.org/strings/?num=1&len=10&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new');
 	return await ranky.text();
