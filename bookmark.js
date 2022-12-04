@@ -9,28 +9,61 @@ Injector.user = {
 	settings: ""
 }
 Injector.info = {
-	version: "2.2.1",
+	version: "3.0",
 	changelog: `
-	<h2> The Release Update </h2>
+	<h2> -=- The Migration Update -=- </h2>
   <h3> General Changes </h3>
-  <p> - Registration page </p>
-  <p> - Better backend </p>
-	<p> - Better login </p>
-	<p> - More themes </p>
- 	<p> - Hit 'Escape' key to redirect window to Google classroom</p>
+  <p> - Cleaner Bookmark </p>
+  <p> - Devs can now fix bookmark server side </p>
+	<p> - Better UI [Coming Soon]</p>
+	<p> - More themes [Coming Soon]</p>
+ 	<p> - Cleaner link (inject0r.repl.co)</p>
 	
-  <p> - Injector now has a server for the backend <a href="https://inject0r.paragram.repl.co">here</a> </p>
-  
-  <h3> Chatbox </h3>
-  <p> - Chatroom has been completely reprogrammed, rebranded to Chatbox </p>
-  <p> - Status indicators, channels, important channels </p>
-  <p> - Direct Messaging </p>
-  
+<br>
+<br>
+<h3> Administeration Changes </h3>
+<style>
+tr:nth-child(even) {background-color: #87F1DA;}
+tr:nth-child(odd) {background-color: #93E5E9;}
+th {
+  background-color: #90A1C8;
+  color: white;
+}
+</style>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;Role</td>
+<td>&nbsp;User</td>
+<td>&nbsp;Inject0r User&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;Owner</td>
+<td>&nbsp;Paragram#0121</td>
+<td>&nbsp;paragram</td>
+</tr>
+<tr>
+<td>&nbsp;Communications Dept Head</td>
+<td>&nbsp;ironswordX#1594</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;UI Developer</td>
+<td>&nbsp;Jake378#6783</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;ExploitHub Developer</td>
+<td>&nbsp;mrphi05#7192</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
   
   <h3> Developer Updates </h3>
   <p style="font-weight: bold">[Major]: New injector object - important information stored there.</p>
   `
-}
+	}
 async function fetchUserData() {
 	let dataFetch = await fetch('https://inject0r.paragram.repl.co/save', {
 		method: 'GET',
