@@ -1,6 +1,6 @@
 
 var Injector = {
-	serverURL: "https://inject0r.paragram.repl.co"
+	serverURL: "https://inject0r.repl.co"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {
@@ -38,24 +38,24 @@ th {
 <td>&nbsp;Inject0r User&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;Owner</td>
-<td>&nbsp;Paragram#0121</td>
-<td>&nbsp;paragram</td>
+<td>&nbsp;Owner&nbsp;</td>
+<td>&nbsp;Paragram#0121&nbsp;</td>
+<td>&nbsp;paragram&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;Communications Dept Head</td>
-<td>&nbsp;ironswordX#1594</td>
-<td>&nbsp;</td>
+<td>&nbsp;Communications Dept Head&nbsp;</td>
+<td>&nbsp;ironswordX#1594&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;UI Developer</td>
-<td>&nbsp;Jake378#6783</td>
-<td>&nbsp;</td>
+<td>&nbsp;UI Developer&nbsp;</td>
+<td>&nbsp;Jake378#6783&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;ExploitHub Developer</td>
-<td>&nbsp;mrphi05#7192</td>
-<td>&nbsp;</td>
+<td>&nbsp;ExploitHub Developer&nbsp;</td>
+<td>&nbsp;mrphi05#7192&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ th {
   `
 	}
 async function fetchUserData() {
-	let dataFetch = await fetch('https://inject0r.paragram.repl.co/save', {
+	let dataFetch = await fetch('https://inject0r.repl.co/save', {
 		method: 'GET',
 		headers: {
 			'token': Injector.user.token
@@ -77,7 +77,7 @@ fetchUserData().then(response => {
 	Injector.user.settings += (JSON.parse(response).personalize);
 })
 async function saveData(category, data) {
-	let dataSend = await fetch('https://inject0r.paragram.repl.co/save', {
+	let dataSend = await fetch('https://inject0r.repl.co/save', {
 		method: 'POST',
 		headers: {
 			'token': Injector.user.token,
@@ -88,7 +88,7 @@ async function saveData(category, data) {
 	return await dataSend.text();
 }
 async function deleteData(category, index) {
-	let dataRem = await fetch('https://inject0r.paragram.repl.co/save', {
+	let dataRem = await fetch('https://inject0r.repl.co/save', {
 		method: 'POST',
 		headers: {
 			'token': Injector.user.token,
@@ -100,7 +100,7 @@ async function deleteData(category, index) {
 	return await dataRem.text();
 }
 async function removeCategory(category) {
-	let dataRemover = await fetch('https://inject0r.paragram.repl.co/save', {
+	let dataRemover = await fetch('https://inject0r.repl.co/save', {
 		method: 'POST',
 		headers: {
 			'token': Injector.user.token,
@@ -111,7 +111,7 @@ async function removeCategory(category) {
 	return await dataRemover.text();
 }
 async function fetchUserList() {
-	let joe = await fetch('https://inject0r.paragram.repl.co/userlist');
+	let joe = await fetch('https://inject0r.repl.co/userlist');
 	return await joe.text();
 }
 let namesObject = null;
@@ -1165,7 +1165,7 @@ customConsole{
 
 		function app3() {
 			async function sendDM(user, content) {
-				let req = await fetch('https://inject0r.paragram.repl.co/chat2', {
+				let req = await fetch('https://inject0r.repl.co/chat2', {
 					method: 'POST',
 					headers: {
 						'token': Injector.user.token,
@@ -1177,7 +1177,7 @@ customConsole{
 				return await req.text();
 			}
 			async function makeDMFetch(user) {
-				let req = await fetch('https://inject0r.paragram.repl.co/chat2', {
+				let req = await fetch('https://inject0r.repl.co/chat2', {
 					method: 'GET',
 					headers: {
 						'token': Injector.user.token,

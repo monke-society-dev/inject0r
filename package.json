@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"This is actually the build command cause i was lazy :)\" && npm install node-fetch"
-  },
+		"unbuild": "rm -rf node_modules || rd /s /q node_modules && rm package-lock.json || echo '--------------.Done.-----------------'",
+    "build": "npm run unbuild && npm install"
+	},
   "keywords": [],
-  "author": "",
+  "author": "paragram",
   "license": "ISC",
   "dependencies": {
     "encoding": "^0.1.13",

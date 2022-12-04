@@ -50,6 +50,14 @@ function requestListener(req, res) {
 					res.write(reader.readFileSync('./developer.html', "utf8"))
 					res.end();
 				return;
+				case "/bookmarkcode":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./injbookmarkcode.js', "utf8"))
+					res.end();
+				return;
 				case "/wipgif":
 				var fileStream = reader.createReadStream("images/logos/ggif.gif");
 				res.writeHead(200, { "Content-Type": "image/gif", "Cache-Control": "max-age=3600" });
