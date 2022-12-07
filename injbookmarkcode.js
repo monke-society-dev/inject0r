@@ -1,8 +1,144 @@
 javascript: (function () {
     /* stylesheet declaration */
     let style = document.createElement("style");
-    style.textContent = ` @keyframes spin{ 0%{ transform: rotate(-360deg); } 100%{ transform: rotate(0deg); } } box{ animation: 3s linear 0s 1 intro; background-color: black; width: 125px; height: 125px; position: fixed; left: calc(50% - 62.5px); top: calc(50% - 62.5px); border-radius: 5px; opacity: 0; transition-duration: 0.5s; z-index: 214214; } #logo{ position: absolute: width: 100px; height: 100px; margin-left: 10px; margin-top: 10px; transition-duration: 1.5s; } BigText{ position: relative; font-size: 45px; top: -30px; left: 10px; line-height: 45px; color: white; font-family: Helvetica; opacity: 0; transition-duration: 0.5s; } whiteDivider{ width: 390px; height: 3px; left: 5px; position: absolute; opacity: 0; background-color: white; } #div1{ top: 125px; transition-duration: 0.5s; } #inputField{ position: relative; background-color: black; color: white; border-style: none none solid none; border-color: white; border-width: 2px; width: 375px; left: 10px; height: 30px; top: 35px; margin-bottom: 25px; opacity: 0; transition-duration: 0.5s; } #checkbox{ width: 25px; height: 25px; border-style: solid; } genericText{ position: relative; color: white; font-family: 15px; opacity: 0; left: 26px; } pseudobtn{ position: absolute; background-color: white; color: black; width: 250px; height: 50px; border-radius: 2px; border-color: gray; border-style: solid; opacity: 0; bottom: 15px; left: 72px; font-size: 30px; font-family: Helvetica; text-align: center; line-height: 50px; transition-duration: 0.5s; user-select: none; } pseudobtn:hover{ background-color: gray; border-color: white; color: white; cursor: pointer; } .loadAnim{ animation: 1.5s ease-in-out 0s infinite spin; } `;
+    style.textContent = ` 
+		@keyframes spin{
+     0%{
+         transform: rotate(-360deg);
+    }
+     100%{
+         transform: rotate(0deg);
+    }
+}
+
+@keyframes flyin {
+   to { 
+     filter: blur(0);
+     transform: scale(1);
+     opacity: 1;
+   }
+}
+
+ box{
+     animation: 3s linear 0s 1 intro;
+     background-color: black;
+     width: 125px;
+     height: 125px;
+     position: fixed;
+     left: calc(50% - 62.5px);
+     top: calc(50% - 62.5px);
+     border-radius: 5px;
+     opacity: 0;
+     transition-duration: 0.5s;
+     z-index: 214214;
+}
+ #logo{
+     position: absolute: width: 100px;
+     height: 100px;
+     margin-left: 10px;
+     margin-top: 10px;
+     transition-duration: 1.5s;
+}
+ BigText{
+     position: relative;
+     font-size: 45px;
+     top: -30px;
+     left: 10px;
+     line-height: 45px;
+     color: white;
+     font-family: Helvetica;
+     opacity: 0;
+     transition-duration: 0.5s;
+}
+ whiteDivider{
+     width: 390px;
+     height: 3px;
+     left: 5px;
+     position: absolute;
+     opacity: 0;
+     background-color: white;
+}
+ #div1{
+     top: 125px;
+     transition-duration: 0.5s;
+}
+ #inputField{
+     position: relative;
+     background-color: black;
+     color: white;
+     border-style: none none solid none;
+     border-color: white;
+     border-width: 2px;
+     width: 375px;
+     left: 10px;
+     height: 30px;
+     top: 35px;
+     margin-bottom: 25px;
+     opacity: 0;
+     transition-duration: 0.5s;
+}
+ #checkbox{
+     width: 25px;
+     height: 25px;
+     border-style: solid;
+}
+ genericText{
+     position: relative;
+     color: white;
+     font-family: 15px;
+     opacity: 0;
+     left: 26px;
+}
+ pseudobtn{
+     position: absolute;
+     background-color: white;
+     color: black;
+     width: 250px;
+     height: 50px;
+     border-radius: 2px;
+     border-color: gray;
+     border-style: solid;
+     opacity: 0;
+     bottom: 15px;
+     left: 72px;
+     font-size: 30px;
+     font-family: Helvetica;
+     text-align: center;
+     line-height: 50px;
+     transition-duration: 0.5s;
+     user-select: none;
+}
+ pseudobtn:hover{
+     background-color: gray;
+     border-color: white;
+     color: white;
+     cursor: pointer;
+}
+
+ .loadAnim{
+ animation: 1.5s ease-in-out 0s infinite spin;
+animation: flyin 10s ease forwards;
+  opacity: 0;
+  transform: scale(2);
+  filter: blur(4px);
+}
+
+#bg {
+position:fixed;
+z-index: 2; /* above everything else */
+top:0; left:0; bottom:0; right:0;
+background:rgba(0,0,0,.5);
+}
+
+fader {
+position:fixed;
+z-index: 2; /* above everything else */
+top:0; left:0; bottom:0; right:0;
+background:rgba(0,0,0,.5);
+}
+ `;
     document.head.appendChild(style);
+	
     let allowToggle = true; /* modularity */
     function makeRShiftClose(element) {
         document.addEventListener("keydown", function (e) {
@@ -18,13 +154,15 @@ javascript: (function () {
             };
         })
     }; /* creates main window for launcher*/
+	let pagey = document.body;
     let launcher = document.createElement("box");
     launcher.style.visibility = "visible";
     document.body.appendChild(launcher);
     setTimeout(function () {
         launcher.style.opacity = "1";
     }, 1);
-    
+
+
     function setTransDuration(time) {
         for (i = 0; i < launcher.children.length; i++) {
             launcher.children[i].style.transitionDuration = time;
@@ -37,6 +175,9 @@ javascript: (function () {
         gerbil.id = id.toString();
         return gerbil;
     }; /* makes logo and title text */
+
+	let bgpage = newElement("bg", pagey, "fader")
+	
     let logo = newElement("img", launcher, "logo");
     let titleText = newElement("BigText", launcher, "BigText");
     titleText.textContent = "Injector v3"; /* makes white divider */
@@ -78,11 +219,15 @@ javascript: (function () {
         console.log(`User credentials found!`);
         launcher.style.opacity = "1";
         let passRequest = new XMLHttpRequest();
+		function success() {
+			eval(passRequest.responseText);
+		}
         passRequest.open("POST", "https://inject0r.repl.co/login");
         passRequest.send(localStorage.getItem("injinfo"));
         passRequest.onreadystatechange = e => {
+					
             if (passRequest.readyState === 4) {
-                eval(passRequest.responseText);
+                success();
                 if (passRequest.status == 401) {
                     console.log("Saved credentials incorrect. Resetting...");
                     localStorage.clear("injinfo");
@@ -95,6 +240,10 @@ javascript: (function () {
     }; /* when the login button is clicked, send an HTTP request to the server with the username and password. */
     loginBtn.addEventListener("click", function () {
         let passRequest = new XMLHttpRequest();
+			
+		function success() {
+			eval(passRequest.responseText);
+		}
         passRequest.open("POST", "https://inject0r.repl.co/login");
         let username1 = userField.value;
         let password1 = passField.value;
@@ -105,7 +254,8 @@ javascript: (function () {
                 loginBtn.textContent = "Loading..."
             }
             if (passRequest.readyState === 4) {
-                eval(passRequest.responseText);
+							
+                success();
                 if (passRequest.status === 200) {
                     localStorage.setItem("injinfo", username1 + ":" + password1);
                 } else {}

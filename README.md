@@ -1,6 +1,9 @@
-# inject0r
-The official repository for Inject0r's backend
-<img src="images/logos/logo.png" width="50%"/>
+# Inject0r
+The official repository for Inject0r
+
+***NOW ON VERSION 3, UPDATE YOUR BOOKMARK SOON OR ELSE YOU WILL NOT HAVE ACCESS TO INJECT0R.***
+<img src="images/logos/logo.png" width="50%" />
+
 *** 
 
 #### What is Injector? 
@@ -15,7 +18,8 @@ Guest account is :
 
 ***pass:*** ```pass```
 
-***Token:*** not needed
+***Bookmark:*** See BOOKMARK.md for current bookmark
+			
 
 #### Features
 
@@ -34,7 +38,7 @@ As mentioned in the Features tab, the App Store is a place for third party devel
 
 Inject0r is free, but a token will be needed upon registering for it.
 
-If you have gotten your single-use code, go [here](https://inject0r.paragram.repl.co/register) to register.
+If you have gotten your single-use code, go [here](https://inject0r.repl.co/register) to register.
 
 ***
 <img src="images/marketing/exdesktop.png" width="100%"/>

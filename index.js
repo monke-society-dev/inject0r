@@ -207,7 +207,10 @@ function requestListener(req, res) {
 					password = hash.digest("hex");
 					//outta here EnderKingJ
 					//stop fucking withh my passwords
-
+          // why???
+					//kk
+				
+			
 					console.log("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./auths.json'));
 					if (username in Auths2 && Auths2[username] === password) {
@@ -246,7 +249,7 @@ function requestListener(req, res) {
 			case "/chat":
 				if (!("token" in req.headers) || !(Tokens.hasOwnProperty(req.headers.token))) {
 					res.writeHead(401, "Unauthorized");
-					res.write("Error code 401: Unauthorized.               This error normally happens if I'm running maintenance on the servers. Just refresh the page, and it should be fixed.")
+					res.write("Error code 401: Unauthorized. This error normally happens if I'm running maintenance on the servers. Just refresh the page, and it should be fixed.")
 					res.end();
 					return;
 				}
@@ -269,7 +272,6 @@ function requestListener(req, res) {
 						.on('end', function () {
 							let username = Tokens[req.headers.token];
 							if (chdata.length < 250 && (username === "paragram" || !chdata.includes("<"))) {
-
 								chdata = `<bruh class="chatmsg" id="${chatnum}">[${username}]: ${chdata}</bruh><br> _______________________________________________________`;
 								chatnum++;
 								// make global because we are not using this in the same context again
@@ -766,7 +768,7 @@ function requestListener(req, res) {
 				}
 				return;
 			case "/token":
-				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_token']) {
+				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_auth']) {
 					joe = crypto.randomBytes(5).toString('hex')
 					let realTokenFile = JSON.parse(reader.readFileSync('logintokens.json', 'utf8'));
 					if (realTokenFile["temp_tokens"].includes(joe)) {
@@ -779,7 +781,7 @@ function requestListener(req, res) {
 					res.end();
 				} else {
 					res.writeHead(403, 'Unauthorized');
-					res.write("GTFO MY SERVER");
+					res.write("[ERROR] Could not fetch");
 					res.end();
 				}
 				return;
