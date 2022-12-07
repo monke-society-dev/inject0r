@@ -8,6 +8,10 @@ var rimraf = require("rimraf");
 const Settings = require("./settings.json");
 const Auths = require("./auths.json");
 rimraf("/some/directory", function () { console.log("Load Sucessful"); })
+var logger = reader.createWriteStream('log.txt', {
+  flags: 'a' // 'a' means appending (old data will be preserved)
+})
+var writeLine = (line) => logger.write(`\n${line}`);
 
 //Delete guest data as it is not needed
 rimraf.sync("./inCloud/users/guest/");
@@ -212,9 +216,11 @@ function requestListener(req, res) {
 				
 			
 					console.log("Recieved login request from " + username);
+          writeLine("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./auths.json'));
 					if (username in Auths2 && Auths2[username] === password) {
 						console.log("Credentials for " + username + " correct");
+            writeLine("Credentials for " + username + " correct");
 
 						//generate auth token and save it into authtokens.json hopefully
 						let authtoken = Math.floor(Math.random() * 9999999999999) + 1000000000000;
@@ -223,22 +229,26 @@ function requestListener(req, res) {
 						reader.writeFile('./authtokens.json', JSON.stringify(Tokens), function (err) {
 							if (err != null)
 								console.log(err);
+                writeLine(err);
 						});
 						res.writeHead(200, "OK");
 
 						//checks if this is coming from the login panel or from the bookmark
 						if (req.headers.fromlogin) { // if it is from login panel
 							console.log("Request was from Server Login Panel");
+              writeLine("Request was from Server Login Panel");
 							res.write(reader.readFileSync('./panel.js', 'utf8') + ";let user ='" + username + "';");
 
 						} else { // otherwise it is from the bookmark
 							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./bookmark.js', 'utf8'));
 							console.log("Requesting bookmarklet content for " + username)
+              writeLine("Requesting bookmarklet content for " + username)
 						} // write the contents of bookmark.js as the response
 						res.end(); // then end the response
 
 					} else { // otherwise the credentials were wrong
 						console.log("cred incorrect: " + password);
+            writeLine("cred incorrect: " + password);
 						res.writeHead(401, "Unauthorized");
 						res.write("loginBtn.textContent = 'Incorrect!'");
 
@@ -329,6 +339,7 @@ function requestListener(req, res) {
 					}
 				} else if (req.method.toLowerCase() === "post") {
 					console.log("Recieved save request from " + username);
+          writeLine("Recieved save request from " + username);
 					let saveData = "";
 					req.on("data", chunk => saveData += chunk.toString())
 						.on('end', function () {
@@ -355,6 +366,7 @@ function requestListener(req, res) {
 								res.writeHead("400", "Bad Request");
 								res.end()
 								console.log("error saving: " + err)
+                writeLine("error saving: " + err)
 							}
 						})
 				}
@@ -373,6 +385,7 @@ function requestListener(req, res) {
 			case "/appstore":
 				let token21 = req.headers.token;
 				console.log("Request recieved to Appstore");
+        writeLineline("Request recieved to Appstore");
 				if (!(token21 in Tokens)) {
 					res.writeHead(401, "Unauthorized");
 					res.end();
@@ -391,8 +404,10 @@ function requestListener(req, res) {
 										res.writeHead(200, "OK");
 										res.write(reader.readFileSync(__Data + ".js", 'utf8'));
 										console.log("Attemping to read contents of " + __Data + ".js")
+                    writeLineline("Attemping to read contents of " + __Data + ".js")
 										res.end();
 										console.log("Wrote app contents of " + __Data + " to client " + user2);
+                    writeLineline("Wrote app contents of " + __Data + " to client " + user2);
 										let parsedFile = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
 										if (parsedFile[user2].apps === undefined) {
 											parsedFile[user2].apps = [];
@@ -402,6 +417,7 @@ function requestListener(req, res) {
 										for (i = 0; i < appsINJS.length; i++) {
 											if (appsINJS[i] == __Data) {
 												console.log("Same Copy detected!")
+                        writeLineline("Same Copy detected!")
 												sameCopy = true;
 												break;
 											}
@@ -420,11 +436,13 @@ function requestListener(req, res) {
 
 								} else {
 									console.log("Uninstall request interpereted")
+                  writeLine("Uninstall request interpereted")
 
 
 									let parsedFileForUninstall = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
 									parsedFileForUninstall[user2].apps.splice(parsedFileForUninstall[user2].apps.indexOf(__Data), 1);
 									console.log(parsedFileForUninstall[user2].apps);
+                  loger.writeline(parsedFileForUninstall[user2].apps);
 									reader.writeFileSync("./userdata.json", JSON.stringify(parsedFileForUninstall))
 									res.writeHead('200', "OK");
 									res.end();
@@ -432,6 +450,7 @@ function requestListener(req, res) {
 							} catch (err) {
 								res.writeHead(400, "Bad Request");
 								console.log("Request was invalid: " + err);
+                writeLineline("Request was invalid: " + err);
 								res.end();
 								return;
 							}
@@ -441,6 +460,7 @@ function requestListener(req, res) {
 			case "/googleacc":
 				let token123 = req.headers.token;
 				console.log("Google account info recieved");
+        writeLine("Google account info recieved");
 				if (!(token123 in Tokens)) {
 					res.writeHead(401, "Unauthorized");
 					res.end();
@@ -452,6 +472,7 @@ function requestListener(req, res) {
 					req.on("data", chunk => gaData += chunk.toString())
 						.on('end', function () {
 							console.log("Logging GACC info from " + gaData + " to user " + user123);
+              writeLine("Logging GACC info from " + gaData + " to user " + user123);
 							var existingData = JSON.parse(reader.readFileSync("googleaccounts.json", "utf8"));
 							if (!existingData.hasOwnProperty(user123)) existingData[user123] = [gaData];
 							else if (!existingData[user123].includes(gaData)) existingData[user123].push(gaData);
@@ -480,6 +501,7 @@ function requestListener(req, res) {
 					res.end();
 				} else if (req.method.toLowerCase() === "post") {
 					console.log("Recieved FTSave request from " + usernameFTS);
+          writeLine("Recieved FTSave request from " + usernameFTS);
 					let ftsData = "";
 					req.on("data", chunk => ftsData += chunk.toString())
 						.on('end', function () {
@@ -493,6 +515,7 @@ function requestListener(req, res) {
 							} else {
 								Userdata[usernameFTS] = {};
 								console.log("Username not in Userdata. Making a file..")
+                writeLine("Username not in Userdata. Making a file..")
 								Userdata[usernameFTS].theme = {};
 								Userdata[usernameFTS].theme = ftsData;
 								reader.writeFileSync('./userdata.json', JSON.stringify(Userdata))
@@ -517,11 +540,13 @@ function requestListener(req, res) {
 						.on('end', function () {
 							if (chatData === "fromStatusUpdate") {
 								console.log("Status update recieved")
+                writeLineline("Status update recieved")
 								let chatFilesta = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
 								let usersJSArray = new Array();
 								for (i = 0; i < chatFilesta["statuses"].length; i++) {
 									usersJSArray.push(chatFilesta["statuses"][i]);
 									console.log(usersJSArray);
+                  writeLine(usersJSArray);
 								}
 								let userExisting = false;
 								for (i = 0; i < usersJSArray.length; i++) {
@@ -541,6 +566,7 @@ function requestListener(req, res) {
 									}
 
 									console.log("User already in Statuses; time updated.");
+                  writeLine("User already in Statuses; time updated.");
 								}
 								reader.writeFileSync('chatroom2.json', JSON.stringify(chatFilesta));
 								res.writeHead('200', 'OK');
@@ -579,6 +605,7 @@ function requestListener(req, res) {
 							req.on("data", chunk => chatData2 += chunk.toString())
 								.on('end', function () {
 									console.log("joe")
+                  writeLine("joe")
 									let user1 = userChat;
 									let user2 = req.headers.user2;
 									let finalUser = ""
@@ -588,6 +615,7 @@ function requestListener(req, res) {
 										finalUser = user2 + ":" + user1;
 									}
 									console.log("DM request! " + finalUser);
+                  writeLine("DM request! " + finalUser)
 									let dms = JSON.parse(reader.readFileSync('dms.json', 'utf8'));
 									if (!(dms.hasOwnProperty(finalUser))) {
 										dms[finalUser] = { "contentOfChat": [] }
@@ -627,6 +655,7 @@ function requestListener(req, res) {
 				return;
 			case "/cloud":
 				console.log("Cloud request recieved!")
+        writeLine("Cloud request recieved!")
 				let clToken = req.headers.token;
 				if (!(Tokens.hasOwnProperty(clToken))) {
 					res.writeHead('403', 'Unauthorized');
@@ -643,6 +672,7 @@ function requestListener(req, res) {
 				if (req.method.toLowerCase() == "get") {
 					if (reader.existsSync('inCloud/users/' + clName)) {
 						console.log("GET request to Injector Cloud detected.")
+            writeLine("GET request to Injector Cloud detected.")
 						let responseFileArray = {}
 						res.writeHead("200", "0K");
 						let userFiles = (reader.readdirSync('inCloud/users/' + clName));
@@ -662,9 +692,11 @@ function requestListener(req, res) {
               "size_limit":1024
             }`);
 						console.log("GET request to Injector Cloud detected, no user existing!")
+            writeLine("GET request to Injector Cloud detected, no user existing!")
 					}
 				} else if (req.method.toLowerCase() == "post") {
 					console.log("POST request to Injector Cloud detected.")
+          writeLine("POST request to Injector Cloud detected")
 					let cldata = "";
 					req.on("data", chunk => cldata += chunk.toString())
 						.on('end', function () {
@@ -803,6 +835,7 @@ function requestListener(req, res) {
 	} catch (err) {
 		res.end();
 		console.log("Client requested a nonexistant URL, or an error occured. Error: " + err);
+    writeLine("Client requested a nonexistant URL, or an error occured. Error: " + err)
 	}
 	res.writeHead(200, {
 		'Content-Type': 'text/html',

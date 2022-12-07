@@ -11,7 +11,7 @@ Injector.user = {
 Injector.info = {
 	version: "3.0",
 	changelog: `
-	<h2> -=- The Migration Update -=- </h2>
+	<h2> --- The Migration Update --- </h2>
   <h3> General Changes </h3>
   <p> - Cleaner Bookmark </p>
   <p> - Devs can now fix bookmark server side </p>
