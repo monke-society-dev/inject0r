@@ -998,20 +998,27 @@ customConsole{
 		function app2() {
 			let exhub = openWindow(400, 330, "Exploit Hub", false, Injector.serverURL + "/exploithub.png")
 			exhub.style.backgroundColor = "#454545";
-			exhub.style.overflow = "hidden";
+//			exhub.style.overflow = "hidden";
 			let numBtn = 0;
 			exhub.innerHTML = `
   <gamingheader id="topdog"></gamingheader>
   <seperator id="seperator"></seperator>
-  <bruh id="stoopybtn">History Flooder</bruh>
-  <bruh id="editbtn">Edit Page</bruh>
-  <bruh id="tabname">Change Tabname</bruh>
-  <bruh id="gdrivecloak">Drive Cloak</bruh>
-	<bruh id="antiexten" 0>Anti-Extension</bruh>
+	<div id="buttonlist">
+	  <bruh id="stoopybtn">History Flooder</bruh>
+	  <bruh id="editbtn">Edit Page</bruh>
+	  <bruh id="tabname">Change Tabname</bruh>
+	  <bruh id="gdrivecloak">Drive Cloak</bruh>
+		<bruh id="antiexten" 0>Anti-Extension</bruh>
+		<bruh id="testings" 0>size test</bruh> 
+  </div>
   <text1 id="headerTxt"></text1>
   <text2 id="descTxt"></text2>`
+			//main
 			let floodBtn = document.getElementById("stoopybtn");
 			let header = document.getElementById("topdog");
+			//exploits
+			//buttonlist is the container for buttons
+			let buttonlist = document.querySelector("#buttonlist");
 			let editBtn = document.getElementById("editbtn");
 			let seperator = document.getElementById("seperator");
 			let headerText = document.getElementById("headerTxt");
@@ -1019,17 +1026,25 @@ customConsole{
 			let tabBtn = document.getElementById("tabname");
 			let noExtension = document.getElementById("antiexten");
 			let driveCloak = document.querySelector("#gdrivecloak");
+			let sizetest = document.querySelector("#testings");
 			// lets me create more buttons later on without cancer cause im lazy
 			buttonCSS(floodBtn, headerText, descText, "Floods your history with the page you are currently visiting. Keep in mind they can still scroll down far enough, so reliance on this is discouraged.");
 			buttonCSS(editBtn, headerText, descText, "Allows you to edit the page you're currently visiting. You cannot edit the contents of Injector. After editing the page, disabling this will lock in your changes to the page. Keep in mind this is only for you, and refreshing will revert these changes.");
 			buttonCSS(tabBtn, headerText, descText, "Changes the current name of the tab you're on. Can be used to trick teachers (make game sites look like Google Classroom, ect). If you dont set anything than it defaults to Google Drive, your welcome ;)");
 			buttonCSS(driveCloak, headerText, descText, "Cloaks the tab as Google Drive. Similar use of the Change Tab Name exploit, but more convincing as it changes the icon.");
 			buttonCSS(noExtension, headerText, descText, "Go to the Chrome Web Store, and activate this bookmark. It will disable the extension you enter in, its like manually turning it off in settings.");
+			buttonCSS(sizetest, headerText, descText, "this is a size test that does nothing \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum fermentum elit, eu fermentum neque posuere ac. Praesent pretium odio sed odio laoreet imperdiet. Nunc interdum bibendum lobortis. Vivamus quam diam, tincidunt id dignissim vel, imperdiet sed elit. Etiam facilisis purus non turpis commodo pellentesque. Mauris posuere egestas varius. Donec nisi nunc, luctus eget semper ac, ultricies sit amet arcu.");
+
+			//trying to make buttons scroll...
+			buttonlist.style.overflow = "scroll";
+			buttonlist.height = '330px';
+			
 			floodBtn.style.top = "60px";
 			editBtn.style.top = "110px";
 			tabBtn.style.top = "160px";
 			driveCloak.style.top = "210px";
 			noExtension.style.top = "260px";
+			sizetest.style.top = "310px";
 			// make the header bar
 			header.style.position = "absolute";
 			header.style.width = "100%";
@@ -1045,12 +1060,16 @@ customConsole{
 			header.style.lineHeight = "50px";
 
 			//make text-description seperator
+			//
 			seperator.style.position = "absolute";
 			seperator.style.width = "2px";
+			//test
 			seperator.style.height = "calc(100% - 50px)"
-			seperator.style.bottom = "0px";
+//			seperator.style.height = "100%"
+			seperator.style.top = "50px";
+			seperator.style.bottom = '0px';
 			seperator.style.backgroundColor = "white";
-			seperator.style.left = "185px";
+			seperator.style.left = "46.25%";
 
 			// text boxes
 			headerText.style.position = "absolute";
@@ -2194,7 +2213,7 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 
 
 		// create icons
-		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logo");
+		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logoxmas2.png");
 		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png"); //https://www.flaticon.com/free-icon/console_1374723
 		createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png"); //https://www.flaticon.com/free-icon/chat_724715
 	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");//https://www.flaticon.com/free-icon/web-search-engine_3003511

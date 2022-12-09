@@ -83,12 +83,12 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 				case "/logo":
-				var fileStream = reader.createReadStream("./images/logos/logoxmas2.png");
+				var fileStream = reader.createReadStream("./images/logos/logo.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
-				case "/logoxmas2.png":
-				var fileStream = reader.createReadStream("./images/logos/logoxmas2.png");
+				case "/logo.png":
+				var fileStream = reader.createReadStream("./images/logos/logo.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -97,16 +97,18 @@ function requestListener(req, res) {
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
-			case "/fnf":
+				//Archived for legacy reasons
+			/* case "/fnf":
 				res.writeHead('200', "OK");
 				res.write(reader.readFileSync('apoc/apoc.html', 'utf8'));
 				res.end();
-				return;
+				return; 
 			case "/shaqimg":
 				var fileStream = reader.createReadStream("apoc/assets/shaq.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
+				*/
 			// app
 			case "/app.png":
 				var fileStream = reader.createReadStream("images/icons/app.png");
