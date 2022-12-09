@@ -177,3 +177,17 @@
 [Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
 [Fri, 09 Dec 2022 14:30:26 GMT] Cloud request recieved!
 [Fri, 09 Dec 2022 14:30:26 GMT] GET request to Injector Cloud detected, no user existing!
+[Fri, 09 Dec 2022 14:30:51 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:51 GMT] POST request to Injector Cloud detected
+[Fri, 09 Dec 2022 14:30:51 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:51 GMT] GET request to Injector Cloud detected.
+[Fri, 09 Dec 2022 14:30:51 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:51 GMT] GET request to Injector Cloud detected.
+[Fri, 09 Dec 2022 14:30:52 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:52 GMT] POST request to Injector Cloud detected
+[Fri, 09 Dec 2022 14:30:55 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:55 GMT] POST request to Injector Cloud detected
+[Fri, 09 Dec 2022 14:31:22 GMT] Recieved FTSave request from guest
+[Fri, 09 Dec 2022 14:31:22 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:31:22 GMT] GET request to Injector Cloud detected.
+[Fri, 09 Dec 2022 14:31:33 GMT] Recieved FTSave request from guest
