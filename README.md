@@ -1,7 +1,7 @@
 # Inject0r
 The official repository for Inject0r
 
-***NOW ON VERSION 3, UPDATE YOUR BOOKMARK SOON OR ELSE YOU WILL NOT HAVE ACCESS TO INJECT0R.***
+***The bookmarklet is being worked on, the servers may be down now and then***
 <img src="images/logos/logo.png" width="50%" />
 
 *** 
