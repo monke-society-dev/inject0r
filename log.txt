@@ -1,17 +1,179 @@
 
-Recieved login request from guest
-Credentials for guest correct
-Requesting bookmarklet content for guest
-null
-Recieved FTSave request from guest
-Client requested a nonexistant URL, or an error occured. Error: ReferenceError: writeLineline is not defined
-Client requested a nonexistant URL, or an error occured. Error: ReferenceError: writeLineline is not defined
-Recieved login request from guest
-Credentials for guest correct
-Requesting bookmarklet content for guest
-null
-Recieved FTSave request from guest
-Client requested a nonexistant URL, or an error occured. Error: ReferenceError: writeLineline is not defined
-Recieved login request from guest
-Credentials for guest correct
-Requesting bookmarklet content for guest
+[Fri, 09 Dec 2022 14:23:25 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:25 GMT] Attemping to read contents of Module2.0.js
+[Fri, 09 Dec 2022 14:23:25 GMT] Wrote app contents of Module2.0 to client guest
+[Fri, 09 Dec 2022 14:23:43 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:43 GMT] Uninstall request interpereted
+[Fri, 09 Dec 2022 14:23:50 GMT] Recieved login request from guest
+[Fri, 09 Dec 2022 14:23:50 GMT] Credentials for guest correct
+[Fri, 09 Dec 2022 14:23:50 GMT] Requesting bookmarklet content for guest
+[Fri, 09 Dec 2022 14:23:50 GMT] null
+[Fri, 09 Dec 2022 14:23:56 GMT] Recieved FTSave request from guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:56 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:23:56 GMT] Wrote app contents of InjectorCloud to client guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:23:56 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:56 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:23:56 GMT] Wrote app contents of JuanAnime to client guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:23:56 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:56 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:23:56 GMT] Wrote app contents of NotePad to client guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:23:56 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:56 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:23:56 GMT] Wrote app contents of TAP to client guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:23:56 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:23:56 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:23:56 GMT] Wrote app contents of Game Hub to client guest
+[Fri, 09 Dec 2022 14:23:56 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:29 GMT] Recieved login request from ironswordX
+[Fri, 09 Dec 2022 14:24:29 GMT] Credentials for ironswordX correct
+[Fri, 09 Dec 2022 14:24:29 GMT] Requesting bookmarklet content for ironswordX
+[Fri, 09 Dec 2022 14:24:29 GMT] null
+[Fri, 09 Dec 2022 14:24:36 GMT] Recieved FTSave request from ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of InjectorCloud to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of Game Hub to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of JuanAnime to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of NotePad to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of Module2.0.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of Module2.0 to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:36 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:36 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:24:36 GMT] Wrote app contents of TAP to client ironswordX
+[Fri, 09 Dec 2022 14:24:36 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:46 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:46 GMT] Uninstall request interpereted
+[Fri, 09 Dec 2022 14:24:50 GMT] Recieved login request from ironswordX
+[Fri, 09 Dec 2022 14:24:50 GMT] Credentials for ironswordX correct
+[Fri, 09 Dec 2022 14:24:50 GMT] Requesting bookmarklet content for ironswordX
+[Fri, 09 Dec 2022 14:24:50 GMT] null
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:24:58 GMT] Wrote app contents of InjectorCloud to client ironswordX
+[Fri, 09 Dec 2022 14:24:58 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:24:58 GMT] Wrote app contents of Game Hub to client ironswordX
+[Fri, 09 Dec 2022 14:24:58 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:24:58 GMT] Wrote app contents of JuanAnime to client ironswordX
+[Fri, 09 Dec 2022 14:24:58 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:24:58 GMT] Wrote app contents of TAP to client ironswordX
+[Fri, 09 Dec 2022 14:24:58 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:24:58 GMT] Wrote app contents of NotePad to client ironswordX
+[Fri, 09 Dec 2022 14:24:58 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:24:58 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:24:58 GMT] Recieved FTSave request from ironswordX
+[Fri, 09 Dec 2022 14:25:11 GMT] Status update recieved
+[Fri, 09 Dec 2022 14:25:42 GMT] Status update recieved
+[Fri, 09 Dec 2022 14:26:12 GMT] Status update recieved
+[Fri, 09 Dec 2022 14:26:12 GMT] ironswordX,1670595942.624
+[Fri, 09 Dec 2022 14:26:12 GMT] User already in Statuses; time updated.
+[Fri, 09 Dec 2022 14:26:42 GMT] Status update recieved
+[Fri, 09 Dec 2022 14:26:42 GMT] ironswordX,1670595972.62
+[Fri, 09 Dec 2022 14:26:42 GMT] User already in Statuses; time updated.
+[Fri, 09 Dec 2022 14:27:11 GMT] Status update recieved
+[Fri, 09 Dec 2022 14:27:11 GMT] ironswordX,1670596002.631
+[Fri, 09 Dec 2022 14:27:11 GMT] User already in Statuses; time updated.
+[Fri, 09 Dec 2022 14:28:49 GMT] Recieved login request from guest
+[Fri, 09 Dec 2022 14:28:49 GMT] Credentials for guest correct
+[Fri, 09 Dec 2022 14:28:49 GMT] Requesting bookmarklet content for guest
+[Fri, 09 Dec 2022 14:28:49 GMT] null
+[Fri, 09 Dec 2022 14:28:55 GMT] Recieved FTSave request from guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:28:55 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:28:55 GMT] Wrote app contents of NotePad to client guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:28:55 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:28:55 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:28:55 GMT] Wrote app contents of Game Hub to client guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:28:55 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:28:55 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:28:55 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:28:55 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:28:55 GMT] Wrote app contents of TAP to client guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:28:55 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:28:55 GMT] Wrote app contents of JuanAnime to client guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:28:55 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:28:55 GMT] Wrote app contents of InjectorCloud to client guest
+[Fri, 09 Dec 2022 14:28:55 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:28:58 GMT] Recieved login request from guest
+[Fri, 09 Dec 2022 14:28:58 GMT] Credentials for guest correct
+[Fri, 09 Dec 2022 14:28:58 GMT] Requesting bookmarklet content for guest
+[Fri, 09 Dec 2022 14:28:58 GMT] null
+[Fri, 09 Dec 2022 14:29:04 GMT] Recieved FTSave request from guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:04 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:29:04 GMT] Wrote app contents of Game Hub to client guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:04 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:04 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:29:04 GMT] Wrote app contents of NotePad to client guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:04 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:04 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:29:04 GMT] Wrote app contents of InjectorCloud to client guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:04 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:04 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:29:04 GMT] Wrote app contents of JuanAnime to client guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:04 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:04 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:29:04 GMT] Wrote app contents of TAP to client guest
+[Fri, 09 Dec 2022 14:29:04 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:12 GMT] Recieved login request from guest
+[Fri, 09 Dec 2022 14:29:12 GMT] Credentials for guest correct
+[Fri, 09 Dec 2022 14:29:12 GMT] Requesting bookmarklet content for guest
+[Fri, 09 Dec 2022 14:29:12 GMT] null
+[Fri, 09 Dec 2022 14:29:18 GMT] Recieved FTSave request from guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:18 GMT] Attemping to read contents of NotePad.js
+[Fri, 09 Dec 2022 14:29:18 GMT] Wrote app contents of NotePad to client guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:18 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:18 GMT] Attemping to read contents of TAP.js
+[Fri, 09 Dec 2022 14:29:18 GMT] Wrote app contents of TAP to client guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:18 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:18 GMT] Attemping to read contents of Game Hub.js
+[Fri, 09 Dec 2022 14:29:18 GMT] Wrote app contents of Game Hub to client guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:18 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:18 GMT] Attemping to read contents of JuanAnime.js
+[Fri, 09 Dec 2022 14:29:18 GMT] Wrote app contents of JuanAnime to client guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:29:18 GMT] Request recieved to Appstore
+[Fri, 09 Dec 2022 14:29:18 GMT] Attemping to read contents of InjectorCloud.js
+[Fri, 09 Dec 2022 14:29:18 GMT] Wrote app contents of InjectorCloud to client guest
+[Fri, 09 Dec 2022 14:29:18 GMT] Same Copy detected!
+[Fri, 09 Dec 2022 14:30:26 GMT] Cloud request recieved!
+[Fri, 09 Dec 2022 14:30:26 GMT] GET request to Injector Cloud detected, no user existing!

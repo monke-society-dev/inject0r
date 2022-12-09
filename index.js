@@ -11,7 +11,7 @@ rimraf("/some/directory", function () { console.log("Load Sucessful"); })
 var logger = reader.createWriteStream('log.txt', {
   flags: 'a' // 'a' means appending (old data will be preserved)
 })
-var writeLine = (line) => logger.write(`\n${line}`);
+var writeLine = (line) => logger.write(`\n[${new Date().toGMTString()}] ${line}`);
 
 //Delete guest data as it is not needed
 rimraf.sync("./inCloud/users/guest/");
@@ -83,12 +83,12 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 				case "/logo":
-				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				var fileStream = reader.createReadStream("./images/logos/logoxmas2.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
-				case "/logo.png":
-				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				case "/logoxmas2.png":
+				var fileStream = reader.createReadStream("./images/logos/logoxmas2.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -250,7 +250,7 @@ function requestListener(req, res) {
 						console.log("cred incorrect: " + password);
             writeLine("cred incorrect: " + password);
 						res.writeHead(401, "Unauthorized");
-						res.write("loginBtn.textContent = 'Incorrect!'");
+						res.write("loginBtn.textContent = 'Incorrect!'; loginBtn.style.backgroundColor = 'red'; loginBtn.style.animation = 'changetext 3s step-end both';");
 
 						res.end();
 					};
@@ -385,7 +385,7 @@ function requestListener(req, res) {
 			case "/appstore":
 				let token21 = req.headers.token;
 				console.log("Request recieved to Appstore");
-        writeLineline("Request recieved to Appstore");
+        writeLine("Request recieved to Appstore");
 				if (!(token21 in Tokens)) {
 					res.writeHead(401, "Unauthorized");
 					res.end();
@@ -404,10 +404,10 @@ function requestListener(req, res) {
 										res.writeHead(200, "OK");
 										res.write(reader.readFileSync(__Data + ".js", 'utf8'));
 										console.log("Attemping to read contents of " + __Data + ".js")
-                    writeLineline("Attemping to read contents of " + __Data + ".js")
+                    writeLine("Attemping to read contents of " + __Data + ".js")
 										res.end();
 										console.log("Wrote app contents of " + __Data + " to client " + user2);
-                    writeLineline("Wrote app contents of " + __Data + " to client " + user2);
+                    writeLine("Wrote app contents of " + __Data + " to client " + user2);
 										let parsedFile = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
 										if (parsedFile[user2].apps === undefined) {
 											parsedFile[user2].apps = [];
@@ -417,7 +417,7 @@ function requestListener(req, res) {
 										for (i = 0; i < appsINJS.length; i++) {
 											if (appsINJS[i] == __Data) {
 												console.log("Same Copy detected!")
-                        writeLineline("Same Copy detected!")
+                        writeLine("Same Copy detected!")
 												sameCopy = true;
 												break;
 											}
@@ -442,7 +442,6 @@ function requestListener(req, res) {
 									let parsedFileForUninstall = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
 									parsedFileForUninstall[user2].apps.splice(parsedFileForUninstall[user2].apps.indexOf(__Data), 1);
 									console.log(parsedFileForUninstall[user2].apps);
-                  loger.writeline(parsedFileForUninstall[user2].apps);
 									reader.writeFileSync("./userdata.json", JSON.stringify(parsedFileForUninstall))
 									res.writeHead('200', "OK");
 									res.end();
@@ -450,7 +449,7 @@ function requestListener(req, res) {
 							} catch (err) {
 								res.writeHead(400, "Bad Request");
 								console.log("Request was invalid: " + err);
-                writeLineline("Request was invalid: " + err);
+                writeLine("Request was invalid: " + err);
 								res.end();
 								return;
 							}
@@ -526,7 +525,6 @@ function requestListener(req, res) {
 				return;
 			case "/chat2":
 				let tokenChat = req.headers.token;
-
 				if (!(Tokens.hasOwnProperty(tokenChat)) || Settings.chatroom["bannedUsers"].includes(Tokens[tokenChat])) {
 					res.writeHead('403', 'Unauthorized');
 					res.write(`{"#general":{"contentOfChat":[["[SERVER]", 1, "you have been BANNED"]]},"statuses":[]} `)
@@ -540,7 +538,7 @@ function requestListener(req, res) {
 						.on('end', function () {
 							if (chatData === "fromStatusUpdate") {
 								console.log("Status update recieved")
-                writeLineline("Status update recieved")
+                writeLine("Status update recieved")
 								let chatFilesta = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
 								let usersJSArray = new Array();
 								for (i = 0; i < chatFilesta["statuses"].length; i++) {
@@ -802,6 +800,7 @@ function requestListener(req, res) {
 			case "/token":
 				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_auth']) {
 					joe = crypto.randomBytes(5).toString('hex')
+                    console.log(joe)
 					let realTokenFile = JSON.parse(reader.readFileSync('logintokens.json', 'utf8'));
 					if (realTokenFile["temp_tokens"].includes(joe)) {
 						joe = crypto.randomBytes(6).toString('hex')

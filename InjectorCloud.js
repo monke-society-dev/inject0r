@@ -1,8 +1,12 @@
 createNewItem(`Injector Cloud`, `InjectorCloud`, `
  try{
+ if (Injector.user.token == "guest") {
+ alert("guest files are not saved");
+ }
 let autoWin = openWindow(500, 325, 'Injector Cloud', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png');
 autoWin.style.backgroundColor = '#1f1f1f';
 let nameBar = newElement('input', autoWin, "autoObj");
+nameBar.placeholder = "File Name Here";
 nameBar.style.position = 'absolute';
 nameBar.style.width = 'calc(100% - 82px)';
 nameBar.style.height = '50px';
@@ -25,6 +29,7 @@ makeFileBtn.style.top = '0px';
 makeFileBtn.style.borderWidth = '2px';
 makeFileBtn.style.borderColor = 'white';
 makeFileBtn.style.borderStyle = 'solid';
+makeFileBtn.innerHTML = "Create";
 makeFileBtn.addEventListener("click", function(){
   let writeReq = new XMLHttpRequest;
   writeReq.open('POST', Injector.serverURL + "/cloud");
@@ -74,15 +79,24 @@ function newFile(name){
     fetchFileReq.send(name);
     fetchFileReq.onreadystatechange=e=>{
       if(fetchFileReq.readyState == 4){
-        alert(fetchFileReq.responseText);
-      }
+			if (name.indexOf(".html") >= 0){
+	 alert("HTML pages stored on our servers are not allowed yet, sorry for the inconveniance");
+			} else {
+				let dataWindow = openWindow(400, 200, name, false);    
+		dataWindow.innerHTML = fetchFileReq.responseText;
+	}
+}
     }
     }
 });
     let fileDeleteBtn = newElement("fileDelete", autoWin, "deleteFile");
     fileDeleteBtn.style.top = floatTop - 35 + "px";
+		fileDeleteBtn.innerHTML = "Delete";
+		fileDeleteBtn.style.textAlign = "center";
   fileDeleteBtn.addEventListener("click", function(){
-    let deleteReq = new XMLHttpRequest;
+	var confirmDelete = confirm("Delete Cloud File?");
+ if (confirmDelete) {
+     let deleteReq = new XMLHttpRequest;
     deleteReq.open('POST', Injector.serverURL + "/cloud");
     deleteReq.setRequestHeader('token', Injector.user.token);
     deleteReq.setRequestHeader('cloudType', 'deleteFile');
@@ -111,6 +125,9 @@ cloudReq2.onreadystatechange=e=>{
 }
       
     }
+ } else {
+ alert("canceled deletion :)");
+ }
   })
 
 }
@@ -158,6 +175,9 @@ fileDelete{
   color: white;
   transition-duration: 0.25s;
   user-select: none;
+	  display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 fileDelete:hover{
@@ -172,6 +192,11 @@ newFile:hover{
 #makeFileBtn{
   transition-duration: 0.25s;
   background-color: gray;
+	text-align:center;
+ 	padding: 1%;
+	  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #makeFileBtn:hover{
   background-color: #2f2f2f;

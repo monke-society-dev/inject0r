@@ -16,23 +16,26 @@ javascript: (function () {
      filter: blur(0);
      transform: scale(1);
      opacity: 1;
+		 border-radius: 25px;
    }
 }
 
  box{
      animation: 3s linear 0s 1 intro;
-     background-color: black;
+     background-color: #494d7e;
      width: 125px;
      height: 125px;
      position: fixed;
      left: calc(50% - 62.5px);
      top: calc(50% - 62.5px);
-     border-radius: 5px;
      opacity: 0;
      transition-duration: 0.5s;
-     z-index: 214214;
+     z-index: 999999999;
+		 outline-style: inset;
+	 		border-radius: 25px;
+
 }
- #logo{
+ #imagetagyessir{
      position: absolute: width: 100px;
      height: 100px;
      margin-left: 10px;
@@ -46,7 +49,7 @@ javascript: (function () {
      left: 10px;
      line-height: 45px;
      color: white;
-     font-family: Helvetica;
+     font-family: "Times New Roman", Times, serif;
      opacity: 0;
      transition-duration: 0.5s;
 }
@@ -76,6 +79,9 @@ javascript: (function () {
      margin-bottom: 25px;
      opacity: 0;
      transition-duration: 0.5s;
+		text-align: center; 
+			border-radius: 25px;
+
 }
  #checkbox{
      width: 25px;
@@ -85,24 +91,25 @@ javascript: (function () {
  genericText{
      position: relative;
      color: white;
+		 font-family: "Times New Roman", Times, serif;
      font-family: 15px;
      opacity: 0;
      left: 26px;
 }
  pseudobtn{
      position: absolute;
-     background-color: white;
+     background-color: #78db97;
      color: black;
      width: 250px;
      height: 50px;
-     border-radius: 2px;
-     border-color: gray;
+  border-radius: 200px;
+     border-color: #2d293d;
      border-style: solid;
      opacity: 0;
      bottom: 15px;
      left: 72px;
      font-size: 30px;
-     font-family: Helvetica;
+     font-family: "Times New Roman", Times, serif;
      text-align: center;
      line-height: 50px;
      transition-duration: 0.5s;
@@ -117,24 +124,22 @@ javascript: (function () {
 
  .loadAnim{
  animation: 1.5s ease-in-out 0s infinite spin;
-animation: flyin 10s ease forwards;
+animation: flyin .5s ease forwards;
   opacity: 0;
   transform: scale(2);
   filter: blur(4px);
 }
 
-#bg {
-position:fixed;
-z-index: 2; /* above everything else */
-top:0; left:0; bottom:0; right:0;
-background:rgba(0,0,0,.5);
+::placeholder {
+  color: #FF6F91;
+	text-align: center;
 }
 
-fader {
-position:fixed;
-z-index: 2; /* above everything else */
-top:0; left:0; bottom:0; right:0;
-background:rgba(0,0,0,.5);
+@keyframes change {
+    from { color: red }
+    to   { color: #78db97 }
+}
+
 }
  `;
     document.head.appendChild(style);
@@ -154,19 +159,21 @@ background:rgba(0,0,0,.5);
             };
         })
     }; /* creates main window for launcher*/
-	let pagey = document.body;
     let launcher = document.createElement("box");
     launcher.style.visibility = "visible";
+	launcher.style.borderRadius = "25px";
     document.body.appendChild(launcher);
     setTimeout(function () {
         launcher.style.opacity = "1";
+				
     }, 1);
 
 
     function setTransDuration(time) {
         for (i = 0; i < launcher.children.length; i++) {
             launcher.children[i].style.transitionDuration = time;
-            launcher.transitionDuration = time;
+            launcher.transitionDuration = time
+							launcher.style.borderRadius = "25px";
         }
     } /* new element function to save some space */
     function newElement(elementType, parent, id) {
@@ -175,10 +182,8 @@ background:rgba(0,0,0,.5);
         gerbil.id = id.toString();
         return gerbil;
     }; /* makes logo and title text */
-
-	let bgpage = newElement("bg", pagey, "fader")
 	
-    let logo = newElement("img", launcher, "logo");
+    let logo = newElement("img", launcher, "imagetagyessir");
     let titleText = newElement("BigText", launcher, "BigText");
     titleText.textContent = "Injector v3"; /* makes white divider */
     let whiteDiv = newElement("whiteDivider", launcher, "div1"); /* make text field for user and password */

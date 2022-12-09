@@ -61,7 +61,7 @@ for(i=0; i<gameNames.length; i++){
 playGameBtn.addEventListener("click", function(){
   gameFrame.src = gameChooseDD.value;
   if(gameChooseDD.value == "https://arrayanime.com/"){
-    alert("Anime is currently broken :( I will try to fix this but this is low priority as I am integrating a tool to uninstall school admin extensions.")
+    alert("Anime is currently broken :(")
   }
   gameSelBar.style.opacity = "0";
   gameSelBar.style.visibility = "hidden";

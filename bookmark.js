@@ -1,4 +1,3 @@
-
 var Injector = {
 	serverURL: "https://inject0r.repl.co"
 };
@@ -9,10 +8,18 @@ Injector.user = {
 	settings: ""
 }
 Injector.info = {
-	version: "3.0",
+	version: "3.3",
 	changelog: `
-	<h2> --- The Migration Update --- </h2>
-  <h3> General Changes </h3>
+	<h2> --- The Xmas Update Update --- </h2>
+ <h3> General Changes v3.2 </h3>
+ <p> - New Xmas themed icon! </p>
+ <p> - Inject0r cloud guest file nosave warn added </p>
+ <p> - Inject0r cloud UI update </p>
+ <p> - Console logging (server side) for errors </p>
+ <h3> General Changes v3.1</h3>
+ <p> - Logging and .gitignore (for replit.nix)</p>
+ <p> - New login UI </p>
+ <h3> General Changes v3.0</h3>
   <p> - Cleaner Bookmark </p>
   <p> - Devs can now fix bookmark server side </p>
 	<p> - Better UI [Coming Soon]</p>
@@ -125,7 +132,7 @@ fetchUserList().then(response => {
 	namesObject = namesArray;
 })
 
-if (location.href == Injector.serverURL + "/") {
+if (location.href == Injector.serverURL + "/" ) {
 	let panelInfo = new XMLHttpRequest;
 	panelInfo.open("POST", Injector.serverURL + "/login");
 	panelInfo.setRequestHeader('fromlogin', true);
@@ -747,6 +754,7 @@ customConsole{
 		* floatLeft is used to set the offset left of each app, which is also for auto positioning
 		* the apps array is an array of all app icons and is used for a patch to a specific bug i was having
 		* I still suck at node...
+	//IMPORTANTTTTvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	* note to new devs: createNewItem(name, appstoreid, "appcodehere", iconurl or base64thing)
  *example: 
 * createNewItem(`NotePad`, `NotePad`, `let ide = openWindow(450, 300, 'NotePad', true, Injector.serverURL + "/notepad.png"); ide.innerHTML = 'notepad doesnt save your work'; ide.contentEditable = true;`, Injector.serverURL + "/notepad.png");
@@ -781,7 +789,7 @@ customConsole{
 
 				numApps = 1;
 				floatLeft += 130;
-				// the following else if statement is because of a bug i dont understand and i am too lazy to fix naturally
+				// the following else if statement is because of a bug i dont understand and i am too lazy to fix naturally lol
 			} else if (numApps >= [backgroundImage.clientHeight - 50] / 141.75 + 1) {
 				numApps = 1;
 				floatLeft += 130;
@@ -1647,9 +1655,17 @@ channel:hover{
 
 
 		// prox browser
-		
+
 		function app4(){
-			let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png");
+			alert("BEING FIXED CURRENTLY");
+let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png")
+	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser")
+	browserwindow.src = "https://alloy.inject0r.repl.co/";
+		}
+		/*
+		function app4(){
+			let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png)
+			alert("Currently being fixed as it doesnt work on some browsers yet.")
 			var proxyTypes = ["Womginx", "Alloy"];
 			var proxyUrls = ["https://womginx.alexandermayer1.repl.co/main/", "https://krono-alloy-proxy.herokuapp.com/session/?url="];
 			let urlbar = newElement("input", proxybrowser, "urlbar");
@@ -1735,10 +1751,10 @@ channel:hover{
 			})
 		
 		}
-		
+		*/
 		// app store
 		function app5() {
-			let store = openWindow(500, 300, "App Store", false, Injector.serverURL + "/app.png");
+			let store = openWindow(500, 300, "App Store", false, Injector.serverURL + "/app.png"); //https://www.flaticon.com/free-icon/cloud-computing_814848
 			let topHeaderBar = newElement("appstorebar", store, "appbar");
 			let appList = newElement("applist", store, "applister");
 			store.style.overflowX = "hidden";
@@ -1946,8 +1962,8 @@ channel:hover{
 		};
 		Injector.settings.theme = null;
 		let currentselected = null;
-		function customizeApp() {
-			let customWindow = openWindow(400, 200, "Personalize", false, Injector.serverURL + "/personalize.png");
+		function useraccApp() {
+			let customWindow = openWindow(400, 200, "User Account", false, Injector.serverURL + "/personalize.png");
 			customWindow.style.backgroundColor = "#1c1c1c";
 			let optionsLeft = newElement("randomassbox", customWindow, "randomassbox");
 			optionsLeft.style.left = "0px";
@@ -2098,6 +2114,7 @@ channel:hover{
 			let crimsonThemeSelector = newTheme("crimson", "https://www.schemecolor.com/wallpaper?i=34515&desktop", "crimsonTheme()");
 			let greenboyThemeSelector = newTheme("green", "https://www.schemecolor.com/wallpaper?i=56477&desktop", "greenTheme()");
 			let lightThemeSelector = newTheme("light", "https://www.schemecolor.com/wallpaper?i=44498&desktop", "lightTheme()")
+			//let christmasThemeSelector = newTheme("christmas", "", "christmasTheme()")
 
 			currentSelected.style.borderColor = "lime";
 
@@ -2178,11 +2195,11 @@ channel:hover{
 
 		// create icons
 		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logo");
-		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png");
-		createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png");
-	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");
+		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png"); //https://www.flaticon.com/free-icon/console_1374723
+		createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png"); //https://www.flaticon.com/free-icon/chat_724715
+	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");//https://www.flaticon.com/free-icon/web-search-engine_3003511
 		createNewItem("App Store", "exploithubApp", "app5()", Injector.serverURL + "/app.png");
-		createNewItem("Personalize", "personalizeApp", "customizeApp()", Injector.serverURL + "/personalize.png");
+		createNewItem("User Account", "personalizeApp", "useraccApp()", Injector.serverURL + "/personalize.png"); //https://www.flaticon.com/free-icon/settings_1208196
 
 
 
@@ -2355,6 +2372,25 @@ channel:hover{
 			}
 			updateTheme();
 		}
+		/*
+		function christmasTheme() {
+			ThemeInfo = {
+				colors: {
+					taskbar_button_color: "#ffb3bf",
+					taskbar_color: "",
+					background: "#1f3325",
+					window_gradient: "linear-gradient(#d24b52, #a9522c, #7e5317, #574f16, #38451e, #344b25, #30512d, #295737, #307445, #379252, #3eb25f, #46d26c);",
+					hover_background_color: "#cc2944",
+					hover_border_color: "",
+					app_name_color: "#efb7a9",
+					app_name_background: "transparent"
+				},
+				logo: "url('" + Injector.serverURL + "/glacier.png')",
+				name: "christmas"
+			}
+			updateTheme();
+		}
+		*/
 		let preTitle = document.title;
 		var uFCons = false;
 		let themeFetch = new XMLHttpRequest;
