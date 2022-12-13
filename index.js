@@ -7,12 +7,27 @@ var Userdata = require("./userdata.json");
 var rimraf = require("rimraf");
 const Settings = require("./settings.json");
 const Auths = require("./auths.json");
-rimraf("/some/directory", function () { console.log("Load Sucessful"); })
+const tokenlocation = './logintokens.json';
+rimraf("/some/directory", function () { console.log("-✅ Load Sucessful"); })
 var logger = reader.createWriteStream('log.txt', {
   flags: 'a' // 'a' means appending (old data will be preserved)
 })
 var writeLine = (line) => logger.write(`\n[${new Date().toGMTString()}] ${line}`);
 
+//remake logintokens if pulling from github save cause gitignore ignores it when baclong up to git
+try {
+  if (reader.existsSync(tokenlocation)) {
+    console.log("-✅ RegTokens Exist, reboot canceled")
+  } else {
+		console.log("-❌ RegTokens Do-Not Exist, reboot started");
+		reader.writeFile(tokenlocation, '{"perm_tokens":[],"temp_tokens":[]}', function (err) {
+  if (err) throw err;
+  console.log('- ✅ File is created successfully');
+});
+	}
+} catch(err) {
+  console.log(err)
+}
 //Delete guest data as it is not needed
 rimraf.sync("./inCloud/users/guest/");
 async function getRandomCharstream() {
@@ -148,7 +163,7 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 			case "/personalize.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/customize/.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/customize.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;

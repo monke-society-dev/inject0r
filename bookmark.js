@@ -604,7 +604,7 @@ customConsole{
 		let toggled = false;
 		document.addEventListener("keydown", function(e) {
 			let key = e.key + e.location;
-			if (key == "Control2" /*|| key == "/0"*/) {
+			if (key == "Control2" || key == "/0") {
 				if (toggled) {
 					console.style.opacity = "0";
 					consoleInput.style.opacity = "0";
