@@ -14,3 +14,6 @@ assignees: Paragramex, ironswordX-dev
 #### Do you agree to our disclaimer?
 
 ```YES or NO```
+
+
+# WE DO NOT CHECK GITHUB THAT OFTEN SO PLEASE JOIN DISSCORD
