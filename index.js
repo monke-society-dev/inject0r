@@ -160,7 +160,7 @@ function requestListener(req, res) {
 			// ./app
 			case "/crlogo.png":
 				var fileStream = reader.createReadStream("images/logos/clogo.png");
-				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
+				res.writeHead(200, { "Content-Type": "image/", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/grlogo.png":

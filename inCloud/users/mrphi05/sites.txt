@@ -1,1 +1,2 @@
-"IXL": https://www.stptheboiz.tk/music
+"IXL": https://www.stptheboiz.tk/music <br>
+servers: wss://gcraft.alexandermayer1.repl.co/server
