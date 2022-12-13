@@ -990,32 +990,35 @@ customConsole{
 		}
 		//changelog
 		function app1() {
-			let chlog = openWindow(500, 300, "Changelog", true, Injector.serverURL + "/logo");
+			let chlog = openWindow(500, 300, "Changelog", true, Injector.serverURL + "/logo.png");
 			chlog.innerHTML = `<h1>Changelog - Injector v` + Injector.info.version + `</h1>
   `+ Injector.info.changelog;
 		}
+		
 		// exploit hub
 		function app2() {
 			let exhub = openWindow(400, 330, "Exploit Hub", false, Injector.serverURL + "/exploithub.png")
 			exhub.style.backgroundColor = "#454545";
-//			exhub.style.overflow = "hidden";
+			exhub.style.overflow = "hidden";
 			let numBtn = 0;
 			exhub.innerHTML = `
   <gamingheader id="topdog"></gamingheader>
   <seperator id="seperator"></seperator>
-	<div id="buttonlist">
-	  <bruh id="stoopybtn">History Flooder</bruh>
-	  <bruh id="editbtn">Edit Page</bruh>
-	  <bruh id="tabname">Change Tabname</bruh>
-	  <bruh id="gdrivecloak">Drive Cloak</bruh>
-		<bruh id="antiexten" 0>Anti-Extension</bruh>
-		<bruh id="testings" 0>size test</bruh> 
+	<div id="buttonlist" class="expButtonList">
+	  <bruh class="expButton" id="stoopybtn">History Flooder</bruh>
+	  <bruh class="expButton" id="editbtn">Edit Page</bruh>
+	  <bruh class="expButton" id="tabname">Change Tabname</bruh>
+	  <bruh class="expButton" id="gdrivecloak">Drive Cloak</bruh>
+		<bruh class="expButton" id="antiexten" 0>Anti-Extension</bruh>
+		<bruh class="expButton" id="testings" 0>size test</bruh> 
   </div>
+	<style id="expstyle"> </style>
   <text1 id="headerTxt"></text1>
   <text2 id="descTxt"></text2>`
 			//main
 			let floodBtn = document.getElementById("stoopybtn");
 			let header = document.getElementById("topdog");
+			let expstyle = document.getElementById("expstyle");
 			//exploits
 			//buttonlist is the container for buttons
 			let buttonlist = document.querySelector("#buttonlist");
@@ -1036,15 +1039,45 @@ customConsole{
 			buttonCSS(sizetest, headerText, descText, "this is a size test that does nothing \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum fermentum elit, eu fermentum neque posuere ac. Praesent pretium odio sed odio laoreet imperdiet. Nunc interdum bibendum lobortis. Vivamus quam diam, tincidunt id dignissim vel, imperdiet sed elit. Etiam facilisis purus non turpis commodo pellentesque. Mauris posuere egestas varius. Donec nisi nunc, luctus eget semper ac, ultricies sit amet arcu.");
 
 			//trying to make buttons scroll...
-			buttonlist.style.overflow = "scroll";
-			buttonlist.height = '330px';
+			//buttonlist.style.overflow = "scroll";
+			//buttonlist.height = '330px';
+
+			//style
+			expstyle.innerHTML = `
+	 			.expButton {
+		 			width = 42%;
+					padding = 2px;
+		 			position = absolute;
+				}
+				#buttonlist {
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					width: 50%;
+					height: calc(100% - 50px);
+					border-color: gray;
+					border-style: none solid none none;
+					overflow: hidden auto;
+				}
+
 			
-			floodBtn.style.top = "60px";
-			editBtn.style.top = "110px";
-			tabBtn.style.top = "160px";
-			driveCloak.style.top = "210px";
-			noExtension.style.top = "260px";
-			sizetest.style.top = "310px";
+			`
+			//position: absolute; bottom: 0px; left: 0px; width: 150px; height: calc(100% - 50px); border-color: gray; border-style: none solid none none; overflow: hidden auto; --darkreader-inline-border-top:#545b5e; --darkreader-inline-border-right:#545b5e; --darkreader-inline-border-bottom:#545b5e; --darkreader-inline-border-left:#545b5e;
+			
+			 floodBtn.style.top = "10px";
+			 editBtn.style.top = "60px";
+			 tabBtn.style.top = "110px";
+			 driveCloak.style.top = "160px";
+			 noExtension.style.top = "210px";
+			 sizetest.style.top = "260px";
+
+			//floodBtn.style.grid-column = 1;
+			//editBtn.style.grid-column = 2;
+			//tabBtn.style.grid-column = 3;
+			//driveCloak.style.grid-column = 4;
+			//noExtension.style.grid-column = 5;
+			//sizetest.style.grid-column = 6;
+			
 			// make the header bar
 			header.style.position = "absolute";
 			header.style.width = "100%";
@@ -1075,7 +1108,7 @@ customConsole{
 			headerText.style.position = "absolute";
 			headerText.style.right = "0px";
 			headerText.style.top = "50px";
-			headerText.style.width = "calc(400px - 187px)"
+			headerText.style.width = "45%"
 			headerText.style.height = "50px";
 			headerText.style.color = "white";
 			headerText.style.fontFamily = "Helvetica";
@@ -1086,7 +1119,7 @@ customConsole{
 			descText.style.position = "absolute";
 			descText.style.right = "2px";
 			descText.style.top = "100px";
-			descText.style.width = "calc(400px - 194px)"
+			descText.style.width = "45%"
 			descText.style.height = "calc(100% - 50px)";
 			descText.style.color = "white";
 			descText.style.fontFamily = "Helvetica";
@@ -1979,8 +2012,12 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 				}
 			})
 		};
+
+		
+		
 		Injector.settings.theme = null;
 		let currentselected = null;
+		
 		function useraccApp() {
 			let customWindow = openWindow(400, 200, "User Account", false, Injector.serverURL + "/personalize.png");
 			customWindow.style.backgroundColor = "#1c1c1c";

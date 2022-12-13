@@ -5,7 +5,8 @@
     "NotePad",
     "Module2.0",
     "JuanAnime",
-    "InjectorCloud"
+    "InjectorCloud",
+		"cmd"
   ],
   "appsReadable": [
 		[
@@ -33,5 +34,6 @@
       "paragram",
       "A UI overhaul for Injector that allows for a more multitasked style of Injector where the desktop is made transparent over the page, turning it into a more module-style UI. Requires a refresh to uninstall."
     ]
+		
   ]
 }

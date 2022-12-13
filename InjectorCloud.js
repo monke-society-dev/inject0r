@@ -30,37 +30,48 @@ makeFileBtn.style.borderWidth = '2px';
 makeFileBtn.style.borderColor = 'white';
 makeFileBtn.style.borderStyle = 'solid';
 makeFileBtn.innerHTML = "Create";
+
+
+
 makeFileBtn.addEventListener("click", function(){
-  let writeReq = new XMLHttpRequest;
-  writeReq.open('POST', Injector.serverURL + "/cloud");
-  writeReq.setRequestHeader('token', Injector.user.token);
-  writeReq.setRequestHeader('cloudtype', 'writeFile');
-  writeReq.setRequestHeader('filetowrite', nameBar.value);
-  writeReq.send(prompt("Content of file"));
-  writeReq.onreadystatechange=e=>{
-    if(writeReq.readyState == 4)
-      while(document.getElementById("CloudFile"))
-        document.getElementById("CloudFile").remove();
-      while(document.getElementById("deleteFile"))
-        document.getElementById("deleteFile").remove();
-      floatTop = 56;
-      filesArray = [];
-    let cloudReq2 = new XMLHttpRequest;
-cloudReq2.open('GET', Injector.serverURL + "/cloud");
-cloudReq2.setRequestHeader('token', Injector.user.token);
-cloudReq2.send();
-cloudReq2.onreadystatechange=e=>{
-  if(cloudReq2.readyState == 4){
-  let filesJson = JSON.parse(cloudReq2.responseText);
-  for(i=0; i<Object.keys(filesJson).length; i++){
-    if(Object.keys(filesJson)[i] !== "undefined"){
-   newFile(Object.keys(filesJson)[i]); 
-    }
-  };
-  };
-}
+  if(nameBar.value !== "" && nameBar.value !== null) {
+    let writeReq = new XMLHttpRequest;
+    writeReq.open('POST', Injector.serverURL + "/cloud");
+    writeReq.setRequestHeader('token', Injector.user.token);
+    writeReq.setRequestHeader('cloudtype', 'writeFile');
+    writeReq.setRequestHeader('filetowrite', nameBar.value);
+    writeReq.send(prompt("Content of file"));
+    writeReq.onreadystatechange=e=>{
+      if(writeReq.readyState == 4)
+        while(document.getElementById("CloudFile"))
+          document.getElementById("CloudFile").remove();
+        while(document.getElementById("deleteFile"))
+          document.getElementById("deleteFile").remove();
+        floatTop = 56;
+        filesArray = [];
+      let cloudReq2 = new XMLHttpRequest;
+  cloudReq2.open('GET', Injector.serverURL + "/cloud");
+  cloudReq2.setRequestHeader('token', Injector.user.token);
+  cloudReq2.send();
+  cloudReq2.onreadystatechange=e=>{
+    if(cloudReq2.readyState == 4){
+    let filesJson = JSON.parse(cloudReq2.responseText);
+    for(i=0; i<Object.keys(filesJson).length; i++){
+      if(Object.keys(filesJson)[i] !== "undefined"){
+     newFile(Object.keys(filesJson)[i]); 
+      }
+    };
+    };
   }
-})
+    }
+  } else {
+    alert("Name can't be empty.")
+  }// if statement end
+  
+}) // end of click function
+
+
+
 floatTop = 56;
 function newFile(name){
   if(!(filesArray.includes(name))){
@@ -82,7 +93,7 @@ function newFile(name){
 			if (name.indexOf(".html") >= 0){
 	 alert("HTML pages stored on our servers are not allowed yet, sorry for the inconveniance");
 			} else {
-				let dataWindow = openWindow(400, 200, name, false);    
+				let dataWindow = openWindow(400, 200, name, true);    
 		dataWindow.innerHTML = fetchFileReq.responseText;
 	}
 }

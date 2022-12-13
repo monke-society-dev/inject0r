@@ -5,5 +5,13 @@
 		"file": "./chatroom2.json",
 		"admins": ["paragram","ironswordX"],
     "bannedUsers":["guest","jkwillgrabyou"]
+	},
+	"banksystem": {
+		"max_withdraw": "10000",
+		"max_deposit": "100",
+		"min_deposit": "10",
+		"premium": "paragram",
+		"admins": "paragram",
+		"banned": "guest"		
 	}
 }

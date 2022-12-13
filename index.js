@@ -133,12 +133,12 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 			case "/chat.png":
-				var fileStream = reader.createReadStream("images/icons/chat.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/chat.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/exploithub.png":
-				var fileStream = reader.createReadStream("images/icons/exploithub.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/console.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -148,12 +148,12 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 			case "/personalize.png":
-				var fileStream = reader.createReadStream("images/icons/personalize.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/customize/.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/proxbrowser.png":
-				var fileStream = reader.createReadStream("images/icons/proxbrowser.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/web.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -715,7 +715,7 @@ function requestListener(req, res) {
 								}
 								if (req.headers.cloudtype == "writeFile") {
 									try {
-										reader.writeFileSync('inCloud/users/' + clName + "/" + req.headers.filetowrite, cldata)
+										reader.writeFileSync('inCloud/users/' + clName + "/" + req.headers.filetowrite + ".txt", cldata)
 
 
 										res.end();
@@ -802,7 +802,6 @@ function requestListener(req, res) {
 			case "/token":
 				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_auth']) {
 					joe = crypto.randomBytes(5).toString('hex')
-                    console.log(joe)
 					let realTokenFile = JSON.parse(reader.readFileSync('logintokens.json', 'utf8'));
 					if (realTokenFile["temp_tokens"].includes(joe)) {
 						joe = crypto.randomBytes(6).toString('hex')
@@ -867,7 +866,7 @@ function requestListener(req, res) {
     for(i=0; i<updChat["statuses"].length; i++){
       let array = updChat.statuses[i]
       if((array[1] - (new Date().getTime()) / 1000) <= -30){
-        // console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
+ console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
         let removalIndex = updChat["statuses"].indexOf(array);
         let splicedResult = updChat["statuses"].splice(removalIndex, 1);
         reader.writeFileSync('chatroom2.json', JSON.stringify(updChat));
