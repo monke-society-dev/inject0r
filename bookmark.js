@@ -62,7 +62,7 @@ th {
 <tr>
 <td>&nbsp;ExploitHub Developer&nbsp;</td>
 <td>&nbsp;mrphi05#7192&nbsp;</td>
-<td>&nbsp;&nbsp;</td>
+<td>&nbsp;mrphi05&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -410,6 +410,14 @@ CircBtn{
 #CloseBtn:hover{
   background-color: #630000;
   cursor: pointer;
+	border-top-right-radius: 5px;
+ 	padding-right: 2px;
+}
+#fullBtn:hover{
+	background-color: rgba(0, 80, 180, 0.77);
+	cursor: pointer;
+ 	padding-right: 2px;
+	width: 19.8px;
 }
 NewWindowContent{
 position: absolute;
@@ -588,6 +596,13 @@ customConsole{
 .enabled{
   background-color: lime;
 }
+/* Hide scrollbar for Chrome, Safari and Opera, IE, Edge, Firefox */
+ ::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 `};
 	refreshStyleSheet();
 
@@ -754,6 +769,8 @@ customConsole{
 		* floatLeft is used to set the offset left of each app, which is also for auto positioning
 		* the apps array is an array of all app icons and is used for a patch to a specific bug i was having
 		* I still suck at node...
+
+ 
 	//IMPORTANTTTTvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 	* note to new devs: createNewItem(name, appstoreid, "appcodehere", iconurl or base64thing)
  *example: 
@@ -880,7 +897,7 @@ customConsole{
 			console.log("All windows closed, switching parent...", "Injector")
 			windowParent = newParent;
 		}
-		function openWindow(width, height, windowTitle, resizable, tbarIcon, onClose) {
+		function openWindow(width, height, windowTitle, resizable, tbarIcon, onClose, autoclose) {
 			// make the window
 			let newWindow = newElement("windowHeading", windowParent, "genericWindow");
 			windowsOpen.push(newWindow);
@@ -893,6 +910,9 @@ customConsole{
 			newWindow.textContent = windowTitle;
 			topZIndex++;
 			newWindow.style.zIndex = topZIndex;
+
+
+			
 			try {
 				newWindow.style.backgroundImage = colorInUse;
 			} catch (err) {
@@ -902,8 +922,30 @@ customConsole{
 			numWins++;
 			//create close button
 			let closeBtn = newElement("CircBtn", newWindow, "CloseBtn");
-			closeBtn.textContent = "X";
-			noDragGlitch(closeBtn)
+			closeBtn.innerHTML = "X";
+			closeBtn.style.paddingRight = "5px";
+
+			/*//create fullscreen button
+			let openBtn = newElement("CircBtn", newWindow, "fullBtn");
+			openBtn.innerHTML = "□";
+			openBtn.style.right = "50px";*/
+
+			noDragGlitch(closeBtn);
+
+      //automatically close window to fix console spam bug
+			if (autoclose) {
+				setTimeout(() => {
+					if (onClose !== undefined) {
+						eval(onClose);
+					}
+					windowContent.id = "removed";
+					newWindow.remove();
+					prot = false;
+					removeTaskbarItem(taskItem);
+					console.log("Removed window with title " + windowTitle, "Injector");
+				}, 100);
+			}
+
 			closeBtn.addEventListener("click", function() {
 				if (onClose !== undefined) {
 					eval(onClose);
@@ -912,8 +954,26 @@ customConsole{
 				newWindow.remove();
 				prot = false;
 				removeTaskbarItem(taskItem);
-				console.log("Removed window with title " + windowTitle, "Injector")
-			})
+				console.log("Removed window with title " + windowTitle, "Injector");
+			});
+			
+			
+//fullscreen
+
+/*			let isfull = false;
+			fullBtn.addEventListener("click", function() {
+				alert("work in progress");
+				if (isfull) {
+					isfull = false;
+					newWindow.style.width = '100%';
+   //     	newWindow.style.height = '100%';
+				} else {
+					newWindow.style.width = width - 5 + "px";
+					isfull = true;
+				}
+			});*/
+
+
 			setInterval(function() {
 				newWindow.style.width = (parseInt(windowContent.style.width.slice(0, windowContent.style.width.length - 2)) - 5).toString() + "px";
 			}, 20)
@@ -922,6 +982,12 @@ customConsole{
 			let windowContent = newElement("NewWindowContent", newWindow, "WindowCont");
 			windowContent.style.width = (parseInt(newWindow.style.width.slice(0, newWindow.style.width.length - 2)) + 7) + "px";
 			windowContent.style.height = height + "px";
+
+			//rounded corners
+			 newWindow.style.borderTopRightRadius = '5px';
+			 newWindow.style.borderTopLeftRadius = '5px';
+			 windowContent.style.borderBottomRightRadius = '0px';
+			 windowContent.style.borderBottomLeftRadius = '5px';
 
 
 			// make so window cannot be dragged while hovering over content. this prevents annoying glitches
@@ -985,8 +1051,10 @@ customConsole{
 		}
 		
 		function advertise() {
-			let add = openWindow(300, 230, 'ADVERTISEMENT', false, Injector.serverURL + '/adalert');
-			add.innerHTML = `<h1>Advertisement</h1><br><p>I am an advertisement!</p><br><p>If you want to advertise your app, please contact me on discord: Paragram#0121</p>`
+
+			let ad = openWindow(500, 300, "ADVERTISEMENT", true, Injector.serverURL + "/logo.png");
+			ad.innerHTML = `<h1>Advertisement</h1><br><p>I am an advertisement!</p><br><p>If you want to advertise your app, please contact me on discord: Paragram#0121</p>`;
+			
 		}
 		//changelog
 		function app1() {
@@ -1709,10 +1777,15 @@ channel:hover{
 		// prox browser
 
 		function app4(){
-			alert("BEING FIXED CURRENTLY");
-let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png")
-	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser")
-	browserwindow.src = "https://alloy.inject0r.repl.co/";
+let proxybrowser = openWindow(800, 500, "ProxBrowser", true, Injector.serverURL + "/proxbrowser.png")
+	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser");
+	browserwindow.src = "https://alloy.inject0r.repl.co";
+			browserwindow.style.position = "absolute";
+			browserwindow.style.width = "100%";
+			browserwindow.style.height = "100%";
+			browserwindow.style.bottom = "0px";
+			browserwindow.style.borderWidth = "0px";
+			browserwindow.style.margin = "0px";
 		}
 		/*
 		function app4(){
@@ -1754,7 +1827,7 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 			fullScreenBtn.style.borderWidth = "2px";
 			fullScreenBtn.style.borderColor = "white";
 			fullScreenBtn.style.transitionDuration = "0.5s";
-		
+			//.̞͕͔͈̬͓̟̙̙͈̲̖̬̳̯̳̩̖̥̘͚͓̞͇̠͖͍̟̗̤̣͈̜̖̝̯̮̗̭͇̯͚͓͓̱̙̥̟̩̱̲͔̰͈͕̗̜̯̩͍̰̘̫̥̯̣̭̟̟̰̰͚͙̮̫̲̯̜̮͈̘͎̣̳̭̣͖̱̳͖̝̤̩̯͉̙͖͙̫̄̿̐̎̔̍̔̌̏͑̔̇́̾͐̓̆̓̍̑̉͐̌̂̾͊̽̄̇̈́͐̓͂̾̋̀̂̀̃̅̏̂͑̉͋̂͒̀̐̍̆̊͛̋͌̆́͊̀͑̎̀͗̉̓̄͆̄̂͗̐͐̀̔̋́̾́͐͑́̎͛͛̃̀͂́͑̐̌̒̃̓̂̔͂̐̽͛̏̚̚̚ͅͅͅ.̫̭̙̗̫̥̟̦͕̬̖̠̝̯͍̣̜̩̫͙̙̰̰̞̠̳̙̘̗͉͉͖͔̥̜͇̪͙͚̭̝̲͔̥͓̦̘̤͔̝̯͉͇͙͈͓̥̥̩̩̠̞̰̘̟̥̩͔̙͈̦̪̥͇͍̘͚̞̠̰͈̭͈͎̦̫͚͉͓͕̦͔͍̘͕̭͕̯̬͚̟̬̖͙̪̮͚͚͔̯̣͔̱̠̤͚̖̯̞͔͍̱͈͇̬͈̗̭̖̖̟̒̌̓̋̐̂̈́̅̔́͒͆̄̅̆̓͐̅̄̓̏̋͊͊̋͆̅̓̍̈̾̅̿͒͋͗̅͋̃̓̍̓͒̋̄́͛͗͛͛̉̓̆͐̏̈̓̔̇̃̑̔̂͋͋̀̈͋̌͛͊̉͊́̊̏͒͗̆̑͆̀͛̊̅̎̓́̇͌́̎̀̌́͆̔̒̆́́͋̀̆͑͐̓͌̓̃̑̍́͐͐̚̚̚̚̚ͅͅͅ.̰̥̙̝̯̪̥̩̘̙͈̭̥̳̲̤͎̝͇͔̣̫̥̰̯̭̫͎͔̯͍͖͎̥̣̘̝̲͓͔̖̳͇̗̲̙͕̞͎͍͎̮̳̘̰͕̥̯̫̤͉̰̙͎͉̦̫̞̟̯̳͚̤͔̘̙͕͓̖̭͎͍͖͎͍̜̮̦̜̩̬͙̝̜̲̗̮̽̾͛͂̏͒̾̆̃͐̀͗̽̈́̀͒̈͐͐̌̓̔̊̎́̂̔̔̀̽͂̉̾͒̒̀̔̀͂̉͋̔͒͋̿̽̊͋̊̂̒̆̿͂̾̎͛͊̐̍͋͌͌͐̓̋̎́͋̊̍̔͗͑̐́̓͋̿̃̋̉̈̉̑͐̌̈́̎͋̍̃̆̔̈͆͋̑́̎̑́͑̊̉̎́̏̉̊̑̎̿͒̑̋̚̚̚̚̚̚ͅͅͅ.̪̱̣̦͖͓̱̝̗̟̬͖͔̟̭͇̙͎̗̙̝̝̞̰͓̣̤̭̱̫͈̭͍͈̟͕̬͉͇̝̲̲̤̥̰̰̯̬̝͕͇̩̥̩̟̫͙̣̜͚̞͚̝͚̖̖̱̝̬̦͔̭͈͈̬̜̪͕̰̟͎̣͔̯̜̖͕̯̬̠͓͚͍͕̤̤͇͙̮͈̠̗̤̜̟̙͚̟̗̪̗͓̞̦̳̞̯̭̩͖͉̲̐̀͛̉̎̇̒̅̀͆͒̄͛̐̉̑̄̿̓̔̅̿̈́̀͆͛͊̉̐̈̀̂̐́͛͌̈́̾̈́͋̾̉̉̂͋̂̆̃̄́̆͆͒̎̑̆͐̾̒̄̈͗̽͋̇̉̀́̀̈̎͋͊̍́̄̆̃̈́̀̀̅͋̉̔͆̀̀̈́͌̉̓͂̓̀́̉̓̌̈́̏̏͒̓̀̉̏͛̃͂̑̇̇͆̑͌͐̉͋̎̄͊̍̐̊̓͛̃̿͋̀̉̑͆̐̒̃̉͌̚̚ͅͅͅͅͅͅͅ.̤̭͎̞̯̝̣͕̭̣͔̪̬͙͍̪̞̠̩̬͍̤͈̤̙̙̦̖̳̬͚̬͍͖̣͇̣͖̤̘͚͈͓̲̘͔͖͓̲̫̦͈̗̟̥̭̗̱̜͕͓̥͙̖̮͙̪͙̳̝̰̟͓̗̜͓̰͕͓͍̫̯͎̩͈̟̲͎̖̗̲͖̖͓̗̗̣̖̩̙̱̥̙͎̩̩͌͆͑͂̄̿̈̏̔̀͒̉́́͑̐͊͐̍́̅̓̍̽̀̽̉͒́̓̈́̇̀̈̋̔̀͑̈͋̂͆͊̀̒̽͊̐̔͂̀̓̋̂̈́̈̔̍̔͗̄̔͌̍̑̀̌̽̃͒̋̉́̇͑̅̎̋́̔̎͆̽̀̔̂̓̔̊̃͗̑̃̉͐̉̚̚ͅͅͅͅͅ.̜̠̮̖͎̳̩̥͚͕̣̥͈̠̳̟̙̙̣͕̫̭̩̞̝̜̱͍̙̜͉̳̪͉̭̞͓̖̜͙̦̤͙̫̙̘͙̜͎̩̯̙̭̩͉̥̘̖̰͎͉̣̩̫͇̭̫̰̭̗͉̳̳̬͖̪̫͕̜͙̱̳̯͖͍̭͕͇̪̩̥͚͔̦̣̱̜̜̭͖͈͈͈̠̰̲̲̤̟̗͍̘͈͈̣̳̟̙͑̏̎͊͊͆̑͋͌̇͒̐̈̆̄̅͊̌͑̔̅̓̊͊̄̓̄̓̓͊͊̒̾̾̾́̎̓̅̀̈͋͗̃͋̒̊͛̇̔̐̓̌̍̄̀͒̓̽̉̒̏̃́̃̓̑͛̎́̆͑̊̇͋͊̂̔̃̐̎͂̇̽͗́͌̓͆̿͐̒̐̐̽͋͊̎̃̏͐̎̒̑̑̀͂͑̂̓͒̃͋͒͌̀̄̍͊́̀̆̈̀̅̎͂͒̍̊̂̈́̚̚̚ͅ.̫͈̞͈͉̰̜̘̩͇̦̘̰̝̘̥͔̭̱͔͕̘͎͍̭͉͍͖͙̝̝̩̗̲͉̜̮͙̮̝͖̳͎͓͍̱͙͈̯̫͓̜̠͓͙̭̫̟͓̦͕͓͎̭̦͍͓̣͚͍̝̰̘͉͓̙̳͖̰̞̳̯͈̯̜̬̪̩͎̦̯̪̪̥̱̖͓͔̞͈̩̗̩̫͚͇̟̱͔͈̗̞̉̈́͑̄̔̏́̐́̌̄͐͂̉̈̌͂̔͂̔̓̈́̽̓͛̈̃̾̅̿͒̀͌͋̅̎͋̆͑̽̔͌̾̌̍̓̉͒́̅̐͂̀͛̀̀̓̆͑̋̀̈̏̄͐̀͂̑͆̔̌͑͊̑̀̋͆̃͋͊̽̓́͗̆̿̋̿̊̾͌͑̔̃́͆͆̅̓̚̚̚̚̚ͅͅͅ.͍̮̣̰͙̦̤̗̗̠̯͔͈̳͔̬̗͖̭͕͈̫̖͕̠̜̰̗̯̤͈̬̯̭͎͎̘͍̫̞͖̜̲̟̖͓̗͓̥͚̰͕̣̭̱̖̟̘̱̣͎̮͙̖̬̤̟̙̬̝͈̖̭͔͓̝̪͕̖̩̝͙̠̣̞̗̮͕̤͇͉̙̪͎͔̘̗͚̯͖̦̩͖̲̜̲͈̯̠̬̖̪̟̟̘̱̗̦̥͖͉͙͍͚̝͓̽͛̊̀̑͛̐̊̓͒̇͋̏̀͑́͌̿͛̅̀̂̏̑̇͗́̋͐͗͋͊̑̅́͛̔͌̈́̀̾̔̿̌̆̄͑̒̃̾̓͛̋̉̈͗̋̂͗̄̍̈̅̈́̒͆͗̊̂̉̈̇̐̂̍̃͗͊͑̍͊̈̃͌̆̈́́͋̉͗̈̀͂̒̽͗͛̓͌̀̉͋̽̈́̋͑̊̀̀̆̒̃͗̾̑́͌̇̽̄͑̽́͑̉͑̀̌͑̓̽̆̒̚̚̚̚̚ͅͅ.̣̯̥̮͙͇͎̲̰̥͚̤̰̙̞̘̪͍͖͚̮͕͕͖̰͔̬͎̜̜̗̱̥̭̱̲̰̥̫͓͎̩̝̬̜̤̘̥͕̯̬͉̱͔̰̭̝͕̗͙̰̲̱̬̦̙̠̯̦̟̭͖͚͎̯̬̱͎̩̳̰̯̘̩̟̬̪̩͕̮͍͖͚̩̯̙͌̽́͐́̏͛̆̃́̄͐̍͆̐͌̽̄̍̑̂̀̋̅͋̀͊̉̾̈́́͛̈́͋̍̇̒̂͋͛̓̀͊̋̄̑͋̀̂̃͒̃͑̔̎͒̄͊̑̉͑͒͗̏̂̏̿͋̌̒̌́͌͒̆͂̀́͋̏̔̽̊̔̍͌̈́́̋͒̃̾̅̔̀̍̊̍͑̏̾͒̐͛̊̚̚̚̚̚̚ͅͅͅͅͅͅͅ.̗͔̮̜̝̦͍͎̳̗͖̝̪̥̤͔̱̥̯͔͉̞̮͚̣̯̙̗͍̖̥̖͓͔͇̳͖̪̤̬͎͙̖̝̟̬̰͈̯̰̗̝̠̖̠̙͚̰̜̦͕̞̣̙̪̭͈͉͈͕̤͇̝̱̜̜͕͕̙͚̖͕̞̰̣̝͈̩͎͓̜̪̱͚̜̭̘͇̜͕͔̠̱̠̩̝̯̗̟̲̗̞̖̯̙̅̏́͐̑̂̊̋̆̅͒̍̂̈́̓̅̾̋̌͑̈͌̆͊̔̽̓̏̈́͋͒̒̉̈́̾͑̐̊̋͒͐̅͑͋̓̃̀̋̃̎̽̄̓̏͑̉͛̑̓̂̉̋̈́͌̅͊̃̑̉̓́͂̌̏̋̀͋͑̓̎̒͐́͛̌͐̉͗̉̽͊͑̈͌͋̑͐̔̓̌͋̏̉̄͛̒͊̂̀͂͋͂͊̀̄͐͌̌̃͆̓̉͊̀̔̒̉̄͆̃͛͐̚̚̚ͅͅͅͅͅͅ.͇̪͍̮̳̥̖̟͚̤͙̦̰͔͇̮̥̰͎͚̘͙͙̦̖͉͕̜̤̳̮̰͎̝͈͎͈̰̟͚̗̲̱͖̤̖̜̦̝̰͇̥̪͖͕̫̣͔̙͓̫̳͕̙̟̱͎̠̤͙̜͕̥̗̪͔͉̯̞͙̳̖̰̮̘̫͙̰̗̪͎͍̳̟̯̮̳̙͓͇̘̩͍̝̣͎͇̤͕͎̖̲͓̳͓̩͇̟͖͇͈͇̓̓̄̂̏̍̀͌̾̏̓̓͐̒͑͗͐̋̋̑̽́̑̓͌̌̀̒̃̏̎̿̀̑̒̂͊͋̅́͊̑̔͋͊̊͒̆́̔̿̆̇͆̀̈̀͊̒̂̓̀̑̑̎͐͂͑̃̒̇̃̋̎̃̈́̄̾͋̓̃̈́̓̿̆͂͆̉̾̋̇̓͛̄́̅̚̚̚̚̚ͅ.̤̭̣̲̠̜̘̪̬̥͙̬̳̘̣͕̙͉͚̤̦̝̗͈̮̭̣͍̳̤͉̳͙͚̞̗̯̯̘͈̯̱̥̤͇̖͎̮̟̲̤͚̰̞̭̥̜̜̞̭͔͍̪̰̙͖͈̜͈͓̰̗̥̝̖̲̯͖̮͙̳̭̗̞̭͕͍͙̤͉̬̮̱̥̱͈͕̱̘̥͎̜͚̟͍̩̘̠̤̯̫̭͎͍̤̱̗͖͔͚̙̥̪̑̎͑̽̽͒̅̍͒͐̽͒͌̔́̓̽͑̒͋̋̅͌͊͌͛͂́̉̑̽͊̈͂͆̾͊́̾͗͛̆̑͌̀͗͋̈́̌̅̃̑͂̒͆̀̋̍̂͊̎͐̄̉͑͑̐͆̔͋̔̉͋́̈́̈̉̈̋̃̉̆̂̐͊͋͊̀͋̊̏̒̅͛̅͛́͊̓̐͑̃̇̓̏̈́̂̾̓͌̌̀̇̏̂̀͑̏̆̅͆̀́̾̃̊͐̑͛̇́̑̂̇͐̋̑̓̾̏͌̽̄̃̚̚̚̚̚ͅͅͅ
 			browserwindow.style.position = "absolute";
 			browserwindow.style.width = "100%";
 			browserwindow.style.height = "calc(100% - 27px)";
@@ -1806,7 +1879,7 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 		*/
 		// app store
 		function app5() {
-			let store = openWindow(500, 300, "App Store", false, Injector.serverURL + "/app.png"); //https://www.flaticon.com/free-icon/cloud-computing_814848
+			let store = openWindow(500, 300, "App Store", false, Injector.serverURL + "/app.png");
 			let topHeaderBar = newElement("appstorebar", store, "appbar");
 			let appList = newElement("applist", store, "applister");
 			store.style.overflowX = "hidden";
@@ -1833,7 +1906,7 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 			appList.style.position = "absolute";
 			appList.style.bottom = "0px";
 			appList.style.left = "0px";
-			appList.style.width = "150px";
+			appList.style.width = "155px";
 			appList.style.height = "calc(100% - 50px)";
 			appList.style.borderColor = "gray";
 			appList.style.borderStyle = "none solid none none";
@@ -2037,15 +2110,17 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 			optionsPanel.style.top = "0px";
 			optionsPanel.style.visibility = "hidden";
 
-			function newOption(name, saved_value, requiresRestart) {
+			function newOption(name, saved_value, requiresRestart, type, top, funct) {
 				let checkbox = newElement("input", optionsPanel, saved_value);
-				checkbox.type = "checkbox";
-				checkbox.style.position = "relative";
+				checkbox.type = type;
+				checkbox.style.position = "absolute";
 				checkbox.style.margin = "20px";
 				checkbox.style.width = "20px";
 				checkbox.style.height = "20px";
+				checkbox.style.top = top;
 				let joe = newElement("p", optionsPanel, "antifa");
 				joe.style.position = "absolute";
+				joe.style.top = checkbox.style.top;
 				joe.style.left = "45px";
 				joe.textContent = name;
 				joe.style.top = checkbox.offsetTop - 17 + 'px';
@@ -2086,11 +2161,12 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 							if (checkbox.checked) {
 								saveData('personalize', saved_value);
 								Injector.user.settings += saved_value;
+								funct();
 							} else {
 								let indexOfRemoval = parsed["personalize"].indexOf(saved_value);
 								deleteData('personalize', indexOfRemoval);
 								Injector.user.settings = Injector.user.settings.replace(saved_value, '')
-							};
+							}
 							for (i = 0; i < optionsPanel.children.length; i++) {
 								if (optionsPanel.children[i].type == "checkbox") {
 									optionsPanel.children[i].disabled = false;
@@ -2101,7 +2177,11 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 				})
 
 			}
-			newOption("Disable Right Shift Transition", "RightShiftTransitionDisabled");
+			newOption("Disable Right Shift Transition", "RightShiftTransitionDisabled", false, "checkbox", "2px", function() {
+});
+			newOption("test", "test", false, "checkbox", "24px", function () {
+				alert('test')
+			});
 
 
 
@@ -2250,7 +2330,7 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 
 
 		// create icons
-		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logoxmas2.png");
+		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logo.png");
 		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png"); //https://www.flaticon.com/free-icon/console_1374723
 		createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png"); //https://www.flaticon.com/free-icon/chat_724715
 	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");//https://www.flaticon.com/free-icon/web-search-engine_3003511
@@ -2488,7 +2568,11 @@ let proxybrowser = openWindow(450, 350, "ProxBrowser", true, Injector.serverURL 
 				}
 			}
 		}
-		advertise();
+
+    openWindow(500, 300, "Ignore", true, Injector.serverURL + "/adalert", "javascript: void(0);" ,true);
+
+		setTimeout(() => { advertise() }, 1000);
+		
 		console.log("Injector loaded successfully!")
 	}, 5000);
 }

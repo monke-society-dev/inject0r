@@ -8,28 +8,52 @@ var rimraf = require("rimraf");
 const Settings = require("./settings.json");
 const Auths = require("./auths.json");
 const tokenlocation = './logintokens.json';
-rimraf("/some/directory", function () { console.log("-✅ Load Sucessful"); })
 var logger = reader.createWriteStream('log.txt', {
   flags: 'a' // 'a' means appending (old data will be preserved)
 })
 var writeLine = (line) => logger.write(`\n[${new Date().toGMTString()}] ${line}`);
+//nice console UI on launch:
 
-//remake logintokens if pulling from github save cause gitignore ignores it when baclong up to git
+	// cool tabl
+function consoleUI(name, status, info) {
+		function tableUI(part, status) {
+  	this.Part = part
+  	this.Status = status
+		this.Info = info
+	}
+const table = new tableUI(name, status, info)
+//console.table(table);
+console.log()
+}
+
 try {
+	consoleUI("inject0r", "running", "Inject0r index.js is now up!");
+	
+	//remake logintokens if pulling from github save cause gitignore ignores it when baclong up to git
   if (reader.existsSync(tokenlocation)) {
-    console.log("-✅ RegTokens Exist, reboot canceled")
+    consoleUI("logintokens.json","Exists","[Inject0r] remake not needed.")
   } else {
-		console.log("-❌ RegTokens Do-Not Exist, reboot started");
+		consoleUI("logintokens.json", "NONEXISTANT", "[Inject0r] remake started...");
 		reader.writeFile(tokenlocation, '{"perm_tokens":[],"temp_tokens":[]}', function (err) {
   if (err) throw err;
-  console.log('- ✅ File is created successfully');
+  consoleUI("logintokens.json","FIXED","[Inject0r] remake finished.")
 });
 	}
+
+
+//delete guest data
+	function delclouddata(user) {
+		rimraf.sync("./inCloud/users/" + user + "/");
+		consoleUI(user + " Data", "Purged", user + " data cleaned by server")
+	}
+	delclouddata("guest")
+
+
+//catch booting errors ig
 } catch(err) {
   console.log(err)
 }
-//Delete guest data as it is not needed
-rimraf.sync("./inCloud/users/guest/");
+
 async function getRandomCharstream() {
 	let ranky = await fetch('https://www.random.org/strings/?num=1&len=10&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new');
 	return await ranky.text();
@@ -126,24 +150,24 @@ function requestListener(req, res) {
 				*/
 			// app
 			case "/app.png":
-				var fileStream = reader.createReadStream("images/icons/app.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/appstore.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 
 				
 			case "/cloudlogo":
-				var fileStream = reader.createReadStream("images/icons/injcloud.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/injcloud.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/notepad.png":
-				var fileStream = reader.createReadStream("images/icons/notepad.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/notepad.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/bap.png":
-				var fileStream = reader.createReadStream("images/icons/bap.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/tap.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -158,7 +182,7 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 			case "/gamehub.png":
-				var fileStream = reader.createReadStream("images/icons/gamehub.png");
+				var fileStream = reader.createReadStream("images/icons/cleanUI/games.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;

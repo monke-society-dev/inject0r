@@ -1,0 +1,3 @@
+<button onclick='let inf = localStorage.getItem("injinfo").split(":"); alert("username: "+inf[0]+"\npassword: "+inf[1]);'>
+Click me!
+</button>

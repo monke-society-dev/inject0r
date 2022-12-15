@@ -50,14 +50,30 @@ gameChooseDD.style.height = '20px';
 gameChooseDD.style.backgroundColor = 'gray';
 gameChooseDD.style.left = '5px';
 gameChooseDD.style.top = '30px';
-let gameNames = ["Games List"];
-let gameVals = ["https://gfile-games.glitch.me/list.html"]
+let gameNames = ["Games List", "EaglerCraft"];
+//format: [Game1: [how to open game, game url], game2: ...]
+let gameVals = [["iframe","https://gfile-games.glitch.me/list.html"], ["newWin","https://eaglercraft.inject0r.repl.co"]];
 for(i=0; i<gameNames.length; i++){
   let newOp = new Option(gameNames[i], gameVals[i]);
   gameChooseDD.appendChild(newOp);
 }
+
+function setGame (url, action) {
+	switch (action) {
+ 		case "iframe":
+	 	gameFrame.src = url;
+	 	break;
+	 	case "newWin":
+	 	window.open(url, "_blank", "popup");
+	 	break;
+	}
+}
+
 playGameBtn.addEventListener("click", function(){
-  gameFrame.src = gameChooseDD.value;
+	let val = gameChooseDD.value.split(",");
+	setGame(val[1],val[0]);
+//	gameFrame.src = val[1];
+	console.log(gameChooseDD.value,gameFrame.src);
   gameSelBar.style.opacity = "0";
   gameSelBar.style.visibility = "hidden";
 })
