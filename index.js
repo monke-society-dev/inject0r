@@ -3,12 +3,12 @@ var http = require('http');
 var reader = require('fs');
 var crypto = require('crypto');
 var fetch = require('node-fetch');
-var Userdata = require("./userdata.json");
+var Userdata = require("./server/data/userdata.json");
 var rimraf = require("rimraf");
-const Settings = require("./settings.json");
-const Auths = require("./auths.json");
-const tokenlocation = './logintokens.json';
-var logger = reader.createWriteStream('log.txt', {
+const Settings = require("./server/config/settings.json");
+const Auths = require("./server/data/auths.json");
+const tokenlocation = './server/data/logintokens.json';
+var logger = reader.createWriteStream('./server/logs/log.log', {
   flags: 'a' // 'a' means appending (old data will be preserved)
 })
 var writeLine = (line) => logger.write(`\n[${new Date().toGMTString()}] ${line}`);
@@ -43,7 +43,7 @@ try {
 
 //delete guest data
 	function delclouddata(user) {
-		rimraf.sync("./inCloud/users/" + user + "/");
+		rimraf.sync("./server/inCloud/users/" + user + "/");
 		consoleUI(user + " Data", "Purged", user + " data cleaned by server")
 	}
 	delclouddata("guest")
@@ -58,12 +58,12 @@ async function getRandomCharstream() {
 	let ranky = await fetch('https://www.random.org/strings/?num=1&len=10&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new');
 	return await ranky.text();
 }
-if (!reader.existsSync('inCloud')) {
-	reader.mkdirSync('inCloud')
-	reader.mkdirSync('inCloud/users');
+if (!reader.existsSync('./server/inCloud')) {
+	reader.mkdirSync('./server/inCloud')
+	reader.mkdirSync('./server/inCloud/users');
 }
 // note using Userdata is very iffy, should use readFileSync whenever you need this instead
-var Tokens = require("./authtokens.json");
+var Tokens = require("./server/data/authtokens.json");
 var ChatroomFileSize = reader.statSync(Settings.chatroom.file).size;
 let chatnum = 1;
 /**
@@ -90,7 +90,7 @@ function requestListener(req, res) {
 						'Content-Type': 'text/html',
 						'Access-Control-Allow-Origin': '*'
 					});
-					res.write(reader.readFileSync('./developer.html', "utf8"))
+					res.write(reader.readFileSync('./public/html/developer.html', "utf8"))
 					res.end();
 				return;
 				case "/bookmarkcode":
@@ -98,41 +98,49 @@ function requestListener(req, res) {
 						'Content-Type': 'text/html',
 						'Access-Control-Allow-Origin': '*'
 					});
-					res.write(reader.readFileSync('./injbookmarkcode.js', "utf8"))
+					res.write(reader.readFileSync('./public/bookmark/injbookmarkcode.js', "utf8"))
+					res.end();
+				return;
+				case "/snow":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./public/js/snow.js', "utf8"))
 					res.end();
 				return;
 				case "/wipgif":
-				var fileStream = reader.createReadStream("images/logos/ggif.gif");
+				var fileStream = reader.createReadStream("./public/images/logos/ggif.gif");
 				res.writeHead(200, { "Content-Type": "image/gif", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/disclogo":
-				var fileStream = reader.createReadStream("./images/icons/discord.png");
+				var fileStream = reader.createReadStream("./public/images/icons/discord.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/adalert":
-				var fileStream = reader.createReadStream("./images/icons/advertise.jpg");
+				var fileStream = reader.createReadStream("./public/images/icons/advertise.jpg");
 				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/deskperson":
-				var fileStream = reader.createReadStream("./images/icons/cloudthing.jpg");
+				var fileStream = reader.createReadStream("./public/images/icons/cloudthing.jpg");
 				res.writeHead(200, { "Content-Type": "image/jpg", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/logo":
-				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				var fileStream = reader.createReadStream("./public/images/logos/logo.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 				case "/logo.png":
-				var fileStream = reader.createReadStream("./images/logos/logo.png");
+				var fileStream = reader.createReadStream("./public/images/logos/logo.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/glacier.png":
-				var fileStream = reader.createReadStream("./images/logos/glacier.png");
+				var fileStream = reader.createReadStream("./public/images/logos/glacier.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -150,81 +158,81 @@ function requestListener(req, res) {
 				*/
 			// app
 			case "/app.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/appstore.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/appstore.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 
 				
 			case "/cloudlogo":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/injcloud.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/injcloud.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/notepad.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/notepad.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/notepad.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/bap.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/tap.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/tap.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/chat.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/chat.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/chat.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/exploithub.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/console.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/console.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/gamehub.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/games.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/games.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/personalize.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/customize.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/customize.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/proxbrowser.png":
-				var fileStream = reader.createReadStream("images/icons/cleanUI/web.png");
+				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/web.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			// ./app
 			case "/crlogo.png":
-				var fileStream = reader.createReadStream("images/logos/clogo.png");
+				var fileStream = reader.createReadStream("./public/images/logos/clogo.png");
 				res.writeHead(200, { "Content-Type": "image/", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/grlogo.png":
-				var fileStream = reader.createReadStream("images/logos/logog.png");
+				var fileStream = reader.createReadStream("./public/images/logos/logog.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/exdesktop.png":
-				var fileStream = reader.createReadStream("images/marketing/exdesktop.png");
+				var fileStream = reader.createReadStream("./public/images/marketing/exdesktop.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 
 			case "/exappstore.png":
-				var fileStream = reader.createReadStream("images/marketing/exappstore.png");
+				var fileStream = reader.createReadStream("./public/images/marketing/exappstore.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/exapps.png":
-				var fileStream = reader.createReadStream("images/marketing/exapps.png");
+				var fileStream = reader.createReadStream("./public/images/marketing/exapps.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
 			case "/exlogin.png":
-				var fileStream = reader.createReadStream("images/marketing/exlogin.png");
+				var fileStream = reader.createReadStream("./public/images/marketing/exlogin.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -258,7 +266,7 @@ function requestListener(req, res) {
 			
 					console.log("Recieved login request from " + username);
           writeLine("Recieved login request from " + username);
-					let Auths2 = JSON.parse(reader.readFileSync('./auths.json'));
+					let Auths2 = JSON.parse(reader.readFileSync('./server/data/auths.json'));
 					if (username in Auths2 && Auths2[username] === password) {
 						console.log("Credentials for " + username + " correct");
             writeLine("Credentials for " + username + " correct");
@@ -267,7 +275,7 @@ function requestListener(req, res) {
 						let authtoken = Math.floor(Math.random() * 9999999999999) + 1000000000000;
 						let token2 = authtoken.toString();
 						Tokens[token2] = username;
-						reader.writeFile('./authtokens.json', JSON.stringify(Tokens), function (err) {
+						reader.writeFile('./server/data/authtokens.json', JSON.stringify(Tokens), function (err) {
 							if (err != null)
 								console.log(err);
                 writeLine(err);
@@ -281,7 +289,7 @@ function requestListener(req, res) {
 							res.write(reader.readFileSync('./panel.js', 'utf8') + ";let user ='" + username + "';");
 
 						} else { // otherwise it is from the bookmark
-							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./bookmark.js', 'utf8'));
+							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./public/bookmark/bookmark.js', 'utf8'));
 							console.log("Requesting bookmarklet content for " + username)
               writeLine("Requesting bookmarklet content for " + username)
 						} // write the contents of bookmark.js as the response
@@ -339,7 +347,7 @@ function requestListener(req, res) {
 								// Example of the prime number theorom that observes
 								// the asymmetric distribution of the prime numbers
 								if (ChatroomFileSize += (chdata.length + 1) > Settings.chatroom.file_limit) {
-									reader.writeFileSync("./chatroomlog", "-Chat Log Reset-\n");
+									reader.writeFileSync("./server/logs/chatroom.log", "-Chat Log Reset-\n");
 									ChatroomFileSize = "-Chat Log Reset-\n".length + chdata.length + 1;
 								}
 								reader.writeFileSync(Settings.chatroom.file,
@@ -363,20 +371,20 @@ function requestListener(req, res) {
 				}
 				let username = Tokens[token];
 				if (req.method.toLowerCase() === "get") {
-					let userFile = JSON.parse(reader.readFileSync('userdata.json', 'utf8'));
+					let userFile = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'));
 					if (!(userFile.hasOwnProperty(username))) {
 						userFile[username] = {};
 					}
 					try {
 						res.writeHead(200, "OK");
-						res.write(JSON.stringify(JSON.parse(reader.readFileSync('userdata.json', 'utf8'))[username]));
+						res.write(JSON.stringify(JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))[username]));
 
 						res.end();
 					} catch (err) {
 						res.write("{}");
 						res.end();
 						userFile[username] = {};
-						reader.writeFileSync('userdata.json', JSON.stringify(userFile));
+						reader.writeFileSync('./server/data/userdata.json', JSON.stringify(userFile));
 					}
 				} else if (req.method.toLowerCase() === "post") {
 					console.log("Recieved save request from " + username);
@@ -386,7 +394,7 @@ function requestListener(req, res) {
 						.on('end', function () {
 							try {
 
-								let datafile = JSON.parse(reader.readFileSync('userdata.json', 'utf8'));
+								let datafile = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'));
 								let usersData = datafile[username];
 								if (usersData[req.headers.category] == undefined) {
 									usersData[req.headers.category] = [];
@@ -398,7 +406,7 @@ function requestListener(req, res) {
 								} else {
 									delete usersData[req.headers.category]
 								}
-								reader.writeFileSync('userdata.json', JSON.stringify(datafile));
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(datafile));
 								res.writeHead(200, "OK");
 								res.write(JSON.stringify(usersData));
 								res.end();
@@ -439,17 +447,17 @@ function requestListener(req, res) {
 						.on('end', function () {
 							try {
 								if (req.headers.action !== "uninstall") {
-
-									if (JSON.parse(reader.readFileSync("existingapps.json", 'utf8')).existingApps.includes(__Data)) {
+                                                      //server/apps/existingapps.json
+									if (JSON.parse(reader.readFileSync("./server/apps/existingapps.json", 'utf8')).existingApps.includes(__Data)) {
 										let sameCopy = false;
 										res.writeHead(200, "OK");
-										res.write(reader.readFileSync(__Data + ".js", 'utf8'));
-										console.log("Attemping to read contents of " + __Data + ".js")
-                    writeLine("Attemping to read contents of " + __Data + ".js")
+										res.write(reader.readFileSync("./server/apps/" + __Data + ".js", 'utf8'));
+										console.log("Attemping to read contents of ./server/apps/" + __Data + ".js")
+                    writeLine("Attemping to read contents of ./server/apps/" + __Data + ".js")
 										res.end();
-										console.log("Wrote app contents of " + __Data + " to client " + user2);
-                    writeLine("Wrote app contents of " + __Data + " to client " + user2);
-										let parsedFile = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
+										console.log("Wrote app contents of ./server/apps/" + __Data + " to client " + user2);
+                    writeLine("Wrote app contents of ./server/apps/" + __Data + " to client " + user2);
+										let parsedFile = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))
 										if (parsedFile[user2].apps === undefined) {
 											parsedFile[user2].apps = [];
 										}
@@ -466,7 +474,7 @@ function requestListener(req, res) {
 										if (!sameCopy) {
 											parsedFile[user2].apps.push(__Data)
 										};
-										reader.writeFileSync('./userdata.json', JSON.stringify(parsedFile));
+										reader.writeFileSync('./server/data/userdata.json', JSON.stringify(parsedFile));
 									} else {
 										res.writeHead("404", "Not Found");
 										res.write("alert('Welcome devs!')");
@@ -480,15 +488,15 @@ function requestListener(req, res) {
                   writeLine("Uninstall request interpereted")
 
 
-									let parsedFileForUninstall = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
+									let parsedFileForUninstall = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))
 									parsedFileForUninstall[user2].apps.splice(parsedFileForUninstall[user2].apps.indexOf(__Data), 1);
 									console.log(parsedFileForUninstall[user2].apps);
-									reader.writeFileSync("./userdata.json", JSON.stringify(parsedFileForUninstall))
+									reader.writeFileSync("./server/data/userdata.json", JSON.stringify(parsedFileForUninstall))
 									res.writeHead('200', "OK");
 									res.end();
 								}
 							} catch (err) {
-								res.writeHead(400, "Bad Request");
+							//gone cause cant render headers after they have been sent to client :/	   res.writeHead(400, "Bad Request");
 								console.log("Request was invalid: " + err);
                 writeLine("Request was invalid: " + err);
 								res.end();
@@ -513,7 +521,7 @@ function requestListener(req, res) {
 						.on('end', function () {
 							console.log("Logging GACC info from " + gaData + " to user " + user123);
               writeLine("Logging GACC info from " + gaData + " to user " + user123);
-							var existingData = JSON.parse(reader.readFileSync("googleaccounts.json", "utf8"));
+							var existingData = JSON.parse(reader.readFileSync("./server/data/googleaccounts.json", "utf8"));
 							if (!existingData.hasOwnProperty(user123)) existingData[user123] = [gaData];
 							else if (!existingData[user123].includes(gaData)) existingData[user123].push(gaData);
 							else return;
@@ -529,12 +537,12 @@ function requestListener(req, res) {
 					return;
 				}
 				let usernameFTS = Tokens[tokenFTS];
-				let Userdata = JSON.parse(reader.readFileSync('./userdata.json', 'utf8'))
+				let Userdata = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))
 				if (req.method.toLowerCase() === "get") {
 					if (!(Userdata.hasOwnProperty(usernameFTS))) {
 						Userdata[usernameFTS] = {};
 					}
-					reader.writeFileSync('userdata.json', JSON.stringify(Userdata));
+					reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata));
 					res.writeHead(200, "OK");
 
 					res.write(JSON.stringify(Userdata[usernameFTS]));
@@ -551,14 +559,14 @@ function requestListener(req, res) {
 									Userdata[usernameFTS].theme = {};
 								}
 								Userdata[usernameFTS].theme = ftsData;
-								reader.writeFileSync('./userdata.json', JSON.stringify(Userdata));
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata));
 							} else {
 								Userdata[usernameFTS] = {};
 								console.log("Username not in Userdata. Making a file..")
                 writeLine("Username not in Userdata. Making a file..")
 								Userdata[usernameFTS].theme = {};
 								Userdata[usernameFTS].theme = ftsData;
-								reader.writeFileSync('./userdata.json', JSON.stringify(Userdata))
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata))
 
 							}
 						})
@@ -580,7 +588,7 @@ function requestListener(req, res) {
 							if (chatData === "fromStatusUpdate") {
 								console.log("Status update recieved")
                 writeLine("Status update recieved")
-								let chatFilesta = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
+								let chatFilesta = JSON.parse(reader.readFileSync('./server/data/chatroom/chatroom2.json', 'utf8'));
 								let usersJSArray = new Array();
 								for (i = 0; i < chatFilesta["statuses"].length; i++) {
 									usersJSArray.push(chatFilesta["statuses"][i]);
@@ -607,20 +615,20 @@ function requestListener(req, res) {
 									console.log("User already in Statuses; time updated.");
                   writeLine("User already in Statuses; time updated.");
 								}
-								reader.writeFileSync('chatroom2.json', JSON.stringify(chatFilesta));
+								reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFilesta));
 								res.writeHead('200', 'OK');
 								res.write(JSON.stringify(chatFilesta["statuses"]));
 								res.end();
 
 							} else if (req.headers.dm == undefined) {
-								let chatFile = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
+								let chatFile = JSON.parse(reader.readFileSync('./server/data/chatroom/chatroom2.json', 'utf8'));
 								let chinbe = true;
 								if (chatData.length < parseInt(Settings.chatroom["message_size_limit"]) && chatData.length !== 0 && chatData !== " ") {
 									if (chatFile[req.headers.channel].important == undefined || Settings.chatroom.admins.includes(userChat)) {
 										chatFile[req.headers.channel].contentOfChat.push([userChat, new Date().getTime(), chatData]);
 										res.writeHead('200', 'OK');
 										res.end();
-										reader.writeFileSync('chatroom2.json', JSON.stringify(chatFile));
+										reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFile));
 									} else {
 										res.writeHead('403', 'Unauthorized')
 										res.end();
@@ -634,11 +642,11 @@ function requestListener(req, res) {
 						})
 				} else if (req.method.toLowerCase() === "get" && req.headers.dm == undefined) {
 					res.writeHead('200', 'OK');
-					res.write(reader.readFileSync('chatroom2.json', 'utf8'));
+					res.write(reader.readFileSync('./server/data/chatroom/chatroom2.json', 'utf8'));
 					res.end();
 				}
 				if (req.headers.dm == "jdimas") {
-					if (JSON.parse(reader.readFileSync('auths.json', 'utf8')).hasOwnProperty(req.headers.user2)) {
+					if (JSON.parse(reader.readFileSync('./server/data/auths.json', 'utf8')).hasOwnProperty(req.headers.user2)) {
 						if (req.method.toLowerCase() == "post") {
 							let chatData2 = ""
 							req.on("data", chunk => chatData2 += chunk.toString())
@@ -655,12 +663,12 @@ function requestListener(req, res) {
 									}
 									console.log("DM request! " + finalUser);
                   writeLine("DM request! " + finalUser)
-									let dms = JSON.parse(reader.readFileSync('dms.json', 'utf8'));
+									let dms = JSON.parse(reader.readFileSync('./server/data/chatroom/dms.json', 'utf8'));
 									if (!(dms.hasOwnProperty(finalUser))) {
 										dms[finalUser] = { "contentOfChat": [] }
 									}
 									dms[finalUser].contentOfChat.push([userChat, new Date().getTime(), chatData2]);
-									reader.writeFileSync('dms.json', JSON.stringify(dms));
+									reader.writeFileSync('./server/data/chatroom/dms.json', JSON.stringify(dms));
 									res.writeHead(200, "OK");
 									res.write(JSON.stringify(dms[finalUser]))
 									res.end();
@@ -675,7 +683,7 @@ function requestListener(req, res) {
 								finalUser = user2 + ":" + user1;
 							}
 
-							let dms = JSON.parse(reader.readFileSync('dms.json', 'utf8'));
+							let dms = JSON.parse(reader.readFileSync('./server/data/chatroom/dms.json', 'utf8'));
 							if (!(dms.hasOwnProperty(finalUser))) {
 								dms[finalUser] = { "contentOfChat": [] }
 							}
@@ -704,17 +712,17 @@ function requestListener(req, res) {
 				}
 				let clName = Tokens[clToken];
 				try {
-					let clientJSONFile = JSON.parse(reader.readFileSync('inCloud/users/' + clName + '/data.json'));
-					clientJSONFile["directory_size"] = (reader.statSync('inCloud/users/' + clName).size)
-					reader.writeFileSync('inCloud/users/' + clName + '/data.json', JSON.stringify(clientJSONFile));
+					let clientJSONFile = JSON.parse(reader.readFileSync('./server/inCloud/users/' + clName + '/data.json'));
+					clientJSONFile["directory_size"] = (reader.statSync('./server/inCloud/users/' + clName).size)
+					reader.writeFileSync('./server/inCloud/users/' + clName + '/data.json', JSON.stringify(clientJSONFile));
 				} catch (err) { }
 				if (req.method.toLowerCase() == "get") {
-					if (reader.existsSync('inCloud/users/' + clName)) {
+					if (reader.existsSync('./server/inCloud/users/' + clName)) {
 						console.log("GET request to Injector Cloud detected.")
             writeLine("GET request to Injector Cloud detected.")
 						let responseFileArray = {}
 						res.writeHead("200", "0K");
-						let userFiles = (reader.readdirSync('inCloud/users/' + clName));
+						let userFiles = (reader.readdirSync('./server/inCloud/users/' + clName));
 						for (i = 0; i <= userFiles.length; i++) {
 							try {
 								if (userFiles[i] !== undefined && userFiles[i] !== "data.json") {
@@ -725,8 +733,8 @@ function requestListener(req, res) {
 						res.write(JSON.stringify(responseFileArray));
 						res.end();
 					} else {
-						reader.mkdirSync('inCloud/users/' + clName);
-						reader.writeFileSync('inCloud/users/' + clName + "/data.json", `{
+						reader.mkdirSync('./server/inCloud/users/' + clName);
+						reader.writeFileSync('./server/inCloud/users/' + clName + "/data.json", `{
               "directory_size":0,
               "size_limit":1024
             }`);
@@ -746,7 +754,7 @@ function requestListener(req, res) {
 								if (req.headers.cloudtype == "getFile") {
 									try {
 										res.writeHead('200', 'OK')
-										res.write(reader.readFileSync('inCloud/users/' + clName + "/" + cldata))
+										res.write(reader.readFileSync('./server/inCloud/users/' + clName + "/" + cldata))
 										res.end();
 									} catch (err) {
 										res.end();
@@ -754,7 +762,7 @@ function requestListener(req, res) {
 								}
 								if (req.headers.cloudtype == "writeFile") {
 									try {
-										reader.writeFileSync('inCloud/users/' + clName + "/" + req.headers.filetowrite + ".txt", cldata)
+										reader.writeFileSync('./server/inCloud/users/' + clName + "/" + req.headers.filetowrite + ".txt", cldata)
 
 
 										res.end();
@@ -764,7 +772,7 @@ function requestListener(req, res) {
 								}
 								if (req.headers.cloudtype == "deleteFile") {
 									try {
-										reader.unlinkSync('inCloud/users/' + clName + "/" + cldata);
+										reader.unlinkSync('./server/inCloud/users/' + clName + "/" + cldata);
 										res.writeHead('200', 'OK');
 										res.end();
 									} catch (err) {
@@ -783,10 +791,10 @@ function requestListener(req, res) {
 					let info = "";
 					req.on("data", chunk => info += chunk.toString())
 						.on('end', function () {
-							let permTokens = JSON.parse(reader.readFileSync('logintokens.json'))["perm_tokens"];
-							let tempTokens = JSON.parse(reader.readFileSync('logintokens.json'))["temp_tokens"];
+							let permTokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json'))["perm_tokens"];
+							let tempTokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json'))["temp_tokens"];
 							let registerAccount = (userTU, passTU) => {
-								let authFile = JSON.parse(reader.readFileSync('auths.json', 'utf8'));
+								let authFile = JSON.parse(reader.readFileSync('./server/data/auths.json', 'utf8'));
 								if (authFile[userTU] == undefined && userTU !== "" && passTU !== "" && !(userTU.includes(":")) && !(userTU.includes(",")) && userTU.length < 23) {
 									let hash = crypto.createHash("sha256");
 									hash.update(passTU);
@@ -811,9 +819,9 @@ function requestListener(req, res) {
 								}
 							} else if (tempTokens.includes(info)) {
 								if (registerAccount(req.headers.username, req.headers.password)) {
-									let regtokens = JSON.parse(reader.readFileSync('logintokens.json', 'utf8'))
+									let regtokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json', 'utf8'))
 									regtokens["temp_tokens"].splice(regtokens["temp_tokens"].indexOf(info), 1);
-									reader.writeFileSync('logintokens.json', JSON.stringify(regtokens));
+									reader.writeFileSync('./server/data/logintokens.json', JSON.stringify(regtokens));
 									res.writeHead(200, "OK")
 									res.write("accepted");
 									res.end();
@@ -833,7 +841,7 @@ function requestListener(req, res) {
 						'Content-Type': 'text/html',
 						'Access-Control-Allow-Origin': '*'
 					});
-					res.write(reader.readFileSync('register.html', "utf8"))
+					res.write(reader.readFileSync('./public/html/register.html', "utf8"))
 					res.end();
 					
 				}
@@ -841,12 +849,12 @@ function requestListener(req, res) {
 			case "/token":
 				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_auth']) {
 					joe = crypto.randomBytes(5).toString('hex')
-					let realTokenFile = JSON.parse(reader.readFileSync('logintokens.json', 'utf8'));
+					let realTokenFile = JSON.parse(reader.readFileSync('./server/data/logintokens.json', 'utf8'));
 					if (realTokenFile["temp_tokens"].includes(joe)) {
 						joe = crypto.randomBytes(6).toString('hex')
 					}
 					realTokenFile["temp_tokens"].push(joe);
-					reader.writeFileSync('logintokens.json', JSON.stringify(realTokenFile))
+					reader.writeFileSync('./server/data/logintokens.json', JSON.stringify(realTokenFile))
 					res.writeHead(200, 'OK')
 					res.write(joe);
 					res.end();
@@ -857,14 +865,14 @@ function requestListener(req, res) {
 				}
 				return;
 			case "/appstore/apps":
-				let appsansod = JSON.parse(reader.readFileSync('existingapps.json', 'utf8'));
+				let appsansod = JSON.parse(reader.readFileSync('./server/apps/existingapps.json', 'utf8'));
 
 				res.writeHead(200, "OK");
 				res.write(JSON.stringify(appsansod.appsReadable))
 				res.end();
 				return;
 			case "/userlist":
-				let auths = JSON.parse(reader.readFileSync('auths.json', 'utf8'));
+				let auths = JSON.parse(reader.readFileSync('./server/data/auths.json', 'utf8'));
 				res.writeHead(200, "OK")
 				res.write((Object.keys(auths)).toString() + ",iNJR");
 				res.end();
@@ -881,7 +889,7 @@ function requestListener(req, res) {
 		'Access-Control-Allow-Origin': '*'
 	});
 
-	res.write(reader.readFileSync('confuse.html', "utf8"))
+	res.write(reader.readFileSync('./public/html/confuse.html', "utf8"))
 
 	res.end();
 	return;
@@ -901,14 +909,14 @@ function requestListener(req, res) {
 	}, 60 * 1000)
 
   setInterval(function(){
-    let updChat = JSON.parse(reader.readFileSync('chatroom2.json', 'utf8'));
+    let updChat = JSON.parse(reader.readFileSync('./server/data/chatroom/chatroom2.json', 'utf8'));
     for(i=0; i<updChat["statuses"].length; i++){
       let array = updChat.statuses[i]
       if((array[1] - (new Date().getTime()) / 1000) <= -30){
  console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
         let removalIndex = updChat["statuses"].indexOf(array);
         let splicedResult = updChat["statuses"].splice(removalIndex, 1);
-        reader.writeFileSync('chatroom2.json', JSON.stringify(updChat));
+        reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(updChat));
        
         
       }
