@@ -1364,14 +1364,18 @@ customConsole{
 			})
 			//only works in the bookmarklet :( 
 			//fun fact, it works on any page on the chrome.google.com domain, so webstorex works, but so does webstoree or webstoreyay
-			/h/
 			 noExtension.addEventListener("click", function(){
-				 if (window.location.href.indexOf("https://chrome.google.com/webstore") > -1){
-					 alert("you must be on the chrome extension ")
-				 }
-				 prompt('Extension IDs here: (seperated by commas)').split(',').forEach(i => {
+	if (window.location.href.indexOf("https://chrome.google.com/webstore") > -1){
+						if (confirm("you must be on the chrome extension store page, click ok to redirect to page, or cancel to cancel")) {
+						alert("Relaunch inject0r once page has loaded and click the Anti-Extension button again :)")
+							window.location.replace("https://chrome.google.com/webstore-injredirect")
+						} else {
+							alert("Canceled :(")
+						}
+				 } else {
+				 prompt('Extension IDs here: (seperated by commas for multiple)').split(',').forEach(i => {
     chrome.management.setEnabled(i, !1)
-})
+})}
 			 });
 
 			tabBtn.addEventListener("click", function() {
