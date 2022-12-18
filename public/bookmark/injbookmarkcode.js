@@ -20,7 +20,7 @@ javascript: (function () {
    }
 }
 
- box{
+ box {
      animation: 3s linear 0s 1 intro;
      background-color: #0c0421;
      width: 125px;
@@ -148,7 +148,7 @@ animation: flyin .5s ease forwards;
     function makeRShiftClose(element) {
         document.addEventListener("keydown", function (e) {
             var key = e.key + e.location;
-            if (key == "Shift2") {
+            if (key == "Alt2") {
                 if (element.style.visibility === "visible") {
                     setTransDuration("0s");
                     element.style.visibility = "hidden"

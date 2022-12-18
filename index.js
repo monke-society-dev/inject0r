@@ -22,7 +22,7 @@ function consoleUI(name, status, info) {
 		this.Info = info
 	}
 const table = new tableUI(name, status, info)
-//console.table(table);
+console.table(table);
 console.log()
 }
 
@@ -286,7 +286,7 @@ function requestListener(req, res) {
 						if (req.headers.fromlogin) { // if it is from login panel
 							console.log("Request was from Server Login Panel");
               writeLine("Request was from Server Login Panel");
-							res.write(reader.readFileSync('./panel.js', 'utf8') + ";let user ='" + username + "';");
+							res.write(reader.readFileSync('./public/js/panel.js', 'utf8') + ";let user ='" + username + "';");
 
 						} else { // otherwise it is from the bookmark
 							res.write("let token = \"" + authtoken.toString() + "\";let usernameTU = '" + username + "';" + reader.readFileSync('./public/bookmark/bookmark.js', 'utf8'));
@@ -791,16 +791,16 @@ function requestListener(req, res) {
 					let info = "";
 					req.on("data", chunk => info += chunk.toString())
 						.on('end', function () {
-							let permTokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json'))["perm_tokens"];
-							let tempTokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json'))["temp_tokens"];
+							let permTokens = JSON.parse(reader.readFileSync('server/data/logintokens.json'))["perm_tokens"];
+							let tempTokens = JSON.parse(reader.readFileSync('server/data/logintokens.json'))["temp_tokens"];
 							let registerAccount = (userTU, passTU) => {
-								let authFile = JSON.parse(reader.readFileSync('./server/data/auths.json', 'utf8'));
+								let authFile = JSON.parse(reader.readFileSync('server/data/auths.json', 'utf8'));
 								if (authFile[userTU] == undefined && userTU !== "" && passTU !== "" && !(userTU.includes(":")) && !(userTU.includes(",")) && userTU.length < 23) {
 									let hash = crypto.createHash("sha256");
 									hash.update(passTU);
 									let hashpass = hash.digest("hex");
 									authFile[userTU] = hashpass;
-									reader.writeFileSync('auths.json', JSON.stringify(authFile));
+									reader.writeFileSync('server/data/auths.json', JSON.stringify(authFile));
 									return true;
 								} else {
 									return false;
@@ -819,9 +819,9 @@ function requestListener(req, res) {
 								}
 							} else if (tempTokens.includes(info)) {
 								if (registerAccount(req.headers.username, req.headers.password)) {
-									let regtokens = JSON.parse(reader.readFileSync('./server/data/logintokens.json', 'utf8'))
+									let regtokens = JSON.parse(reader.readFileSync('server/data/logintokens.json', 'utf8'))
 									regtokens["temp_tokens"].splice(regtokens["temp_tokens"].indexOf(info), 1);
-									reader.writeFileSync('./server/data/logintokens.json', JSON.stringify(regtokens));
+									reader.writeFileSync('server/data/logintokens.json', JSON.stringify(regtokens));
 									res.writeHead(200, "OK")
 									res.write("accepted");
 									res.end();
@@ -849,12 +849,12 @@ function requestListener(req, res) {
 			case "/token":
 				if (req.method.toLowerCase() == 'get' && req.headers.token == process.env['bot_auth']) {
 					joe = crypto.randomBytes(5).toString('hex')
-					let realTokenFile = JSON.parse(reader.readFileSync('./server/data/logintokens.json', 'utf8'));
+					let realTokenFile = JSON.parse(reader.readFileSync('server/data/logintokens.json', 'utf8'));
 					if (realTokenFile["temp_tokens"].includes(joe)) {
 						joe = crypto.randomBytes(6).toString('hex')
 					}
 					realTokenFile["temp_tokens"].push(joe);
-					reader.writeFileSync('./server/data/logintokens.json', JSON.stringify(realTokenFile))
+					reader.writeFileSync('server/data/logintokens.json', JSON.stringify(realTokenFile))
 					res.writeHead(200, 'OK')
 					res.write(joe);
 					res.end();
@@ -865,14 +865,14 @@ function requestListener(req, res) {
 				}
 				return;
 			case "/appstore/apps":
-				let appsansod = JSON.parse(reader.readFileSync('./server/apps/existingapps.json', 'utf8'));
+				let appsansod = JSON.parse(reader.readFileSync('server/apps/existingapps.json', 'utf8'));
 
 				res.writeHead(200, "OK");
 				res.write(JSON.stringify(appsansod.appsReadable))
 				res.end();
 				return;
 			case "/userlist":
-				let auths = JSON.parse(reader.readFileSync('./server/data/auths.json', 'utf8'));
+				let auths = JSON.parse(reader.readFileSync('server/data/auths.json', 'utf8'));
 				res.writeHead(200, "OK")
 				res.write((Object.keys(auths)).toString() + ",iNJR");
 				res.end();
@@ -909,14 +909,14 @@ function requestListener(req, res) {
 	}, 60 * 1000)
 
   setInterval(function(){
-    let updChat = JSON.parse(reader.readFileSync('./server/data/chatroom/chatroom2.json', 'utf8'));
+    let updChat = JSON.parse(reader.readFileSync('server/data/chatroom/chatroom2.json', 'utf8'));
     for(i=0; i<updChat["statuses"].length; i++){
       let array = updChat.statuses[i]
       if((array[1] - (new Date().getTime()) / 1000) <= -30){
  console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
         let removalIndex = updChat["statuses"].indexOf(array);
         let splicedResult = updChat["statuses"].splice(removalIndex, 1);
-        reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(updChat));
+        reader.writeFileSync('server/data/chatroom/chatroom2.json', JSON.stringify(updChat));
        
         
       }

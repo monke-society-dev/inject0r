@@ -8,9 +8,13 @@ Injector.user = {
 	settings: ""
 }
 Injector.info = {
-	version: "3.3",
+	version: "3.4",
 	changelog: `
-	<h2> --- The Xmas Update Update --- </h2>
+	<h2> --- The Blizzard Update --- </h2>
+ <h3> General Changes v3.3 </h3>
+ <p> - Inject0r server filesystem sorted </p>
+ <p> - Snow added for christmas </p>
+ <p> - Small bugfixes</p>
  <h3> General Changes v3.2 </h3>
  <p> - Merry Christmas! 🎁🔔🎄 </p>
  <p> - New Fully loaded FAST proxy Service Enjoy :) </p>
@@ -83,7 +87,6 @@ alert("Snow module couldn't load.")
 });
 }
 )}
-snowfetch();
 async function fetchUserData() {
 	let dataFetch = await fetch('https://inject0r.repl.co/save', {
 		method: 'GET',
@@ -1359,8 +1362,17 @@ customConsole{
 				}
 
 			})
-			 noExtension.addEventListener("click", function() {exty = prompt("Enter one extension ID here: "); if (exty = "null") { alert("No ID proided"); } });
-			//javascript:eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('d(\'c b a: (9 8 7)\').6(\',\').5(0=>{4.3.2(0,!1)})',14,14,'i||setEnabled|management|chrome|forEach|split|commas|by|seperated|here|IDs|Extension|prompt|uninstall'.split('|'),0,{}))
+			//only works in the bookmarklet :( 
+			//fun fact, it works on any page on the chrome.google.com domain, so webstorex works, but so does webstoree or webstoreyay
+			/h/
+			 noExtension.addEventListener("click", function(){
+				 if (window.location.href.indexOf("https://chrome.google.com/webstore") > -1){
+					 alert("you must be on the chrome extension ")
+				 }
+				 prompt('Extension IDs here: (seperated by commas)').split(',').forEach(i => {
+    chrome.management.setEnabled(i, !1)
+})
+			 });
 
 			tabBtn.addEventListener("click", function() {
 				/*var user_input = prompt("Type new tab name");
@@ -2275,7 +2287,7 @@ let proxybrowser = openWindow(1500, 800, "ProxBrowser", resizable = "on", Inject
 				})
 
 			}
-			newOption("Disable Right Shift Transition", "RightShiftTransitionDisabled", false, "checkbox", "2px", function() {
+			newOption("Disable Right Alt Transition", "RightAltTransitionDisabled", false, "checkbox", "2px", function() {
 });
 			newOption("log out", "logoff", true, "button", "24px", function () {
 				//remove item injinfo from local storage
@@ -2450,8 +2462,8 @@ let proxybrowser = openWindow(1500, 800, "ProxBrowser", resizable = "on", Inject
 		var preVis = null;
 		document.addEventListener("keydown", function(e) {
 			var key = e.key + e.location;
-			if (key == "Shift2") {
-				if (Injector.user.settings.indexOf("RightShiftTransitionDisabled") !== -1) {
+			if (key == "Alt2") {
+				if (Injector.user.settings.indexOf("RightAltTransitionDisabled") !== -1) {
 					if (background.style.display !== "none") {
 						background.style.display = "none";
 						backgroundImage.style.display = "none"
@@ -2678,7 +2690,7 @@ let proxybrowser = openWindow(1500, 800, "ProxBrowser", resizable = "on", Inject
     openWindow(500, 300, "Ignore", resizable = "off", Injector.serverURL + "/adalert", "javascript: void(0);" ,true);
 
 		setTimeout(() => { advertise() }, 1000);
-		
+		snowfetch();
 		console.log("Injector loaded successfully!")
 	}, 5000);
 }
