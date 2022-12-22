@@ -6,8 +6,12 @@ These are the versions that security updates will be supported:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 3.0     | :white_check_mark: |
-| 2.2.x   | :white_check_mark: |
+| 3.4.x   | :white_check_mark: |
+| 3.3.x   | :white_check_mark: |
+| 3.2.x   | :x:                |
+| 3.1.x   | :x:                |
+| 3.0     | :x:                |
+| 2.2.x   | :x:                |
 | 2.0     | :x:                |
 | 1.5.x   | :x:                |
 | < 1.0   | :x:                |

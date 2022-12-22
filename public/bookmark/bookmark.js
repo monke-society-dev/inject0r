@@ -235,10 +235,11 @@ if (location.href == Injector.serverURL + "/" ) {
   
   //dragElement(elementtoDrag);
   function dragElement(element) {
+    var elemnt = element + "Drag";
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(element.id + "Drag")) {
+    if (document.elemnt) {
       /* if present, the header is where you move the DIV from:*/
-      document.getElementById(element.id + "Drag").onmousedown = dragMouseDown;
+      document.elemnt.onmousedown = dragMouseDown;
     } else {
       /* otherwise, move the DIV from anywhere inside the DIV:*/
       element.onmousedown = dragMouseDown;
@@ -964,7 +965,7 @@ customConsole{
 		let windowBorderClr = "transparent";
 		function changeWindowParents(newParent) {
 			for (nmi = 0; nmi < windowParent.children.length; nmi++) {
-				if (windowParent.children[nmi].id == "genericWindow") {
+				if (windowParent.children[nmi].id == "GenericWindow") {
 					windowParent.children[nmi].remove();
 				}
 			}
@@ -977,7 +978,7 @@ customConsole{
 			let newWindow = newElement("windowHeading", windowParent, "genericWindow");
 			windowsOpen.push(newWindow);
 			console.log("Opened window with title " + windowTitle, "Injector");
-
+    
 			newWindow.style.opacity = "0";
 			dragElement(newWindow);
 			newWindow.style.width = width - 5 + "px";
@@ -1364,19 +1365,34 @@ customConsole{
 			})
 			//only works in the bookmarklet :( 
 			//fun fact, it works on any page on the chrome.google.com domain, so webstorex works, but so does webstoree or webstoreyay
-			 noExtension.addEventListener("click", function(){
-	if (window.location.href.indexOf("https://chrome.google.com/webstore") > -1){
-						if (confirm("you must be on the chrome extension store page, click ok to redirect to page, or cancel to cancel")) {
-						alert("Relaunch inject0r once page has loaded and click the Anti-Extension button again :)")
-							window.location.replace("https://chrome.google.com/webstore-injredirect")
-						} else {
-							alert("Canceled :(")
-						}
-				 } else {
-				 prompt('Extension IDs here: (seperated by commas for multiple)').split(',').forEach(i => {
-    chrome.management.setEnabled(i, !1)
-})}
-			 });
+// 			 noExtension.addEventListener("click", function(){
+// 	if (window.location.href.indexOf("https://chrome.google.com/webstore") > -1){
+// 						if (confirm("you must be on the chrome extension store page, click ok to redirect to page, or cancel to cancel")) {
+// 						alert("Relaunch inject0r once page has loaded and click the Anti-Extension button again :)")
+// 							window.location.replace("https://chrome.google.com/webstore-injredirect")
+// 						} else {
+// 							alert("Canceled :(")
+// 						}
+// 				 } else {
+// 				 prompt('Extension IDs here: (seperated by commas for m nultiple)').split(',').forEach(i => {
+//     chrome.management.setEnabled(i, !1)
+// })}
+// 			 });
+
+      noExtension.addEventListener("click", function() {
+        var win = window.location.href;
+        var check = win.startsWith("https://chrome.google.com/webstore");
+        alert(win);
+        if (check) {
+          prompt('Extension IDs here: (seperated by commas for multiple)').split(',').forEach(i => {
+          chrome.management.setEnabled(i, !1)
+          })
+        }
+        else if (!(check)) {
+          alert("Wrong Page redirecting, once redirected relaunch Inject0r and re-click Anti Extension.")
+          window.location.replace("https://chrome.google.com/webstoreinject");
+        }
+      });
 
 			tabBtn.addEventListener("click", function() {
 				/*var user_input = prompt("Type new tab name");

@@ -3,15 +3,15 @@
 		"file_limit": 102000000000000000040,
 		"message_size_limit": 500,
 		"file": "./server/data/chatroom/chatroom2.json",
-		"admins": ["paragram","ironswordX"],
-    "bannedUsers":["guest","jkwillgrabyou"]
+		"admins": "paragram",
+    "bannedUsers": "guest"
 	},
 	"banksystem": {
 		"max_withdraw": "10000",
 		"max_deposit": "100",
 		"min_deposit": "10",
 		"premium": "paragram",
-		"admins": "paragram",
+		"admins": ["paragram","PBSI"],
 		"banned": "guest"		
 	}
 }
