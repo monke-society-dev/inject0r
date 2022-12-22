@@ -5,7 +5,7 @@
 4. No sharing personal information
 
 ### Links:
- - [Inject0r Signup](hrrps://injector.repl.co/register)
+ - [Inject0r Signup](https://injector.repl.co/register)
  - [Inject0r Web Edition](https://web.inject0r.repl.co/)
  - [Eaglercraft (Game)](https://eaglercraft.inject0r.repl.co/)
  - [Alloy (Proxy)](https://alloy.inject0r.repl.co/)
