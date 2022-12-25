@@ -232,18 +232,18 @@ if (location.href == Injector.serverURL + "/" ) {
 	}
 	let topZIndex = 2147683;
   // new js
-  
+ /* 
   //dragElement(elementtoDrag);
   function dragElement(element) {
     var elemnt = element + "Drag";
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.elemnt) {
       /* if present, the header is where you move the DIV from:*/
-      document.elemnt.onmousedown = dragMouseDown;
-    } else {
+//      document.elemnt.onmousedown = dragMouseDown;
+ //   } else {
       /* otherwise, move the DIV from anywhere inside the DIV:*/
-      element.onmousedown = dragMouseDown;
-    }
+//      element.onmousedown = dragMouseDown;
+/*    }
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -271,83 +271,74 @@ if (location.href == Injector.serverURL + "/" ) {
 
   function closeDragElement() {
     /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
+//    document.onmouseup = null;
+//   document.onmousemove = null;
+//  }
+// }
+
   // new js end
-  
-	// function makeElementDraggable(elementtoDrag) {
-	// 	try {
-	// 		function move(e) {
-	// 			x = e.clientX;
-	// 			y = e.clientY;
-	// 			elementtoDrag.style.left = x - x2 + "px";
-	// 			elementtoDrag.style.top = y - y2 + "px";
-	// 		}
-	// 		elementtoDrag.addEventListener("mousedown", e => {
+ function makeElementDraggable(elementtoDrag) {
+    try{
+  function move(e) {
+		x = e.clientX;
+		y = e.clientY;
+		elementtoDrag.style.left = x - x2  + "px";
+		elementtoDrag.style.top = y - y2  + "px";
+  }
+	elementtoDrag.addEventListener("mousedown", e => {
 
-	// 			x2 = e.offsetX;
-	// 			y2 = e.offsetY;
-	// 			topZIndex++;
-	// 			elementtoDrag.style.zIndex = topZIndex;
-	// 			if (!prot) {
-	// 				document.addEventListener("mousemove", move);
-	// 				elementtoDrag.addEventListener("mouseup", function() {
-	// 			document.removeEventListener("mousemove", move);
-	// 				});
-	// 			}
-	// 		});
-	// 	} catch (err) {
-	// 		alert(err);
-	// 	}
-	// };
-	// function unprotectedDrag(elementtoDrag) {
-	// 	try {
-	// 		function move(e) {
-	// 			x = e.clientX;
-	// 			y = e.clientY;
-	// 			elementtoDrag.style.left = x - x2 + "px";
-	// 			elementtoDrag.style.top = y - y2 + "px";
-	// 		}
-	// 		elementtoDrag.addEventListener("mousedown", e => {
+		x2 = e.offsetX;
+		y2 = e.offsetY;
+    topZIndex++;
+    elementtoDrag.style.zIndex = topZIndex;
+		if (!prot) {
+			document.addEventListener("mousemove", move);
+			elementtoDrag.addEventListener("mouseup", function () {
+				document.removeEventListener("mousemove", move);
+			});
+		}
+	});
+    }catch(err){
+      alert(err);
+    }
+};
+  function unprotectedDrag(elementtoDrag) {
+    try{
+  function move(e) {
+		x = e.clientX;
+		y = e.clientY;
+		elementtoDrag.style.left = x - x2  + "px";
+		elementtoDrag.style.top = y - y2  + "px";
+  }
+	elementtoDrag.addEventListener("mousedown", e => {
 
-	// 			x2 = e.offsetX;
-	// 			y2 = e.offsetY;
-	// 			if (true) {
-	// 				document.addEventListener("mousemove", move);
-	// 				elementtoDrag.addEventListener("mouseup", function() {
-	// 					document.removeEventListener("mousemove", move);
-	// 				});
-	// 			}
-	// 		});
-	// 	} catch (err) {
-	// 		alert(err);
-	// 	}
-	// };
-	// function noDragGlitch(button2fix) {
-	// 	button2fix.addEventListener("mouseover", function() {
-	// 		prot = true;
-	// 	})
-	// 	button2fix.addEventListener("mouseout", function() {
-	// 		prot = false;
-	// 	})
-	// }
-	// function disableProtRestriction(button2fix) {
-	// 	button2fix.addEventListener("mouseover", function() {
-	// 		setTimeout(function() {
-	// 			prot = false;
-	// 		}, 1)
-	// 	})
-	// }
-
-  // var snow = document.createElement('script');
-  // snow.src = "https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js";
-  // document.body.appendChild(snow);
-  // var sf = new Snowflakes({
-  //     speed: 2
-  // });
-  
+		x2 = e.offsetX;
+		y2 = e.offsetY;
+		if (true) {
+			document.addEventListener("mousemove", move);
+			elementtoDrag.addEventListener("mouseup", function () {
+				document.removeEventListener("mousemove", move);
+			});
+		}
+	});
+    }catch(err){
+      alert(err);
+    }
+};
+function noDragGlitch(button2fix){
+  button2fix.addEventListener("mouseover", function(){
+    prot = true;
+  })
+  button2fix.addEventListener("mouseout", function(){
+    prot = false;
+  })
+}
+function disableProtRestriction(button2fix){
+  button2fix.addEventListener("mouseover", function(){
+    setTimeout(function(){
+      prot = false;}, 1)
+  })
+}
 	var windowPureClr = "rgba(0, 31, 51, 0.95);"
 	function refreshStyleSheet() {
 		style.textContent = `
@@ -980,7 +971,7 @@ customConsole{
 			console.log("Opened window with title " + windowTitle, "Injector");
     
 			newWindow.style.opacity = "0";
-			dragElement(newWindow);
+			makeElementDraggable(newWindow)
 			newWindow.style.width = width - 5 + "px";
 			newWindow.style.paddingLeft = "5px";
 			newWindow.textContent = windowTitle;
