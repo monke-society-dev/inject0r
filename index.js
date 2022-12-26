@@ -85,12 +85,28 @@ function requestListener(req, res) {
 	}
 	try {
 		switch (req.url) {
+				case "/inj":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./public/html/confuse.html', "utf8"))
+					res.end();
+				return;
 				case "/dev":
 				res.writeHead(200, {
 						'Content-Type': 'text/html',
 						'Access-Control-Allow-Origin': '*'
 					});
 					res.write(reader.readFileSync('./public/html/developer.html', "utf8"))
+					res.end();
+				return;
+				case "/boot.css":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./public/css/boot.css', "utf8"))
 					res.end();
 				return;
 				case "/bookmarkcode":
@@ -180,7 +196,7 @@ function requestListener(req, res) {
 				fileStream.pipe(res);
 				return;
 			case "/chat.png":
-				var fileStream = reader.createReadStream("./public/images/icons/cleanUI/chat.png");
+				var fileStream =reader.createReadStream("./public/images/icons/cleanUI/chat.png");
 				res.writeHead(200, { "Content-Type": "image/png", "Cache-Control": "max-age=3600" });
 				fileStream.pipe(res);
 				return;
@@ -239,6 +255,7 @@ function requestListener(req, res) {
 			case "/login":
 				if (req.method.toLowerCase() !== "post") {
 					res.writeHead(401, 'Invalid');
+					res.write("NO GO AWAY");
 					res.end();
 					return;
 				}
@@ -889,7 +906,7 @@ function requestListener(req, res) {
 		'Access-Control-Allow-Origin': '*'
 	});
 
-	res.write(reader.readFileSync('./public/html/confuse.html', "utf8"))
+	res.write(reader.readFileSync('./public/html/new.html', "utf8"))
 
 	res.end();
 	return;

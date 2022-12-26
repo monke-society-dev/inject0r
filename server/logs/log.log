@@ -3043,3 +3043,62 @@
 [Sun, 25 Dec 2022 04:41:38 GMT] Credentials for guest correct
 [Sun, 25 Dec 2022 04:41:38 GMT] Requesting bookmarklet content for guest
 [Sun, 25 Dec 2022 04:41:38 GMT] null
+[Sun, 25 Dec 2022 23:29:03 GMT] Recieved login request from paragram
+[Sun, 25 Dec 2022 23:29:03 GMT] Credentials for paragram correct
+[Sun, 25 Dec 2022 23:29:03 GMT] Requesting bookmarklet content for paragram
+[Sun, 25 Dec 2022 23:29:03 GMT] null
+[Sun, 25 Dec 2022 23:29:09 GMT] Recieved FTSave request from paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/JuanAnime.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/JuanAnime to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/TAP.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/TAP to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/NotePad.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/NotePad to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/cmd.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/cmd to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/InjectorCloud.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/InjectorCloud to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:09 GMT] Request recieved to Appstore
+[Sun, 25 Dec 2022 23:29:09 GMT] Attemping to read contents of ./server/apps/Game Hub.js
+[Sun, 25 Dec 2022 23:29:09 GMT] Wrote app contents of ./server/apps/Game Hub to client paragram
+[Sun, 25 Dec 2022 23:29:09 GMT] Same Copy detected!
+[Sun, 25 Dec 2022 23:29:21 GMT] Recieved save request from paragram
+[Sun, 25 Dec 2022 23:29:33 GMT] Status update recieved
+[Mon, 26 Dec 2022 05:44:08 GMT] Recieved login request from miconguyen12
+[Mon, 26 Dec 2022 05:44:08 GMT] Credentials for miconguyen12 correct
+[Mon, 26 Dec 2022 05:44:08 GMT] Requesting bookmarklet content for miconguyen12
+[Mon, 26 Dec 2022 05:44:08 GMT] null
+[Mon, 26 Dec 2022 05:44:15 GMT] Recieved FTSave request from miconguyen12
+[Mon, 26 Dec 2022 05:44:16 GMT] Request recieved to Appstore
+[Mon, 26 Dec 2022 05:44:16 GMT] Attemping to read contents of ./server/apps/Game Hub.js
+[Mon, 26 Dec 2022 05:44:16 GMT] Wrote app contents of ./server/apps/Game Hub to client miconguyen12
+[Mon, 26 Dec 2022 05:44:16 GMT] Same Copy detected!
+[Mon, 26 Dec 2022 05:44:16 GMT] Request recieved to Appstore
+[Mon, 26 Dec 2022 05:44:16 GMT] Attemping to read contents of ./server/apps/NotePad.js
+[Mon, 26 Dec 2022 05:44:16 GMT] Wrote app contents of ./server/apps/NotePad to client miconguyen12
+[Mon, 26 Dec 2022 05:44:16 GMT] Same Copy detected!
+[Mon, 26 Dec 2022 05:44:16 GMT] Request recieved to Appstore
+[Mon, 26 Dec 2022 05:44:16 GMT] Attemping to read contents of ./server/apps/InjectorCloud.js
+[Mon, 26 Dec 2022 05:44:16 GMT] Wrote app contents of ./server/apps/InjectorCloud to client miconguyen12
+[Mon, 26 Dec 2022 05:44:16 GMT] Same Copy detected!
+[Mon, 26 Dec 2022 05:44:16 GMT] Request recieved to Appstore
+[Mon, 26 Dec 2022 05:44:16 GMT] Attemping to read contents of ./server/apps/TAP.js
+[Mon, 26 Dec 2022 05:44:16 GMT] Wrote app contents of ./server/apps/TAP to client miconguyen12
+[Mon, 26 Dec 2022 05:44:16 GMT] Same Copy detected!
+[Mon, 26 Dec 2022 05:44:22 GMT] Status update recieved
+[Mon, 26 Dec 2022 05:44:34 GMT] Status update recieved
+[Mon, 26 Dec 2022 05:44:34 GMT] miconguyen12,1672033462.492
+[Mon, 26 Dec 2022 05:44:34 GMT] User already in Statuses; time updated.
+[Mon, 26 Dec 2022 05:45:03 GMT] Status update recieved
+[Mon, 26 Dec 2022 05:45:03 GMT] miconguyen12,1672033474.053
+[Mon, 26 Dec 2022 05:45:03 GMT] User already in Statuses; time updated.
