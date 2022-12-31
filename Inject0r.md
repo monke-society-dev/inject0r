@@ -3,6 +3,7 @@
 2. Hacking accounts is intolerable and will be trased back to you
 3. Keep things age appropriate
 4. No sharing personal information
+5. You should comply with [COPPA](https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa) (Childrens Online Privacy Protection Act)
 
 ### Links:
  - [Inject0r Signup](https://injector.repl.co/register)
