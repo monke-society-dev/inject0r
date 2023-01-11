@@ -1,14 +1,16 @@
 // Fetch data & modules
 var http = require('http');
+var httpstest = require('https')
 var reader = require('fs');
-var crypto = require('crypto');
+//var crypto = require('crypto');
+var bcrypt = require('bcrypt');
 var fetch = require('node-fetch');
 var Userdata = require("./server/data/userdata.json");
 var rimraf = require("rimraf");
 const Settings = require("./server/config/settings.json");
 const Auths = require("./server/data/auths.json");
 const tokenlocation = './server/data/logintokens.json';
-var logger = reader.createWriteStream('./server/logs/log.log', {
+var logger = reader.createWriteStream('./server/logs/server.log', {
   flags: 'a' // 'a' means appending (old data will be preserved)
 })
 var writeLine = (line) => logger.write(`\n[${new Date().toGMTString()}] ${line}`);
@@ -40,14 +42,14 @@ try {
 });
 	}
 
-
 //delete guest data
 	function delclouddata(user) {
 		rimraf.sync("./server/inCloud/users/" + user + "/");
 		consoleUI(user + " Data", "Purged", user + " data cleaned by server")
 	}
 	delclouddata("guest")
-
+httpstest.get('https://eaglercraft.inject0r.repl.co/')
+consoleUI("eaglercraft", "pinged", "server up")
 
 //catch booting errors ig
 } catch(err) {
@@ -272,19 +274,22 @@ function requestListener(req, res) {
 
 					let username = data.slice(0, data.indexOf(":"));
 					let password = data.slice(username.length + 1);
-					let hash = crypto.createHash("sha256");
-					hash.update(password);
-					password = hash.digest("hex");
-					//outta here EnderKingJ
-					//stop fucking withh my passwords
-          // why???
-					//kk
+
+          
+          
+          // old stuff
+					// let hash = crypto.createHash("sha256");
+					// hash.update(password);
+					// password = hash.digest("hex");
+
+          // time to upgrade our shitty security. 
+          // stored in secrets and hashed, fuck you craex. 
 				
 			
 					console.log("Recieved login request from " + username);
           writeLine("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./server/data/auths.json'));
-					if (username in Auths2 && Auths2[username] === password) {
+					if (username in Auths2 && bcrypt.compareSync(password, auths2[username])) {
 						console.log("Credentials for " + username + " correct");
             writeLine("Credentials for " + username + " correct");
 
@@ -813,10 +818,18 @@ function requestListener(req, res) {
 							let registerAccount = (userTU, passTU) => {
 								let authFile = JSON.parse(reader.readFileSync('server/data/auths.json', 'utf8'));
 								if (authFile[userTU] == undefined && userTU !== "" && passTU !== "" && !(userTU.includes(":")) && !(userTU.includes(",")) && userTU.length < 23) {
-									let hash = crypto.createHash("sha256");
-									hash.update(passTU);
-									let hashpass = hash.digest("hex");
-									authFile[userTU] = hashpass;
+                  // new password stuff
+                  var salt = bcrypt.genSaltSync(10);
+                  var hashed = bcrypt.hashSync(passTU, salt);
+                  authFile[userTU] = hashed;
+									
+                  
+                  
+                  // old stuff
+                  // let hash = crypto.createHash("sha256");
+									// hash.update(passTU);
+									// let hashpass = hash.digest("hex");
+									// authFile[userTU] = hashpass;
 									reader.writeFileSync('server/data/auths.json', JSON.stringify(authFile));
 									return true;
 								} else {
