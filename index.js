@@ -289,7 +289,7 @@ function requestListener(req, res) {
 					console.log("Recieved login request from " + username);
           writeLine("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./server/data/auths.json'));
-					if (username in Auths2 && bcrypt.compareSync(password, auths2[username])) {
+					if (username in Auths2 && bcrypt.compareSync(password, Auths2[username])) {
 						console.log("Credentials for " + username + " correct");
             writeLine("Credentials for " + username + " correct");
 
