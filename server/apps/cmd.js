@@ -9,7 +9,7 @@ function loge (val) {
 		log.innerText = log.innerText +val + '\\n';
 }
 
-let cmd = openWindow(400, 330, "Command Prompt", false, Injector.serverURL + "/exploithub.png")
+let cmd = openWindow(400, 330, "Command Prompt", resizable = "on", Injector.serverURL + "/exploithub.png")
 			cmd.style.backgroundColor = "#454545";
 			//exhub.style.overflow = "hidden";
 			let numBtn = 0;

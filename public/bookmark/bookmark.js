@@ -282,13 +282,21 @@ if (location.href == Injector.serverURL + "/" ) {
   function move(e) {
 		x = e.clientX;
 		y = e.clientY;
-		elementtoDrag.style.left = x - x2  + "px";
-		elementtoDrag.style.top = y - y2  + "px";
+		
+		// elementtoDrag.style.left = x - activeX + "px";
+		// elementtoDrag.style.top = y - activeY + "px";
+		let winTitleBarHeight = 12
+		if (y2 < winTitleBarHeight){elementtoDrag.style.left = x - x2  + "px";
+		elementtoDrag.style.top = y - y2  + "px";}
+		//resize stuff?
+		document.getElementById('webCont').innerHTML = ' x: '+x+' y: '+y+' x2: '+x2+' y2: '+y2+' left: '+elementtoDrag.style.left+' top: '+elementtoDrag.style.top;
   }
 	elementtoDrag.addEventListener("mousedown", e => {
 
-		x2 = e.offsetX;
-		y2 = e.offsetY;
+		x2 = event.clientX - elementtoDrag.offsetLeft;
+		y2 = event.clientY - elementtoDrag.offsetTop;
+		activeX = event.clientX - elementtoDrag.offsetLeft;
+		activeY = event.clientY - elementtoDrag.offsetTop;
     topZIndex++;
     elementtoDrag.style.zIndex = topZIndex;
 		if (!prot) {
@@ -1893,7 +1901,7 @@ channel:hover{
 		// prox browser
 
 		function app4(){
-let proxybrowser = openWindow(1500, 800, "ProxBrowser", resizable = "on", Injector.serverURL + "/proxbrowser.png")
+let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Injector.serverURL + "/proxbrowser.png")
 	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser");
 			browserwindow.src = "https://nebula.inject0r.repl.co";
 			browserwindow.style.position = "absolute";
@@ -2701,7 +2709,7 @@ let proxybrowser = openWindow(1500, 800, "ProxBrowser", resizable = "on", Inject
     openWindow(500, 300, "Ignore", resizable = "off", Injector.serverURL + "/adalert", "javascript: void(0);" ,true);
 
 		setTimeout(() => { advertise() }, 1000);
-		snowfetch();
+		//snowfetch();
 		console.log("Injector loaded successfully!")
 	}, 5000);
 }
