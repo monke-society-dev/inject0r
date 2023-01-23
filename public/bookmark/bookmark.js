@@ -69,7 +69,7 @@ th {
 <tr>
 <td>&nbsp;ExploitHub Developer&nbsp;</td>
 <td>&nbsp;mrphi05#7192&nbsp;</td>
-<td>&nbsp;mrphi05&nbsp;</td>
+<td>&nbsp;username-pass&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -184,6 +184,43 @@ if (location.href == Injector.serverURL + "/" ) {
 		gerbil.id = id.toString();
 		return gerbil;
 	};
+	let winScript = newElement('script',document.body,'winprompt');
+	winScript.innerHTML = `function winprompt(question, callback) {
+			
+			let promptWin = openWindow(300, 225, 'Prompt', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png',function () {},false,true,'promptWin');
+			let inputText = newElement('input', promptWin, "autoObj");
+			inputText.style.position = 'absolute';
+			inputText.style.width = '50%';
+			inputText.style.height = '10%';
+			inputText.style.backgroundColor = '';
+			inputText.style.left = '25%';
+			inputText.style.top = '50%';
+			let Prompt = newElement('genericBapBox', promptWin, "autoObj");
+			Prompt.style.position = 'absolute';
+			Prompt.style.width = '100%';
+			Prompt.style.height = '30%';
+			Prompt.style.backgroundColor = 'lightgray';
+			Prompt.innerText= question;
+			Prompt.style.top = '10px';
+
+			inputText.addEventListener("keydown", function(e){
+				if(e.key === "Enter"){
+					// windowContent = document.promptWin.querySelector('#WindowCont');
+					// newWindow = document.promptWin.querySelector('#genericWindow');
+					// windowContent.id = "removed";
+					// newWindow.remove();
+					// removeTaskbarItem(taskItem);
+					let val =  inputText.value;
+					promptWin.remove();
+					document.getElementById('promptWin').remove();
+					console.log("Removed prompt window");
+					callback(val);
+					return val;
+				}
+			})
+			
+		}`
+	
 	var console = {};
 	// pre init variables for use later on because i didnt know the difference between let and var
 	//i do now...
@@ -289,7 +326,7 @@ if (location.href == Injector.serverURL + "/" ) {
 		if (y2 < winTitleBarHeight){elementtoDrag.style.left = x - x2  + "px";
 		elementtoDrag.style.top = y - y2  + "px";}
 		//resize stuff?
-		document.getElementById('webCont').innerHTML = ' x: '+x+' y: '+y+' x2: '+x2+' y2: '+y2+' left: '+elementtoDrag.style.left+' top: '+elementtoDrag.style.top;
+		//document.getElementById('webCont').innerHTML = ' x: '+x+' y: '+y+' x2: '+x2+' y2: '+y2+' left: '+elementtoDrag.style.left+' top: '+elementtoDrag.style.top;
   }
 	elementtoDrag.addEventListener("mousedown", e => {
 
@@ -330,7 +367,7 @@ if (location.href == Injector.serverURL + "/" ) {
 		}
 	});
     }catch(err){
-      alert(err);
+      alert("Inject0r seems to have hit a critical system error, please report the following in discord:" err);
     }
 };
 function noDragGlitch(button2fix){
@@ -530,7 +567,7 @@ messagediv{
 .fullScreen {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
 }
@@ -971,10 +1008,16 @@ customConsole{
 			console.log("All windows closed, switching parent...", "Injector")
 			windowParent = newParent;
 		}
-		function openWindow(width, height, windowTitle, resizable, tbarIcon, onClose, autoclose) {
+		function openWindow(width, height, windowTitle, resizable, tbarIcon, onClose, autoclose, notaskbar,winId) {
+			if (notaskbar !== true) {
+				notaskbar == false;
+			}
+			if (winId === undefined) {
+					winId = "genericWindow";
+				}
 			
 			// make the window
-			let newWindow = newElement("windowHeading", windowParent, "genericWindow");
+			let newWindow = newElement("windowHeading", windowParent, winId);
 			windowsOpen.push(newWindow);
 			console.log("Opened window with title " + windowTitle, "Injector");
     
@@ -985,6 +1028,7 @@ customConsole{
 			newWindow.textContent = windowTitle;
 			topZIndex++;
 			newWindow.style.zIndex = topZIndex;
+			newWindow.style.boxShadow = 'px 5px 5px lightgray'
 
 
 			
@@ -993,17 +1037,22 @@ customConsole{
 			} catch (err) {
 				alert(err);
 			};
+			
 			let taskItem = newTaskbarItem(tbarIcon, newWindow)
 			numWins++;
+			if (notaskbar) {
+				removeTaskbarItem(taskItem);
+			}
+			
 			//create close button
 			let closeBtn = newElement("CircBtn", newWindow, "CloseBtn");
 			closeBtn.innerHTML = "X";
 			closeBtn.style.paddingRight = "5px";
 
-			/*//create fullscreen button
-			let openBtn = newElement("CircBtn", newWindow, "fullBtn");
-			openBtn.innerHTML = "□";
-			openBtn.style.right = "50px";*/
+			//create fullscreen button
+			// let openBtn = newElement("CircBtn", newWindow, "fullBtn");
+			// openBtn.innerHTML = "□";
+			// openBtn.style.right = "50px";
 
 			//noDragGlitch(closeBtn);
 
@@ -1035,18 +1084,30 @@ customConsole{
 			
 //fullscreen
 
-/*			let isfull = false;
-			fullBtn.addEventListener("click", function() {
-				alert("work in progress");
-				if (isfull) {
-					isfull = false;
-					newWindow.style.width = '100%';
-   //     	newWindow.style.height = '100%';
-				} else {
-					newWindow.style.width = width - 5 + "px";
-					isfull = true;
-				}
-			});*/
+			let isfull = false;
+// 			fullBtn.addEventListener("click", function() {
+// 				function toggleFullScreen() {
+// 					alert('work in progress');
+// 					newWindow.classList.toggle('fullScreen');
+					
+//   /*if (!document.fullscreenElement) {
+		
+//     document.documentElement.requestFullscreen();
+//   } else if (document.exitFullscreen) {
+//     document.exitFullscreen();
+//   }*/
+// }
+//     toggleFullScreen();
+  
+// 			// 	if (isfull) {
+// 			// 		isfull = false;
+// 			// 		newWindow.style.width = '100%';
+//    // //     	newWindow.style.height = '100%';
+// 			// 	} else {
+// 			// 		newWindow.style.width = width - 5 + "px";
+// 			// 		isfull = true;
+// 			// 	}
+// 			});
 
 
 			setInterval(function() {
@@ -1127,6 +1188,46 @@ customConsole{
 			localStorage.setItem("notepadstorage", ide.innerHTML);
 			alert("Saved notepad!");
 		}
+		function winprompt(question, callback) {
+			let cont = prompt(question);
+			if (cont == undefined || cont == null || cont == ''){
+			let promptWin = openWindow(300, 225, 'Prompt', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png',function () {},false,true,'promptWin');
+			let inputText = newElement('input', promptWin, "autoObj");
+			inputText.style.position = 'absolute';
+			inputText.style.width = '50%';
+			inputText.style.height = '10%';
+			inputText.style.backgroundColor = '';
+			inputText.style.left = '25%';
+			inputText.style.top = '50%';
+			let Prompt = newElement('genericBapBox', promptWin, "autoObj");
+			Prompt.style.position = 'absolute';
+			Prompt.style.width = '100%';
+			Prompt.style.height = '30%';
+			Prompt.style.backgroundColor = 'lightgray';
+			Prompt.innerText= question;
+			Prompt.style.top = '10px';
+
+			inputText.addEventListener("keydown", function(e){
+				if(e.key === "Enter"){
+					// windowContent = document.promptWin.querySelector('#WindowCont');
+					// newWindow = document.promptWin.querySelector('#genericWindow');
+					// windowContent.id = "removed";
+					// newWindow.remove();
+					// removeTaskbarItem(taskItem);
+					let val =  inputText.value;
+					promptWin.remove();
+					document.getElementById('promptWin').remove();
+					console.log("Removed prompt window");
+					callback(val);
+					return val;
+				}
+			})}
+			else {
+				callback(cont);
+				return cont;
+			}
+			
+		}
 		
 		function advertise() {
 
@@ -1139,6 +1240,7 @@ customConsole{
 			let chlog = openWindow(500, 300, "Changelog", resizable = "on", Injector.serverURL + "/logo.png");
 			chlog.innerHTML = `<h1>Changelog - Injector v` + Injector.info.version + `</h1>
   `+ Injector.info.changelog;
+			chlog.style.overflow = 'auto';
 		}
 		
 		// exploit hub
@@ -1776,9 +1878,10 @@ customConsole{
 			}, 750);
 			realMsgInput.addEventListener("keydown", function(e) {
 				if (e.key == "Enter") {
+				
 					if (type == "channel") {
 						makeChatFetch();
-						if (realMsgInput.value.length < 500) {
+						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0) {
 							let chatsend = new XMLHttpRequest;
 							chatsend.open('POST', Injector.serverURL + '/chat2');
 							chatsend.setRequestHeader('channel', currentChannel);
@@ -1792,7 +1895,7 @@ customConsole{
 							}, 1000);
 						}
 					} else {
-						if (realMsgInput.value.length < 500) {
+						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0) {
 							sendDM(currentDM, realMsgInput.value);
 							realMsgInput.value = "";
 							fullDMFetch(currentDM, false);
@@ -1903,7 +2006,7 @@ channel:hover{
 		function app4(){
 let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Injector.serverURL + "/proxbrowser.png")
 	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser");
-			browserwindow.src = "https://nebula.inject0r.repl.co";
+			browserwindow.src = "https://prox-switcher.inject0r.repl.co";
 			browserwindow.style.position = "absolute";
 			browserwindow.style.width = "100%";
 			browserwindow.style.height = "100%";
@@ -2273,11 +2376,21 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 					}
 					if (existing) { checkbox.checked = true };
 				})
+				if (type == 'input') {
+					
+					checkbox.addEventListener("keydown", function(event) {
+			if (event.key === "Enter") {
+				alert('does not save yet');
+				document.getElementById('header').src = checkbox.value;
+			}
+		});
+					}
 				checkbox.addEventListener("click", function() {
 
 					if (type == 'button') {
 						funct();
 					}
+					
 					
 					for (i = 0; i < optionsPanel.children.length; i++) {
 						if (optionsPanel.children[i].type == "checkbox") {
@@ -2308,12 +2421,18 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 			}
 			newOption("Disable Right Alt Transition", "RightAltTransitionDisabled", false, "checkbox", "2px", function() {
 });
-			newOption("log out", "logoff", true, "button", "24px", function () {
+			newOption('enable snow (restart to disable)', 'snow', true, 'checkbox', '24px', function () {snowfetch()})
+			newOption('web.inject0r.repl.repl.co ralt url','bgurl',false, 'input','46px',function() {
+				
+			})
+			let inf = localStorage.getItem("injinfo").split(":"); //alert("username: "+inf[0]+"\npassword: "+inf[1]);
+			newOption("log out ("+inf[0]+")", "logoff", true, "button", "68px", function () {
 				//remove item injinfo from local storage
 				let injinfo = localStorage.getItem("injinfo");
 				if (injinfo!== null) {
 					localStorage.removeItem("injinfo");
 					alert("Logged out, refresh page to re-login")
+					location.reload();
 				}
 				//set this checkbox to unchecked
 				let checkbox = document.querySelector("input[type='checkbox'][name='logoff']");
@@ -2479,9 +2598,11 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 		background.style.left = "0px";
 		backgroundImage.style.right = "0px";
 		var preVis = null;
+		if (Injector.user.settings.indexOf("snow") !== -1) {snowfetch();}
 		document.addEventListener("keydown", function(e) {
 			var key = e.key + e.location;
-			if (key == "Alt2") {
+			//console.log(key);
+			if (key == "Alt2" || key == "\\0") {
 				if (Injector.user.settings.indexOf("RightAltTransitionDisabled") !== -1) {
 					if (background.style.display !== "none") {
 						background.style.display = "none";

@@ -1,0 +1,1 @@
+document.getElementById('header').removeAttribute('src'); document.getElementById('header').removeAttribute('srcdoc'); document.getElementById('header').src = 'https://faculty.ksu.edu.sa/sites/default/files/precalculus-mathematics_for_calculus-j._stewart_l._redlin_and_s._watson-cengage_learning_7th_edition_2015.pdf';

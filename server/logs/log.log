@@ -206,7 +206,7 @@
 [Thu, 22 Dec 2022 15:20:42 GMT] Cloud request recieved!
 [Thu, 22 Dec 2022 15:20:42 GMT] GET request to Injector Cloud detected, no user existing!
 [Thu, 22 Dec 2022 15:29:21 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 15:29:21 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 15:29:21 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 15:43:53 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 15:43:53 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 15:43:53 GMT] Requesting bookmarklet content for guest
@@ -510,11 +510,11 @@
 [Thu, 22 Dec 2022 18:53:04 GMT] Wrote app contents of ./server/apps/TAP to client guest
 [Thu, 22 Dec 2022 18:53:04 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 19:13:00 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 19:13:00 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 19:13:00 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 19:13:15 GMT] Recieved login request from guests
-[Thu, 22 Dec 2022 19:13:15 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Thu, 22 Dec 2022 19:13:15 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 19:13:16 GMT] Recieved login request from guests
-[Thu, 22 Dec 2022 19:13:16 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Thu, 22 Dec 2022 19:13:16 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 19:13:20 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 19:13:20 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 19:13:20 GMT] Requesting bookmarklet content for guest
@@ -785,13 +785,13 @@
 [Thu, 22 Dec 2022 22:50:40 GMT] Wrote app contents of ./server/apps/Game Hub to client guest
 [Thu, 22 Dec 2022 22:50:40 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 22:51:05 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 22:51:05 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 22:51:05 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 22:59:38 GMT] Recieved login request from orteil.dashnet.org
-[Thu, 22 Dec 2022 22:59:38 GMT] cred incorrect: 74b4f3401d4af8b1af09ce7c14da894b7280239d105e62570ff8014b5ef316e8
+[Thu, 22 Dec 2022 22:59:38 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 22:59:44 GMT] Recieved login request from orteil.dashnet.org
-[Thu, 22 Dec 2022 22:59:44 GMT] cred incorrect: 74b4f3401d4af8b1af09ce7c14da894b7280239d105e62570ff8014b5ef316e8
+[Thu, 22 Dec 2022 22:59:44 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 22:59:48 GMT] Recieved login request from orteil.dashnet.org
-[Thu, 22 Dec 2022 22:59:48 GMT] cred incorrect: 74b4f3401d4af8b1af09ce7c14da894b7280239d105e62570ff8014b5ef316e8
+[Thu, 22 Dec 2022 22:59:48 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:00:02 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:00:02 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:00:02 GMT] Requesting bookmarklet content for guest
@@ -885,9 +885,9 @@
 [Thu, 22 Dec 2022 23:17:29 GMT] Wrote app contents of ./server/apps/InjectorCloud to client _BlockDude
 [Thu, 22 Dec 2022 23:17:29 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 23:18:52 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 23:18:52 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 23:18:52 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:19:05 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 23:19:05 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 23:19:05 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:19:30 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:19:30 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:19:30 GMT] Requesting bookmarklet content for guest
@@ -1098,15 +1098,15 @@
 [Thu, 22 Dec 2022 23:30:59 GMT] Wrote app contents of ./server/apps/InjectorCloud to client guest
 [Thu, 22 Dec 2022 23:30:59 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 23:31:54 GMT] Recieved login request from al999
-[Thu, 22 Dec 2022 23:31:54 GMT] cred incorrect: 88e63a9461b5c08954aa34b158fecbdf7433096da4408cf9b115d4c3fcb03b94
+[Thu, 22 Dec 2022 23:31:54 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:31:55 GMT] Recieved login request from al999
-[Thu, 22 Dec 2022 23:31:55 GMT] cred incorrect: 88e63a9461b5c08954aa34b158fecbdf7433096da4408cf9b115d4c3fcb03b94
+[Thu, 22 Dec 2022 23:31:55 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:31:59 GMT] Recieved login request from al999
-[Thu, 22 Dec 2022 23:31:59 GMT] cred incorrect: 056fdf1f5333f9446d41abcfc594e99e246031f429be700b900899cf7211b0cc
+[Thu, 22 Dec 2022 23:31:59 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:32:04 GMT] Recieved login request from al999
-[Thu, 22 Dec 2022 23:32:04 GMT] cred incorrect: 50172900cab9a001eb979555dcb7727c9947ed1004c62481b4bb33b72e895d5a
+[Thu, 22 Dec 2022 23:32:04 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:32:10 GMT] Recieved login request from al999
-[Thu, 22 Dec 2022 23:32:10 GMT] cred incorrect: 88e63a9461b5c08954aa34b158fecbdf7433096da4408cf9b115d4c3fcb03b94
+[Thu, 22 Dec 2022 23:32:10 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:32:15 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:32:15 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:32:15 GMT] Requesting bookmarklet content for guest
@@ -1133,7 +1133,7 @@
 [Thu, 22 Dec 2022 23:32:21 GMT] Wrote app contents of ./server/apps/TAP to client guest
 [Thu, 22 Dec 2022 23:32:21 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 23:33:03 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 23:33:03 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 23:33:03 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:33:15 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:33:15 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:33:15 GMT] Requesting bookmarklet content for guest
@@ -1210,11 +1210,11 @@
 [Thu, 22 Dec 2022 23:35:02 GMT] Wrote app contents of ./server/apps/Game Hub to client guest
 [Thu, 22 Dec 2022 23:35:02 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 23:35:44 GMT] Recieved login request from guest 
-[Thu, 22 Dec 2022 23:35:44 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Thu, 22 Dec 2022 23:35:44 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:35:56 GMT] Recieved login request from guest 
-[Thu, 22 Dec 2022 23:35:56 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Thu, 22 Dec 2022 23:35:56 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:35:57 GMT] Recieved login request from guest 
-[Thu, 22 Dec 2022 23:35:57 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Thu, 22 Dec 2022 23:35:57 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:36:03 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:36:03 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:36:03 GMT] Requesting bookmarklet content for guest
@@ -1241,19 +1241,19 @@
 [Thu, 22 Dec 2022 23:36:09 GMT] Wrote app contents of ./server/apps/TAP to client guest
 [Thu, 22 Dec 2022 23:36:09 GMT] Same Copy detected!
 [Thu, 22 Dec 2022 23:38:45 GMT] Recieved login request from asf
-[Thu, 22 Dec 2022 23:38:45 GMT] cred incorrect: 200a98c47fcc5457886e644d13ff5e3cdc651d23c130afde8157f9184ed28b9e
+[Thu, 22 Dec 2022 23:38:45 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:49 GMT] Recieved login request from 
-[Thu, 22 Dec 2022 23:38:49 GMT] cred incorrect: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[Thu, 22 Dec 2022 23:38:49 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:52 GMT] Recieved login request from adsf
-[Thu, 22 Dec 2022 23:38:52 GMT] cred incorrect: 91c9c3ff310a53f8d179461d9af55371c78b67c38ab030bf9c026693ca495399
+[Thu, 22 Dec 2022 23:38:52 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:52 GMT] Recieved login request from adsf
-[Thu, 22 Dec 2022 23:38:52 GMT] cred incorrect: 91c9c3ff310a53f8d179461d9af55371c78b67c38ab030bf9c026693ca495399
+[Thu, 22 Dec 2022 23:38:52 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:53 GMT] Recieved login request from adsf
-[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: 91c9c3ff310a53f8d179461d9af55371c78b67c38ab030bf9c026693ca495399
+[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:53 GMT] Recieved login request from adsf
-[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: 91c9c3ff310a53f8d179461d9af55371c78b67c38ab030bf9c026693ca495399
+[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:38:53 GMT] Recieved login request from adsf
-[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: 91c9c3ff310a53f8d179461d9af55371c78b67c38ab030bf9c026693ca495399
+[Thu, 22 Dec 2022 23:38:53 GMT] cred incorrect: ████████
 [Thu, 22 Dec 2022 23:42:42 GMT] Recieved login request from guest
 [Thu, 22 Dec 2022 23:42:42 GMT] Credentials for guest correct
 [Thu, 22 Dec 2022 23:42:42 GMT] Requesting bookmarklet content for guest
@@ -1293,25 +1293,25 @@
 [Fri, 23 Dec 2022 00:29:12 GMT] Wrote app contents of ./server/apps/InjectorCloud to client rouge
 [Fri, 23 Dec 2022 00:29:12 GMT] Same Copy detected!
 [Fri, 23 Dec 2022 00:52:24 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:52:24 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:52:24 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:30 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:30 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:30 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:39 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:39 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:39 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:40 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:40 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:40 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:40 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:41 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:41 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:41 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:54:41 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:54:41 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:54:41 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:57:59 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:57:59 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:57:59 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:58:10 GMT] Recieved login request from elvisirony
-[Fri, 23 Dec 2022 00:58:10 GMT] cred incorrect: 7c4a5e4311c08f5618daf737bfdeda42f74469bb255736045f246f3b7cef26a9
+[Fri, 23 Dec 2022 00:58:10 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 00:59:44 GMT] Recieved login request from guest
 [Fri, 23 Dec 2022 00:59:44 GMT] Credentials for guest correct
 [Fri, 23 Dec 2022 00:59:44 GMT] Requesting bookmarklet content for guest
@@ -1645,11 +1645,11 @@
 [Fri, 23 Dec 2022 11:34:48 GMT] Request was from Server Login Panel
 [Fri, 23 Dec 2022 11:34:48 GMT] null
 [Fri, 23 Dec 2022 11:35:21 GMT] Recieved login request from duskrising
-[Fri, 23 Dec 2022 11:35:21 GMT] cred incorrect: e7edd6da7bc67389f20bdf84c95fd5c852b1585f648f209822a012f2cd9daf5a
+[Fri, 23 Dec 2022 11:35:21 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 11:35:22 GMT] Recieved login request from duskrising
-[Fri, 23 Dec 2022 11:35:22 GMT] cred incorrect: e7edd6da7bc67389f20bdf84c95fd5c852b1585f648f209822a012f2cd9daf5a
+[Fri, 23 Dec 2022 11:35:22 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 11:35:32 GMT] Recieved login request from duskrising
-[Fri, 23 Dec 2022 11:35:32 GMT] cred incorrect: e7edd6da7bc67389f20bdf84c95fd5c852b1585f648f209822a012f2cd9daf5a
+[Fri, 23 Dec 2022 11:35:32 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 12:46:46 GMT] Recieved login request from MADARA
 [Fri, 23 Dec 2022 12:46:46 GMT] Credentials for MADARA correct
 [Fri, 23 Dec 2022 12:46:46 GMT] Requesting bookmarklet content for MADARA
@@ -1723,9 +1723,9 @@
 [Fri, 23 Dec 2022 12:56:00 GMT] Wrote app contents of ./server/apps/JuanAnime to client guest
 [Fri, 23 Dec 2022 12:56:00 GMT] Same Copy detected!
 [Fri, 23 Dec 2022 13:10:37 GMT] Recieved login request from duskrising
-[Fri, 23 Dec 2022 13:10:37 GMT] cred incorrect: e7edd6da7bc67389f20bdf84c95fd5c852b1585f648f209822a012f2cd9daf5a
+[Fri, 23 Dec 2022 13:10:37 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 13:10:43 GMT] Recieved login request from duskrising
-[Fri, 23 Dec 2022 13:10:43 GMT] cred incorrect: 4ff960927a2d7af640ed569918ad757ea6f2fa906b4a6aadce8e1a7c0aa2aa54
+[Fri, 23 Dec 2022 13:10:43 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 13:25:10 GMT] Recieved login request from guest
 [Fri, 23 Dec 2022 13:25:10 GMT] Credentials for guest correct
 [Fri, 23 Dec 2022 13:25:10 GMT] Requesting bookmarklet content for guest
@@ -1957,9 +1957,9 @@
 [Fri, 23 Dec 2022 18:00:41 GMT] Wrote app contents of ./server/apps/NotePad to client guest
 [Fri, 23 Dec 2022 18:00:41 GMT] Same Copy detected!
 [Fri, 23 Dec 2022 18:00:59 GMT] Recieved login request from Guest
-[Fri, 23 Dec 2022 18:00:59 GMT] cred incorrect: d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1
+[Fri, 23 Dec 2022 18:00:59 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 18:01:08 GMT] Recieved login request from Guest
-[Fri, 23 Dec 2022 18:01:08 GMT] cred incorrect: ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b
+[Fri, 23 Dec 2022 18:01:08 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 18:02:02 GMT] Recieved login request from guest
 [Fri, 23 Dec 2022 18:02:02 GMT] Credentials for guest correct
 [Fri, 23 Dec 2022 18:02:02 GMT] Requesting bookmarklet content for guest
@@ -2052,7 +2052,7 @@
 [Fri, 23 Dec 2022 18:27:53 GMT] Attemping to read contents of ./server/apps/Module2.0.js
 [Fri, 23 Dec 2022 18:27:53 GMT] Wrote app contents of ./server/apps/Module2.0 to client guest
 [Fri, 23 Dec 2022 18:36:12 GMT] Recieved login request from q
-[Fri, 23 Dec 2022 18:36:12 GMT] cred incorrect: 8e35c2cd3bf6641bdb0e2050b76932cbb2e6034a0ddacc1d9bea82a6ba57f7cf
+[Fri, 23 Dec 2022 18:36:12 GMT] cred incorrect: ████████
 [Fri, 23 Dec 2022 18:52:38 GMT] Recieved login request from kittyguygaming
 [Fri, 23 Dec 2022 18:52:38 GMT] Credentials for kittyguygaming correct
 [Fri, 23 Dec 2022 18:52:38 GMT] Requesting bookmarklet content for kittyguygaming
@@ -2478,7 +2478,7 @@
 [Sat, 24 Dec 2022 02:04:14 GMT] Recieved save request from NavyCroft
 [Sat, 24 Dec 2022 02:04:22 GMT] Recieved FTSave request from NavyCroft
 [Sat, 24 Dec 2022 02:07:28 GMT] Recieved login request from NavyCroft
-[Sat, 24 Dec 2022 02:07:28 GMT] cred incorrect: 2e77d324b173f510a6bfa6db55baf2ed477155486bed55c0bd805a87e059151a
+[Sat, 24 Dec 2022 02:07:28 GMT] cred incorrect: ████████
 [Sat, 24 Dec 2022 02:07:38 GMT] Recieved login request from NavyCroft
 [Sat, 24 Dec 2022 02:07:38 GMT] Credentials for NavyCroft correct
 [Sat, 24 Dec 2022 02:07:38 GMT] Requesting bookmarklet content for NavyCroft

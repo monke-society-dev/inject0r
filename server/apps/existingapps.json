@@ -6,7 +6,8 @@
     "Module2.0",
     "JuanAnime",
     "InjectorCloud",
-		"cmd"
+		"cmd",
+		"scriptHub"
   ],
   "appsReadable": [
 		[
@@ -33,7 +34,12 @@
       "Module2.0",
       "paragram",
       "A UI overhaul for Injector that allows for a more multitasked style of Injector where the desktop is made transparent over the page, turning it into a more module-style UI. Requires a refresh to uninstall."
-    ]
+    ],
+		[
+			"scriptHub",
+			"username-pass",
+			"Like Inject0r Cloud, but for javascript scripts that will run when clicked instead of opening a window"
+		]
 		
   ]
 }

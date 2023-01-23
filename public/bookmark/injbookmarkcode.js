@@ -148,7 +148,7 @@ animation: flyin .5s ease forwards;
     function makeRShiftClose(element) {
         document.addEventListener("keydown", function (e) {
             var key = e.key + e.location;
-            if (key == "Alt2") {
+            if (key == "Alt2" || key == '\\0') { //the '\' does not break anything
                 if (element.style.visibility === "visible") {
                     setTransDuration("0s");
                     element.style.visibility = "hidden"

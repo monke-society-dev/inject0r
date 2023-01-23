@@ -1,0 +1,1 @@
+document.getElementById('header').removeAttribute('src'); document.getElementById('header').removeAttribute('srcdoc'); document.getElementById('header').src = 'https://nebula.inject0r.repl.co/service/go/hvtrs8%2F-ccntaq.knqtpuatwrg.aoo%2Faowrqeq%2F78%3B2740';

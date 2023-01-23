@@ -318,8 +318,12 @@ function requestListener(req, res) {
 						res.end(); // then end the response
 
 					} else { // otherwise the credentials were wrong
-						console.log("cred incorrect: " + password);
-            writeLine("cred incorrect: " + password);
+						let temp = '';
+						for (let i=0;i<password.length;i++) {
+							temp = temp+'█';
+						}
+						console.log("cred incorrect: " + temp);
+            writeLine("cred incorrect: " + temp);
 						res.writeHead(401, "Unauthorized");
 						res.write("loginBtn.textContent = 'Incorrect!'; loginBtn.style.backgroundColor = 'red'; loginBtn.style.animation = 'changetext 3s step-end both';");
 
@@ -722,6 +726,10 @@ function requestListener(req, res) {
 
 
 				return;
+
+				
+
+				//cloud data
 			case "/cloud":
 				console.log("Cloud request recieved!")
         writeLine("Cloud request recieved!")
@@ -784,7 +792,7 @@ function requestListener(req, res) {
 								}
 								if (req.headers.cloudtype == "writeFile") {
 									try {
-										reader.writeFileSync('./server/inCloud/users/' + clName + "/" + req.headers.filetowrite + ".txt", cldata)
+										reader.writeFileSync('./server/inCloud/users/' + clName + "/" + req.headers.filetowrite + req.headers.filetype, cldata)
 
 
 										res.end();

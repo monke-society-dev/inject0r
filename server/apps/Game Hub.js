@@ -2,7 +2,7 @@ createNewItem("Game Hub", "Game Hub", `
 
 try{
 // remove this it fixes syntax highlighting
-let autoWin = openWindow(550, 300, 'Game Hub', true, Injector.serverURL + "/gamehub.png");
+let autoWin = openWindow(550, 300, 'Game Hub', resizeable = "on", Injector.serverURL + "/gamehub.png");
 autoWin.style.backgroundColor = 'white';
 autoWin.style.overflowY = "hidden";
 let gameSelBar = newElement('genericBapBox', autoWin, "autoObj");

@@ -1,14 +1,9 @@
-createNewItem(`Injector Cloud`, `InjectorCloud`, `
+createNewItem(`Script Hub`, `scriptHub`, `
  try{
  if (Injector.user.token == "guest") {
  alert("guest files are not saved");
  }
-
-
-	let writeReq;
-function send (value) {writeReq.send(value)}
- 
-let autoWin = openWindow(500, 325, 'Injector Cloud', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png');
+let autoWin = openWindow(500, 325, 'Script Hub', false, 'https://Inject0r.repl.co/cloudlogo');
 autoWin.style.backgroundColor = '#1f1f1f';
 let nameBar = newElement('input', autoWin, "autoObj");
 nameBar.placeholder = "File Name Here";
@@ -37,6 +32,9 @@ makeFileBtn.style.borderStyle = 'solid';
 makeFileBtn.innerHTML = "Create";
 
 
+	let writeReq;
+function send (value) {writeReq.send(value)}
+
 makeFileBtn.addEventListener("click", function(){
   if(nameBar.value !== "" && nameBar.value !== null) {
     writeReq = new XMLHttpRequest;
@@ -44,12 +42,10 @@ makeFileBtn.addEventListener("click", function(){
     writeReq.setRequestHeader('token', Injector.user.token);
     writeReq.setRequestHeader('cloudtype', 'writeFile');
     writeReq.setRequestHeader('filetowrite', nameBar.value);
-		writeReq.setRequestHeader('filetype', '.txt');
-		
-		
+		writeReq.setRequestHeader('filetype', '.js');
+    
 			winprompt('Content of file',send);
 		
-    //writeReq.send(prompt("Content of file"));
     writeReq.onreadystatechange=e=>{
       if(writeReq.readyState == 4)
         while(document.getElementById("CloudFile"))
@@ -83,7 +79,7 @@ makeFileBtn.addEventListener("click", function(){
 
 floatTop = 56;
 function newFile(name){
-  if(!(filesArray.includes(name)) && name.indexOf(".txt") >= 0){
+  if(!(filesArray.includes(name)) && name.indexOf(".js") >= 0){
   let prot = false;
     filesArray.push(name);
   let fileToMk = newElement("newFile", autoWin, "CloudFile");
@@ -102,8 +98,9 @@ function newFile(name){
 			if (name.indexOf(".html") >= 0){
 	 alert("HTML pages stored on our servers are not allowed yet, sorry for the inconveniance");
 			} else {
-				let dataWindow = openWindow(400, 200, name, resizable = "on");
-		dataWindow.innerHTML = fetchFileReq.responseText;
+			//	let dataWindow = openWindow(400, 200, name, resizable = "on");
+			//	dataWindow.innerHTML = fetchFileReq.responseText;
+	 			eval(fetchFileReq.responseText);
 	}
 }
     }
