@@ -184,8 +184,23 @@ if (location.href == Injector.serverURL + "/" ) {
 		gerbil.id = id.toString();
 		return gerbil;
 	};
-	let winScript = newElement('script',document.body,'winprompt');
-	winScript.innerHTML = `function winprompt(question, callback) {
+	let lib = newElement('script',document.body,'lib');
+	lib.innerHTML = `
+
+ function files() {
+ 		let fetchFileReq = new XMLHttpRequest;
+		fetchFileReq.open('POST', '${Injector.serverURL}' + "/cloud");
+		fetchFileReq.setRequestHeader('token', ${Injector.user.token});
+		fetchFileReq.setRequestHeader('cloudType', 'getFile');
+		fetchFileReq.send('user.settings');
+		fetchFileReq.onreadystatechange = e => {
+		  if (fetchFileReq.readyState == 4) {
+		    alert(fetchFileReq.responseText);
+		  }
+		}
+	}
+ 
+ function winprompt(question, callback) {
 			
 			let promptWin = openWindow(300, 225, 'Prompt', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png',function () {},false,true,'promptWin');
 			let inputText = newElement('input', promptWin, "autoObj");
@@ -367,7 +382,8 @@ if (location.href == Injector.serverURL + "/" ) {
 		}
 	});
     }catch(err){
-      alert("Inject0r seems to have hit a critical system error, please report the following in discord:" err);
+      alert("Inject0r seems to have hit a critical system error, please report the following in discord:"+err);
+			//don't forget the '+'! it just broke everything earlier
     }
 };
 function noDragGlitch(button2fix){
@@ -519,13 +535,17 @@ CircBtn{
   background-color: #630000;
   cursor: pointer;
 	border-top-right-radius: 5px;
- 	padding-right: 2px;
+ 	/*padding-right: 2px;*/
+}
+#minBtn:hover{
+  background-color: #004343;
+  cursor: pointer;
 }
 #fullBtn:hover{
 	background-color: rgba(0, 80, 180, 0.77);
 	cursor: pointer;
- 	padding-right: 2px;
-	width: 19.8px;
+ 	/*padding-right: 2px;
+	width: 19.8px;*/
 }
 NewWindowContent{
 position: absolute;
@@ -1048,15 +1068,23 @@ customConsole{
 			let closeBtn = newElement("CircBtn", newWindow, "CloseBtn");
 			closeBtn.innerHTML = "X";
 			closeBtn.style.paddingRight = "5px";
+			closeBtn.style.borderTopRightRadius = '5px';
 
 			//create fullscreen button
-			// let openBtn = newElement("CircBtn", newWindow, "fullBtn");
-			// openBtn.innerHTML = "□";
-			// openBtn.style.right = "50px";
+			 let fullBtn = newElement("CircBtn", newWindow, "fullBtn");
+			 fullBtn.innerHTML = "□";
+			 fullBtn.style.right = "48px";
+			 fullBtn.style.paddingRight = '2px';
 
 			//noDragGlitch(closeBtn);
 
       //automatically close window to fix console spam bug
+			let minBtn = newElement('CircBtn',newWindow,'minBtn');
+			minBtn.innerHTML = '_';
+			minBtn.style.marginRight = '93px';
+			minBtn.style.paddingRight = '2px';
+			
+			
 			if (autoclose) {
 				setTimeout(() => {
 					if (onClose !== undefined) {
@@ -1080,6 +1108,19 @@ customConsole{
 				removeTaskbarItem(taskItem);
 				console.log("Removed window with title " + windowTitle, "Injector");
 			});
+minBtn.addEventListener("click", function() {
+	newWindow.style.display = "none"; 
+	//taskItem.style.backgroundColor = "#3c3c3d";
+	//alert(taskItem.children());
+});
+fullBtn.addEventListener("click", function() {
+//	newWindow.style.width = '800px';
+	alert('wip');
+	
+	newWindow.style.height = "100%";
+	newWindow.style.bottom = '0px';
+	newWindow.style.right = '0px';
+});
 			
 			
 //fullscreen
@@ -1518,6 +1559,11 @@ customConsole{
 		//chatroom
 
 		function app3() {
+			//setting settings and variables
+			let latestMsgs = [];
+			let chatSettings = {
+				spamLength: 5
+			}
 			async function sendDM(user, content) {
 				let req = await fetch('https://inject0r.repl.co/chat2', {
 					method: 'POST',
@@ -1881,12 +1927,14 @@ customConsole{
 				
 					if (type == "channel") {
 						makeChatFetch();
-						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0) {
+						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0 && !latestMsgs.includes(realMsgInput.value)) {
 							let chatsend = new XMLHttpRequest;
 							chatsend.open('POST', Injector.serverURL + '/chat2');
 							chatsend.setRequestHeader('channel', currentChannel);
 							chatsend.setRequestHeader('token', Injector.user.token);
 							chatsend.send(realMsgInput.value);
+							if (latestMsgs.length >= chatSettings.spamLength){latestMsgs.shift();}
+							latestMsgs.push(realMsgInput.value);
 							realMsgInput.value = "";
 						} else {
 							realMsgInput.style.color = "red";

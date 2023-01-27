@@ -4,7 +4,7 @@
 		"message_size_limit": 500,
 		"file": "./server/data/chatroom/chatroom2.json",
 		"admins": "paragram",
-    "bannedUsers": "guest"
+    "bannedUsers": ["guest","allah1121336040"]
 	},
 	"banksystem": {
 		"max_withdraw": "10000",

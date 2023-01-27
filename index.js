@@ -95,6 +95,13 @@ function requestListener(req, res) {
 					res.write(reader.readFileSync('./public/html/confuse.html', "utf8"))
 					res.end();
 				return;
+				case "/php":
+				res.writeHead(200, {
+						'Content-Type': 'text/html',
+						'Access-Control-Allow-Origin': '*'
+					});
+					res.write(reader.readFileSync('./public/php/index.php', "utf8"))
+					res.end();
 				case "/dev":
 				res.writeHead(200, {
 						'Content-Type': 'text/html',
@@ -289,6 +296,7 @@ function requestListener(req, res) {
 					console.log("Recieved login request from " + username);
           writeLine("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./server/data/auths.json'));
+				//	console.log('referrer: '+req.get('Referrer'))
 					if (username in Auths2 && bcrypt.compareSync(password, Auths2[username])) {
 						console.log("Credentials for " + username + " correct");
             writeLine("Credentials for " + username + " correct");
@@ -723,11 +731,14 @@ function requestListener(req, res) {
 					}
 				}
 
+        
 
 
 				return;
 
-				
+      case "/recievestr":
+        
+        return;
 
 				//cloud data
 			case "/cloud":
