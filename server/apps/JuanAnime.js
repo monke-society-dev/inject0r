@@ -61,7 +61,7 @@ for(i=0; i<gameNames.length; i++){
 playGameBtn.addEventListener("click", function(){
   gameFrame.src = gameChooseDD.value;
   if(gameChooseDD.value == "https://arrayanime.com/"){
-    alert("Anime is currently broken :(")
+    alert("Anime is broken :(")
   }
   gameSelBar.style.opacity = "0";
   gameSelBar.style.visibility = "hidden";

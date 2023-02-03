@@ -5,7 +5,8 @@ Injector.settings = {} // theme info goes here later
 Injector.user = {
 	token: token,
 	username: usernameTU,
-	settings: ""
+	settings: "",
+	background: Injector.serverURL + '/logo.png'
 }
 Injector.info = {
 	version: "3.4",
@@ -187,18 +188,21 @@ if (location.href == Injector.serverURL + "/" ) {
 	let lib = newElement('script',document.body,'lib');
 	lib.innerHTML = `
 
- function files() {
+ function files(filename,callback) {
  		let fetchFileReq = new XMLHttpRequest;
 		fetchFileReq.open('POST', '${Injector.serverURL}' + "/cloud");
 		fetchFileReq.setRequestHeader('token', ${Injector.user.token});
 		fetchFileReq.setRequestHeader('cloudType', 'getFile');
-		fetchFileReq.send('user.settings');
+		fetchFileReq.setRequestHeader('nolog', true);
+		fetchFileReq.send(filename);
 		fetchFileReq.onreadystatechange = e => {
-		  if (fetchFileReq.readyState == 4) {
-		    alert(fetchFileReq.responseText);
+		  if (fetchFileReq.readyState == 4 && fetchFileReq.responseText.length > 1) {
+		    callback(fetchFileReq.responseText);
+				//alert(fetchFileReq.responseText);
 		  }
 		}
 	}
+
  
  function winprompt(question, callback) {
 			
@@ -1564,6 +1568,17 @@ fullBtn.addEventListener("click", function() {
 			let chatSettings = {
 				spamLength: 5
 			}
+			let chatBlacklist = ['nigga','nigge','gay ass','dick','blacklistTest','blacklist Test'];
+			function inBlacklist(item) {
+				item = item.toLowerCase();
+				for (i=0;i<chatBlacklist.length;i++) {
+					if (item.includes(chatBlacklist[i].toLowerCase())) {
+						console.log(`phrase '${item}' blocked because it includes '${chatBlacklist[i]}'`);
+						return true;
+					}
+				}
+				return false;
+			}
 			async function sendDM(user, content) {
 				let req = await fetch('https://inject0r.repl.co/chat2', {
 					method: 'POST',
@@ -1927,7 +1942,7 @@ fullBtn.addEventListener("click", function() {
 				
 					if (type == "channel") {
 						makeChatFetch();
-						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0 && !latestMsgs.includes(realMsgInput.value)) {
+						if (realMsgInput.value.length < 500 && realMsgInput.value.length > 0 && !latestMsgs.includes(realMsgInput.value) && !inBlacklist(realMsgInput.value)) {
 							let chatsend = new XMLHttpRequest;
 							chatsend.open('POST', Injector.serverURL + '/chat2');
 							chatsend.setRequestHeader('channel', currentChannel);
@@ -2879,6 +2894,17 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 
 		setTimeout(() => { advertise() }, 1000);
 		//snowfetch();
+		var setBG = setInterval(		 (function(){files('background.txt',function(resp){
+			//bg is the same
+			if (Injector.user.background != resp) {
+		 	Injector.user.background = resp;
+			//alert(resp);
+			document.getElementById('backgroundImage').style.backgroundImage = 'url('+resp+')';
+		console.log('set background to: '+document.getElementById('backgroundImage').style.backgroundImage);
+			}
+		
+		 })}),5000);
+
 		console.log("Injector loaded successfully!")
 	}, 5000);
 }

