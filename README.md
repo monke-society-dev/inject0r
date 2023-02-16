@@ -8,7 +8,7 @@ The official repository for Inject0r
 
 #### How to register???
 
-To register for Inject0r please join our public discord server / https://discord.gg/GSqDrERGze
+***To register for Inject0r please join our public discord server / https://discord.gg/GSqDrERGze***
 
 #### What is Injector? 
 
