@@ -45,5 +45,3 @@ Inject0r is free, but a token will be needed upon registering for it.
 If you have gotten your single-use code, go [here](https://inject0r.repl.co/register) to register.
 
 ***
-<img src="images/marketing/exdesktop.png" width="100%"/>
-<img src="images/marketing/exlogin.png" width="100%"/>
