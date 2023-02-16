@@ -6,6 +6,10 @@ The official repository for Inject0r
 
 *** 
 
+#### How to register???
+
+To register for Inject0r please join our public discord server / https://discord.gg/GSqDrERGze
+
 #### What is Injector? 
 
 Injector is a JavaScript bookmarklet developed by Paragram and some other people. It creates a pseudo desktop environment on the active page. It has multiple apps for games, proxying, chatting, ect, and it can be hidden at any time by simply pressing Right Shift. Its primary use is to circumvent school security mechanisms like iBoss, GoGuardian, Securly, Harpara, ect.
