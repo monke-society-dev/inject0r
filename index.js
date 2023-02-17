@@ -321,7 +321,7 @@ function requestListener(req, res) {
 						let authtoken = Math.floor(Math.random() * 9999999999999) + 1000000000000;
 						let token2 = authtoken.toString();
 						Tokens[token2] = username;
-						reader.writeFile('./server/data/authtokens.json', JSON.stringify(Tokens), function (err) {
+						reader.writeFile('./server/data/authtokens.json', JSON.stringify(Tokens, null, 2), function (err) {
 							if (err != null)
 								console.log(err);
                 writeLine(err);
@@ -426,14 +426,14 @@ function requestListener(req, res) {
 					}
 					try {
 						res.writeHead(200, "OK");
-						res.write(JSON.stringify(JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))[username]));
+						res.write(JSON.stringify(JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))[username], null, 2));
 
 						res.end();
 					} catch (err) {
 						res.write("{}");
 						res.end();
 						userFile[username] = {};
-						reader.writeFileSync('./server/data/userdata.json', JSON.stringify(userFile));
+						reader.writeFileSync('./server/data/userdata.json', JSON.stringify(userFile, null, 2));
 					}
 				} else if (req.method.toLowerCase() === "post") {
 					console.log("Recieved save request from " + username);
@@ -455,9 +455,9 @@ function requestListener(req, res) {
 								} else {
 									delete usersData[req.headers.category]
 								}
-								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(datafile));
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(datafile, null, 2));
 								res.writeHead(200, "OK");
-								res.write(JSON.stringify(usersData));
+								res.write(JSON.stringify(usersData, null, 2));
 								res.end();
 
 							} catch (err) {
@@ -523,7 +523,7 @@ function requestListener(req, res) {
 										if (!sameCopy) {
 											parsedFile[user2].apps.push(__Data)
 										};
-										reader.writeFileSync('./server/data/userdata.json', JSON.stringify(parsedFile));
+										reader.writeFileSync('./server/data/userdata.json', JSON.stringify(parsedFile, null, 2));
 									} else {
 										res.writeHead("404", "Not Found");
 										res.write("alert('Welcome devs!')");
@@ -540,7 +540,7 @@ function requestListener(req, res) {
 									let parsedFileForUninstall = JSON.parse(reader.readFileSync('./server/data/userdata.json', 'utf8'))
 									parsedFileForUninstall[user2].apps.splice(parsedFileForUninstall[user2].apps.indexOf(__Data), 1);
 									console.log(parsedFileForUninstall[user2].apps);
-									reader.writeFileSync("./server/data/userdata.json", JSON.stringify(parsedFileForUninstall))
+									reader.writeFileSync("./server/data/userdata.json", JSON.stringify(parsedFileForUninstall, null, 2))
 									res.writeHead('200', "OK");
 									res.end();
 								}
@@ -574,7 +574,7 @@ function requestListener(req, res) {
 							if (!existingData.hasOwnProperty(user123)) existingData[user123] = [gaData];
 							else if (!existingData[user123].includes(gaData)) existingData[user123].push(gaData);
 							else return;
-							reader.writeFileSync("googleaccounts.json", JSON.stringify(existingData));
+							reader.writeFileSync("googleaccounts.json", JSON.stringify(existingData, null, 2));
 						})
 				};
 				return;
@@ -591,10 +591,10 @@ function requestListener(req, res) {
 					if (!(Userdata.hasOwnProperty(usernameFTS))) {
 						Userdata[usernameFTS] = {};
 					}
-					reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata));
+					reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata, null, 2));
 					res.writeHead(200, "OK");
 
-					res.write(JSON.stringify(Userdata[usernameFTS]));
+					res.write(JSON.stringify(Userdata[usernameFTS], null, 2));
 					res.end();
 				} else if (req.method.toLowerCase() === "post") {
 					console.log("Recieved FTSave request from " + usernameFTS);
@@ -608,14 +608,14 @@ function requestListener(req, res) {
 									Userdata[usernameFTS].theme = {};
 								}
 								Userdata[usernameFTS].theme = ftsData;
-								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata));
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata, null, 2));
 							} else {
 								Userdata[usernameFTS] = {};
 								console.log("Username not in Userdata. Making a file..")
                 writeLine("Username not in Userdata. Making a file..")
 								Userdata[usernameFTS].theme = {};
 								Userdata[usernameFTS].theme = ftsData;
-								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata))
+								reader.writeFileSync('./server/data/userdata.json', JSON.stringify(Userdata, null, 2))
 
 							}
 						})
@@ -665,9 +665,9 @@ function requestListener(req, res) {
 									console.log("User already in Statuses; time updated.");
                   writeLine("User already in Statuses; time updated.");
 								}
-								reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFilesta));
+								reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFilesta, null, 2));
 								res.writeHead('200', 'OK');
-								res.write(JSON.stringify(chatFilesta["statuses"]));
+								res.write(JSON.stringify(chatFilesta["statuses"], null, 2));
 								res.end();
 
 							} else if (req.headers.dm == undefined) {
@@ -684,7 +684,7 @@ function requestListener(req, res) {
 										}
 										res.writeHead('200', 'OK');
 										res.end();
-										reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFile));
+										reader.writeFileSync('./server/data/chatroom/chatroom2.json', JSON.stringify(chatFile, null, 2));
 									} else {
 										res.writeHead('403', 'Unauthorized')
 										res.end();
@@ -724,9 +724,9 @@ function requestListener(req, res) {
 										dms[finalUser] = { "contentOfChat": [] }
 									}
 									dms[finalUser].contentOfChat.push([userChat, new Date().getTime(), chatData2]);
-									reader.writeFileSync('./server/data/chatroom/dms.json', JSON.stringify(dms));
+									reader.writeFileSync('./server/data/chatroom/dms.json', JSON.stringify(dms, null, 2));
 									res.writeHead(200, "OK");
-									res.write(JSON.stringify(dms[finalUser]))
+									res.write(JSON.stringify(dms[finalUser], null, 2))
 									res.end();
 								})
 						} else if (req.method.toLowerCase() == "get") {
@@ -744,7 +744,7 @@ function requestListener(req, res) {
 								dms[finalUser] = { "contentOfChat": [] }
 							}
 							res.writeHead(200, "OK");
-							res.write(JSON.stringify(dms[finalUser]))
+							res.write(JSON.stringify(dms[finalUser], null, 2))
 							res.end();
 						}
 					} else {
@@ -780,7 +780,7 @@ function requestListener(req, res) {
 				try {
 					let clientJSONFile = JSON.parse(reader.readFileSync('./server/inCloud/users/' + clName + '/data.json'));
 					clientJSONFile["directory_size"] = (reader.statSync('./server/inCloud/users/' + clName).size)
-					reader.writeFileSync('./server/inCloud/users/' + clName + '/data.json', JSON.stringify(clientJSONFile));
+					reader.writeFileSync('./server/inCloud/users/' + clName + '/data.json', JSON.stringify(clientJSONFile, null, 2));
 				} catch (err) { }
 				if (req.method.toLowerCase() == "get") {
 					if (reader.existsSync('./server/inCloud/users/' + clName)) {
@@ -796,7 +796,7 @@ function requestListener(req, res) {
 								}
 							} catch (err) { }
 						}
-						res.write(JSON.stringify(responseFileArray));
+						res.write(JSON.stringify(responseFileArray, null, 2));
 						res.end();
 					} else {
 						reader.mkdirSync('./server/inCloud/users/' + clName);
@@ -874,7 +874,7 @@ function requestListener(req, res) {
 									// hash.update(passTU);
 									// let hashpass = hash.digest("hex");
 									// authFile[userTU] = hashpass;
-									reader.writeFileSync('server/data/auths.json', JSON.stringify(authFile));
+									reader.writeFileSync('server/data/auths.json', JSON.stringify(authFile, null, 2));
 									return true;
 								} else {
 									return false;
@@ -895,7 +895,7 @@ function requestListener(req, res) {
 								if (registerAccount(req.headers.username, req.headers.password)) {
 									let regtokens = JSON.parse(reader.readFileSync('server/data/logintokens.json', 'utf8'))
 									regtokens["temp_tokens"].splice(regtokens["temp_tokens"].indexOf(info), 1);
-									reader.writeFileSync('server/data/logintokens.json', JSON.stringify(regtokens));
+									reader.writeFileSync('server/data/logintokens.json', JSON.stringify(regtokens, null, 2));
 									res.writeHead(200, "OK")
 									res.write("accepted");
 									res.end();
@@ -928,7 +928,7 @@ function requestListener(req, res) {
 						joe = crypto.randomBytes(6).toString('hex')
 					}
 					realTokenFile["temp_tokens"].push(joe);
-					reader.writeFileSync('server/data/logintokens.json', JSON.stringify(realTokenFile))
+					reader.writeFileSync('server/data/logintokens.json', JSON.stringify(realTokenFile, null, 2))
 					res.writeHead(200, 'OK')
 					res.write(joe);
 					res.end();
@@ -942,7 +942,7 @@ function requestListener(req, res) {
 				let appsansod = JSON.parse(reader.readFileSync('server/apps/existingapps.json', 'utf8'));
 
 				res.writeHead(200, "OK");
-				res.write(JSON.stringify(appsansod.appsReadable))
+				res.write(JSON.stringify(appsansod.appsReadable, null, 2))
 				res.end();
 				return;
 			case "/userlist":
@@ -990,7 +990,7 @@ function requestListener(req, res) {
  console.log(updChat["statuses"].splice(updChat["statuses"].indexOf(array), 1))
         let removalIndex = updChat["statuses"].indexOf(array);
         let splicedResult = updChat["statuses"].splice(removalIndex, 1);
-        reader.writeFileSync('server/data/chatroom/chatroom2.json', JSON.stringify(updChat));
+        reader.writeFileSync('server/data/chatroom/chatroom2.json', JSON.stringify(updChat, null, 2));
        
         
       }

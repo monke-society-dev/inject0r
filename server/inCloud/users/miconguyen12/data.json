@@ -1,1 +1,4 @@
-{"directory_size":60,"size_limit":1024}
+{
+  "directory_size": 60,
+  "size_limit": 1024
+}

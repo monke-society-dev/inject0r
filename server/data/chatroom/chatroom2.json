@@ -1,1 +1,1134 @@
-{"#general":{"contentOfChat":[["paragram",1,"Restarted the chatroom. We're having some issues with the server, so unexpected brief outages and database rollbacks should be expected."],["Chatroom Announcements",2,"The oldest content in the chatroom will be periodically removed and archived for performance reasons. Sorry for the inconvenience. If you have any questions, or need older archives, ask a dev"],["username-pass",1676327137194,"all messages in here now show up in discord"],["username-pass",1676327148572,"I am working on making it work the other way as well"],["username-pass",1676337633895,"newline test \nthis is a new line?"],["Discord-user",1676338306823,"test"],["Discord-user",1676338770539,"test content"],["[Discord]Discord username",1676340683458,"test content"],["[Discord]sample user",1676340854143,"This is an example message by discord"],["[Discord]sample user",1676340870091,"This is an example message by discord"],["username-pass",1676341328817,"like this!"],["Jake",1676341838573,"test"],["[Discord]sample user",1676341851437,"This is an example message by discord"],["cheslin23t",1676341971488,"hi"],["username-pass",1676342058231,"hi"],["Jake",1676342115383,"hi"],["[Discord]sample user",1676342650877,"This is an example message by discord"],["cheslin23t",1676342985258,"not like i can speak though"],["cheslin23t",1676343007569,"u might wanna remove pinging perms cuzz.. <@899426743130128414>"],["username-pass",1676343021862,"huh"],["cheslin23t",1676343035473,"basically, use regex to determine if <@(stuff)> matches, and then remove"],["username-pass",1676343049187,"well, it is just a webhook, so there is not much I can do..."],["cheslin23t",1676343064810,"is this client straight to discord? lmao"],["cheslin23t",1676343262013,"<@964151420314091610>"],["cheslin23t",1676343298964,"waiitt- test @...everyone with our view perms disabled, so no one gets mad"],["username-pass",1676343315844,"I will remove this if people abuse it though"],["username-pass",1676343321632,"@everyone"],["username-pass",1676343329208,"whoops"],["username-pass",1676343336872,"@username-pass"],["cheslin23t",1676343337143,"worked lmao"],["cheslin23t",1676343368539,"i have experience in nodejs, if u want, i can make a pr and fix it up for ya"],["cheslin23t",1676343412760,"aswell as some other things like scroll down to the bottom of the chat when loading in"],["username-pass",1676343422889,"sure, also, could you make some bot code to go from discord to the chat? I can give you the code to go to this."],["cheslin23t",1676343435749,"Sure"],["[Discord]username",1676343439399,"using something like this"],["[Discord]username",1676343450225,"using something like this"],["username-pass",1676343454591,"you were @spacehold right?"],["cheslin23t",1676343461397,"mhm"],["Calvin",1676343480530,"wait this is cool"],["Calvin",1676343500356,"the inject0r chat thing"],["Calvin",1676343519673,"my user on discord is Sir.Me btw"],["Calvin",1676343559420,"as in on discord it puts these messages here"],["Calvin",1676343631863,"also love to see community helping out"],["winrin",1676380613149,"this community is smart"],["winrin",1676381127571,"I like when teachers do blooket because I can sometimes mess around with the people I don't like with cheat menu"],["Kavicooks123",1676381751662,"hi gois"],["winrin",1676382108369,"Google Chat ain't workin for me right now"],["winrin",1676384256985,"bru I think it was GayGuardian"],["kenanwhy",1676385628164,"hello"],["cheslin23t",1676385709455,"hi"],["Kavicooks123",1676386772695,"hi"],["qwertyuiop",1676386813110,"hello!"],["qwertyuiop",1676386836942,"this chat box is cool"],["winrin",1676386943776,"ye"],["winrin",1676387021101,"I wonder what amazing things people could make if you got the top 10% of Bookmarklet creators and had them on payroll for a month to all collab on something"],["Calvin",1676388248194,"oh yeah"],["Skully",1676391971235,"@Skully"],["Sunset2775",1676393077090,"hi"],["winrin",1676393125062,"helo"],["Sunset2775",1676393327744,"hi"],["kittyguygaming",1676396072909,"hola soy dora"],["kittyguygaming",1676396081805,"also is it me or does the chatbox open instantly now"],["kittyguygaming",1676396089051,"yes it does"],["kittyguygaming",1676396090316,"W"],["kittyguygaming",1676396103086,"@kittyguygaming"],["kittyguygaming",1676396108646,"how do pings work"],["kittyguygaming",1676396113853,"does it ping chatbox or discord"],["kittyguygaming",1676396501945,"discord"],["kittyguygaming",1676396656747,"out of curiosity"],["kittyguygaming",1676396666396,"who else pirates stuff "],["kittyguygaming",1676396668769,"just because"],["ol1374",1676401411880,"GoGuardian"],["ol1374",1676401428097,"is trash"],["ol1374",1676401466325,"i found lots of proxies and exploits"],["ol1374",1676401469106,"if you want em"],["ol1374",1676401483594,"auto clicker:"],["ol1374",1676401615268,"im bored"],["ol1374",1676401616914,"lol"],["username-pass",1676403061859,"the chatbox only loads instantly because I deleted all the old messages"],["username-pass",1676403138842,"ol1374, I'll take them if you want"],["kittyguygaming",1676403227020,"i'm looking for game hubs"],["kittyguygaming",1676403234054,"if I can't find one I'll make one"],["[Discord]username",1676403385963,"using something like this"],["[Discord]username",1676403414101,"using something like this"],["kittyguygaming",1676403474210,"I found a really cool site with a bunch of proxies"],["kittyguygaming",1676403479904,"proxy4 seems to work best"],["kittyguygaming",1676403480712,"https://sites.google.com/view/unblocki/pr0xy-4?authuser=0"],["cheslin23t",1676403605223,"sad they blocked ours"],["kittyguygaming",1676403683210,"I found another proxy"],["kittyguygaming",1676403686802,"https://repl-mods-stink.jamesmadision.repl.co/"],["kittyguygaming",1676403695825,"ultraviolet"],["kittyguygaming",1676403732670,"and this https://google.jamesmadision.repl.co/"],["kittyguygaming",1676403801002,"@mrphi05#7192 could you add these?"],["kittyguygaming",1676403837997,"@username-pass"],["kittyguygaming",1676403839107,"idk"],["username-pass",1676403892799,"I am looking at them rn"],["kittyguygaming",1676403928070,"k"],["kittyguygaming",1676403955303,"also nebula.inject0r.repl.co is down"],["username-pass",1676404147456,"I am working on it"],["kittyguygaming",1676404247830,"found a good game hub site"],["kittyguygaming",1676404249152,"https://biggercheese.netlify.app/projects.html"],["kittyguygaming",1676404322357,"and can you remove phpprox? it doesn't work in iframe"],["username-pass",1676404563139,"it works for me"],["kittyguygaming",1676404583095,"weird"],["kittyguygaming",1676404604425,"wait"],["kittyguygaming",1676404609874,"the issue is when you input a url"],["username-pass",1676404767347,"did you put https://?"],["kittyguygaming",1676404838212,"yes"],["username-pass",1676405050699,"well, it seemed to work for me"],["kittyguygaming",1676405083728,"odd"],["kittyguygaming",1676405084976,"alright"],["kittyguygaming",1676405101448,"what do you think of the proxies?"],["kittyguygaming",1676405103303,"and the game hub"],["username-pass",1676405178577,"I'll add the game hub, and see if I can fork some of the proxies"],["kittyguygaming",1676405669381,"alright "],["username-pass",1676405762739,"I got the google one, working on grabbing a couple more"],["winrin",1676405918458,"what fancy shmancy magic stuff is goin on in here"],["username-pass",1676406056544,"just forking proxies"],["winrin",1676406340927,"fork.png Nebula_logo.png"],["winrin",1676406473010,"where the heck is"],["winrin",1676406477893,"that one dude what's his name"],["winrin",1676406490927,"Millencolin"],["username-pass",1676407950819,"tell me any other proxies you would like added"],["kittyguygaming",1676409994079,"ok"],["kittyguygaming",1676412747490,"can you get rid of the games list in game hub? or replace it with the game list you added earlier"],["kittyguygaming",1676412754069,"because it serves no purpose right now"],["ol1374",1676413239654,"why is there khan academy??"],["ol1374",1676413240822,"lol"],["Jake",1676419047869,"hola "],["Jake",1676419049293,"amigos"],["amadu",1676419728429,"lol"],["Geass",1676430244057,"lmao"],["Geass",1676437547123,"yo anyone online"],["Geass",1676437655762,"can GayGaurdian see injector"],["username-pass",1676438395773,"I don't have it so I don't know, but depending on how you use it, you can hide it quite well"],["username-pass",1676438690665,"I'd expect it might also not be able to see about:blank pages, but you would have to test that out"],["slider_on_the_black",1676440351340,"hello there"],["slider_on_the_black",1676440358000,"test"],["slider_on_the_black",1676440365447,"ok it works"],["username-pass",1676440400404,"what were you testing?"],["slider_on_the_black",1676440425857,"to see if it links to discord"],["username-pass",1676440429699,"ah"],["slider_on_the_black",1676440433945,"which it does"],["username-pass",1676440443655,"I know, I set it up"],["slider_on_the_black",1676440447213,"cool"],["username-pass",1676440455752,"but if people abuse it, I will remove it"],["slider_on_the_black",1676440462602,"ok"],["username-pass",1676440491612,"do you have any coding experience? if not, what apps would you like?"],["n1swordslasher",1676470232026,"O dp"],["n1swordslasher",1676470234608,"I do"],["n1swordslasher",1676470258806,"I have some coding experience. However, I'm not the greatest at javascript"],["winrin",1676473094876,"I don't exactly know how GayGuardian works but it probably can see Inject0r if the tab is viewed, but otherwise it appears as a regular tab"],["winrin",1676473127737,"*take with a grain of salt because all my knowledge is based off of a teacher accidentally bringing up the management window twice"],["Dr.",1676473853219,"yo spirix"],["winrin",1676474006160,"Google proxy said no RuneScape :("],["Revl",1676474326161,"sad"],["Fundin",1676474484527,"yo"],["winrin",1676475323052,"is it possible to have a proxy with an adblock on it"],["cheslin23t",1676475753687,"run an adblock in the script hub i believ"],["CSS_LOGO",1676476536659,"Is there a way to change my Username?"],["kittyguygaming",1676477099049,"i mean you could make a new account with a new username but no, currently there's no way to change it"],["kittyguygaming",1676477140541,"also my school uses gayguardian, they can indeed see inject0r and about:blank"],["kittyguygaming",1676477157506,"it shows all javascript additions so if you played that one snake bookmarklet they can see it too"],["kittyguygaming",1676477166753,"but there's right alt for that"],["kittyguygaming",1676477255310,"also if you install module 2.0 i's a lot harder to see inject0r even if someone walked up to your computer"],["kittyguygaming",1676477262264,"it's"],["username-pass",1676477810073,"I can change your username, just tell me what you want it to be"],["Sunset2775",1676477817843,"hi"],["username-pass",1676477827958,"hi"],["Sunset2775",1676477837353,"ok"],["username-pass",1676478004628,"hola"],["kittyguygaming",1676478074564,"hola soy dora"],["kittyguygaming",1676478096236,"also someone suggested a proxy a while ago"],["kittyguygaming",1676478099830,"https://sheluvsmula.yaha.gay"],["kittyguygaming",1676478115650,"alternate link http://sheluvsmula.elude.wiki/"],["kittyguygaming",1676478125348,"it seems interesting"],["Revl",1676478133078,"hi"],["kittyguygaming",1676478144598,"hi"],["kittyguygaming",1676478169048,"also the nebula repl is asleep again"],["kittyguygaming",1676478208148,"how do you get an account for crx.playcode.io?"],["Revl",1676478210342,"use lucid"],["Revl",1676478236193,"https://stingray.wtf/"],["Revl",1676478258159,"https://stingweb.wtf/ "],["Revl",1676478283726,"1st link is a typo btw"],["Calvin",1676478399965,"are things breaking for yall?"],["Calvin",1676478449735,"like gba games"],["Calvin",1676478455185,"and eaglercraft"],["kittyguygaming",1676478688285,"nope"],["Calvin",1676478696691,"aight just me"],["winrin",1676479105782,"both GBA and Eaglercraft booted for me no issue"],["Sunset2775",1676480874788,"im here now"],["Mercy",1676480959880,"okay hi"],["Sunset2775",1676481077190,"hi"],["Calvin",1676481514264,"is fine"],["winrin",1676481598210,"Inject0r karaoke night"],["username-pass",1676481657444,"if anyone has any html experience, I am looking for apps to add to my new project. it is basically just the app code all in the body, and in the head, only a title element. for ex: <head><title>APP TITLE</title></head><body>APP CODE</body>"],["ol1374",1676483114446,"you know that you can download eaglercraft on github, get the html \"offline version\" despite working onlline"],["username-pass",1676483589150,"I'll look into it"],["ol1374",1676483611451,"downlad as an .html file and just open it"],["ol1374",1676483662254,"https://oncoursemail.github.io/eaglercraft/1.8.html"],["ol1374",1676483666735,"it works"],["ol1374",1676483672105,"btw, its just 1.5.2"],["ol1374",1676483676547,"not 1. 8"],["ol1374",1676483741299,"i thought it was 1.8 at first :("],["cheslin23t",1676484643466,"hey byron"],["username-pass",1676484786300,"I thought they were working on a 1.8 version"],["n1swordslasher",1676485291520,"They are"],["n1swordslasher",1676485296513,"it is called eaglerx"],["ol1374",1676485454079,"oh"],["Geass",1676488469753,"Is there a way to make it so that Gaygurdian cannot see this?"],["Geass",1676488507801,"nvm somebody alr answered the question"],["Geass",1676488523779,"about:blank doesnt work btw"],["kittyguygaming",1676492433600,"it does if you go to web.inject0r.repl.co/blank.html"],["kittyguygaming",1676492470901,"and @username-pass what kind of project"],["kittyguygaming",1676492709131,"I have a snake game I found"],["kittyguygaming",1676492723012,"but the chatbox antispam doesn't like it"],["kittyguygaming",1676492797638,"https://codehs.com/editor/html/8827066/2960987/index.html"],["kittyguygaming",1676492912096,"I has a tetris in js that I made but I can't find it"],["kittyguygaming",1676493350994,"I wish chatbox could be re-sizable :pensive:"],["ol1374",1676499239183,"i tried the turning of extension on exploit hub and doesn't work"],["ol1374",1676499303960,"tetris doesn't work"],["ol1374",1676499304908,"lol"],["ol1374",1676499308984,"it doesn't respond"],["Geass",1676500804776,"can gaygurdian see https://web.inject0r.repl.co/blank.html"],["kittyguygaming",1676517117542,"it can see everything"],["kittyguygaming",1676517119807,"it is all knowing"],["winrin",1676553520300,"I think GayGuardian can see the name and web address of open tabs, and the currently viewed tab the person running it can directly see the webpage"],["winrin",1676553767915,"this gif seems to show pretty well what the teacher you can do (zoom in cuz it's small)"],["winrin",1676553768743,"https://www.google.com/search?q=what+can+goguardian+see&rlz=1CAJIKU_enUS1022US1022&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj9796UkZr9AhVQEFkFHcL9Dc8Q_AUoAXoECAEQAw&biw=1318&bih=665&dpr=1&safe=active&ssui=on#imgrc=J113qb9OuMZWfM"],["7ww6z",1676556088356,"yo"],["winrin",1676556532608,"daily wordle app with leaderboard when"],["Capn_Nemo",1676564438934,"Mamba?"],["TheBlackMamba99",1676564481446,"yea"],["Capn_Nemo",1676564484789,"YOO"],["Capn_Nemo",1676564487797,"sup man"],["Capn_Nemo",1676564495672,"This"],["Capn_Nemo",1676564497001,"is"],["Capn_Nemo",1676564501357,"Inject0r"],["Capn_Nemo",1676564508139,"go to search users to DM"],["Capn_Nemo",1676564512805,"and search this name"],["Capn_Nemo",1676564517551,"and talk there"],["TheBlackMamba99",1676564605632,"where"],["Capn_Nemo",1676564634466,"ON the side"],["Capn_Nemo",1676564636478,"it says"],["Capn_Nemo",1676564642532,"search for users to DM"],["Capn_Nemo",1676564644757,"click that"],["Capn_Nemo",1676564647265,"and type in"],["Capn_Nemo",1676564650019,"Capn_Nemo"],["Capn_Nemo",1676564653875,"and hit enter"],["Capn_Nemo",1676564704670,"also"],["Capn_Nemo",1676564710159,"right alt to hide this"],["Capn_Nemo",1676564715677,"and again to bring it back"],["18008080115",1676566300419,"no spamming"],["18008080115",1676566307176,"also"],["18008080115",1676566312871,"bye"],["18008080115",1676566355099,"hi"],["RiverdaleMasterCoder",1676568123590,"Hi"],["kittyguygaming",1676569264342,"h"],["kittyguygaming",1676569464679,"you can go into the github and see everything someone has on their inject0r cloud or script hub"],["kittyguygaming",1676569466976,"https://github.com/Platinome/inject0r/tree/V4-The-Security-Update/server/inCloud/users/"],["ol1374",1676571594185,"thanks"],["kittyguygaming",1676572689966,"h"],["kittyguygaming",1676572700225,"that shouldn't be publicly accessible"],["winrin",1676572768458,"what is that and why is my name on it"],["username-pass",1676573248720,"We are currently working on a better system as well as a rewrite. what do recommend we do?"],["winrin",1676573592253,"what does \"better system\" mean"],["username-pass",1676573817223,"improving the code"],["username-pass",1676573823843,"and security"],["winrin",1676573841356,"ah"],["winrin",1676573865284,"so why is my name on that GitHub thing with \"added anti-spam\" next to it"],["username-pass",1676573921346,"that was the commit where your files were last pushed to github"],["username-pass",1676573961205,"so when I added anti-spam, and committed it to github, it committed all the files, including your cloud files"],["winrin",1676573967141,"ah (but this time with this in parenthesis because I said \"ah\" too recently)"],["username-pass",1676573987638,"anti spam lol"],["winrin",1676573989555,"I don't use GitHub for publishing because obvious reasons, so now I finally know what that grey stuff means"],["winrin",1676573996515,"the more you know"],["username-pass",1676574091951,"also, if you want to make apps, it is way easier now. In the rewrite, just make an html doc, with only a title element in the head, and all your code in the body, and I can add it as an app :)"],["winrin",1676574146504,"hopefully that will eventually lead to an actual app store with lots of apps from different people"],["username-pass",1676574156719,"yes"],["username-pass",1676574177352,"I just need to figure out some more login stuff "],["winrin",1676574183380,"elaborate"],["username-pass",1676574267720,"I think the new system I am working on in the rewrite is better and more secure. nearly everything is hashed (username, username+password), and it requires both username and token to get data from the server, but the username is not stored in plaintext."],["username-pass",1676574293237,"I am sure I can improve it, but it is still a definite improvement"],["winrin",1676574313155,"that sounds like a good idea"],["username-pass",1676574407541,"however, I do also need to fix many things, because it is supposed to work with multiple servers at once, with the same code, but it means that signing up will be an issue (logging in is fine rn). the signup code requires modifying a file, but some server hosting things just get their things from github, so I am thinking of just manually pushing to github every week or so..."],["username-pass",1676574498731,"so far it seems to work pretty well though"],["winrin",1676574517124,"stupid social studies essay finally done"],["winrin",1676574607242,"I wish I could donate server parts but alas I have but no extra parts lying around"],["username-pass",1676574740923,"I'm just replit for now, because I can't find another one that can write to files... maybe I can have one central server that does that that the servers all refer to on the server side, like a proxy."],["username-pass",1676574838885,"what do you think of the login? (try with wrong credentials, then use the guest ones)"],["username-pass",1676574839777,"https://tungsten.username-pass.repl.co/"],["Capn_Nemo",1676574879223,"what is the site for HolyUB proxy"],["username-pass",1676574892235,"a self hosted holy unblocker"],["username-pass",1676574917543,"https://replit.com/@Inject0r/website-aio"],["username-pass",1676574930859,"I am waking it up now"],["Jake",1676575027573,"Yoyo"],["username-pass",1676575086656,"it's back up"],["Jake",1676575109019,"What is lol"],["username-pass",1676575117463,"holy unblocker"],["Jake",1676575136631,"Oh nebula we need to ping it because the longer we used is now out of service"],["Jake",1676575155093,"Pinger we used is now broken"],["Capn_Nemo",1676575161667,"oh"],["username-pass",1676575164412,"ah"],["Jake",1676575276803,"Hey check discord morphi"],["username-pass",1676575359562,"I can't rn, I will see if I can use a proxy"],["Capn_Nemo",1676575476078,"Why does discord not work on any of the proxys"],["Capn_Nemo",1676575489860,"you can try to sign in but it shows some other thing"],["username-pass",1676575492886,"I don't know. it was working"],["Capn_Nemo",1676575520847,"Its never owrked for me"],["Capn_Nemo",1676575748258,"Just finished a French test, feelin good"],["username-pass",1676576039256,"jake, just dm me here I guess if you can"],["username-pass",1676576202791,"or use replit chat"],["username-pass",1676576320688,"<@887524177664426075> if it is time sensitive, replit chat or dm me here, I cannot access discord rn"],["kittyguygaming",1676577597321,"I found this replit that emulates firefox and nothing gets blocked by it"],["kittyguygaming",1676577600704,"https://replit.com/@3kh0/Firefox-browser"],["kittyguygaming",1676577616501,"and someone else suggested incognito proxy"],["kittyguygaming",1676577617513,"https://pink.herokuapp.com/"],["kittyguygaming",1676577624661,"this one can actually access discord"],["username-pass",1676578133303,"I can access, but I also need to confirm new location, which I cannot do on a chromebook"],["Man",1676580383960,"whoever the owner is, this app is sick ngl"],["Man",1676580396503,"also make the notepad save plz. :)"],["username-pass",1676583141872,"copy the stuff from your notepad, then paste it into a cloud file"],["ol1374",1676585723359,"hi can i get a new temp code"],["ol1374",1676585728825,"im making one for my friend"],["username-pass",1676585871361,"ok"],["ol1374",1676585875065,"thx!"],["username-pass",1676585935962,"use 'haveaniceday'"],["ol1374",1676585948524,"ok"],["ol1374",1676585951640,"it worked thanks"],["username-pass",1676586040101,"ol1374, you might be the 150th inject0r user :D (Jake is 100 I think)"],["slider_on_the_black",1676592321113,"hello people"],["skyrocketer",1676593321185,"hello"],["slider_on_the_black",1676593596711,"ok"],["Jake",1676593657623,"hello"],["Jake",1676593660018,"slider"],["Jake",1676593664484,"hola rocketer"],["eclipse",1676600430148,"olah"],["skyrocketer",1676602159260,"hi"],["skyrocketer",1676602317700,"how r yu"],["username-pass",1676607848455,"OfficialK74K3N, check #requests"]]},"#fart-channel":{"contentOfChat":[["fart",1,"fart chanel"],["siege",1619450480821,"fart"],["BuriedKitten",1619458738162,"OMG ITS FART CHANEL"],["Elon Musk",1619531489188,"ONII CHAN"],["BuriedKitten",1619543450069,"owo"],["Rasb",1619656554198,"a"],["paragram",1654222646340,"hi"],["m",1666557431125,"hah farts"],["Lolcat",1666557986971,"?"],["paragram",1666572744746,"maybe i should delete this channel"],["paragram",1666572747817,"idk"],["m",1666679288674,"j"],["m",1666679291547,"sure"],["paragram",1666887264896,"⚠ WARNING ⚠ alt accounts will be purged, the account that clasify as an alt are accounts that have almost identical spelling in their usernames"],["ner-42",1670000741723,"fart "],["MADARA",1670456097607,"why fart?"],["jkwillgrabyou",1670530813654,"daddy "],["jkwillgrabyou",1670606467560,"Hello"],["PBSI",1670609648861,"bobby "],["PBSI",1670609650600,"heheheehe"],["paragram",1670619932106,"??????"],["_BlockDude",1671118794089,"fard"],["_BlockDude",1671118795319,"fard"],["_BlockDude",1671118796968,"fard!"],["_BlockDude",1671118798622,"faqrd!"],["_BlockDude",1671118800863,"fard!"],["_BlockDude",1671118803780,"FARD!\\"],["_BlockDude",1671118805516,"FARD!"],["_BlockDude",1671118808369,"FARD!!!!!"],["miconguyen12",1672033494941,"FARD!"],["Jarza",1673483516102,"FARD!"],["KingQibli",1673545854607,"hi"],["MideDibba",1674059717782,"fard"],["mrphi05",1674071254181,"https://example.com"],["DamienCool",1674081123768,"fard"],["mrphi05",1674091593907,"HELLO WORLD!"],["admin",1674091612562,"WHY ARE YOU SHOUTING"],["mrphi05",1674091660046,"I DON'T KNOW"],["phantomcrysta",1674126169127,"hello"],["DamienCool",1674136703235,"STOP SHOUTING"],["DamienCool",1674136706841,"STOP"],["DamienCool",1674136709234,"STOP IT"],["kittyguygaming",1674150080126,"https://www.youtube.com/@kittyguygaming"],["kittyguygaming",1674150083625,":thumbsup:"],["DamienCool",1674163677039,"FARtation"],["fatboy11",1674164015659,"goofy"],["fatboy11",1674164021198,"daaa"],["fatboy11",1674164023105,"aa"],["fatboy11",1674164024104,"aaa"],["fatboy11",1674164024523,"a"],["fatboy11",1674164024877,"a"],["fatboy11",1674164025036,"a"],["fatboy11",1674164025275,"a"],["fatboy11",1674164025466,"a"],["fatboy11",1674164025675,"a"],["fatboy11",1674229194079,"yo"],["DamienCool",1674229428857,"Why is this a channel over everything else"],["Millencolin",1674237994311,"fart"],["miconguyen12",1674238550475,"FARD"],["gunner gardenhire",1674510100061," i have 80 accounts  of murder and 48 years in federal prison:)"],["gunner gardenhire",1674510124125,"FUN EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"],["gunner gardenhire",1674510153843,"FUN"],["gunner gardenhire",1674510200408,"in FEDERAL PRISON"],["phantomcrysta",1674519109551,"hello"],["phantomcrysta",1674519114276,"agin"],["Millencolin",1674576248429,"fart"],["CAM",1674590361402,"hello"],["CAM",1674590391404,"is anyone there"],["CAM",1674590415089,"HELLO"],["Millencolin",1674595845389,"fart"],["AidenShivers",1674660208545,"Wth"],["jiojiojio",1674769331712,"fart"],["gunner gardenhire",1674841758237,"308 "],["gunner gardenhire",1674841804927,"  it is a gun  buy it"],["gunner gardenhire",1674841823284,"5,000"],["gunner gardenhire",1674841839926,"6.5 "],["*lucasgames8957",1674845856252,"FARD"],["username-pass",1674856758364,"test"],["username-pass",1674856763995,"test 1"],["charly",1674949286163,"testicles"],["Danigglet",1675019385125,"Wsg "],["Danigglet",1675024001781,"Y'all some 5yo ass niggas ong "],["Danigglet",1675024010816,"Ayo that was my cat"],["Danigglet",1675024011888,"sorry"],["Danigglet",1675024020409,"he sometimes steps on the keyboard 🤭"],["Danigglet",1675024021758,"🤭🤭"],["Danigglet",1675024023288,"🤭"],["miconguyen12",1675199577634,"🫥"],["ThatWillGuy",1675270389145,"whatsupp doges"],["ol1374",1675273947494,"asdf"],["ol1374",1675273985282,"UNHOLY"],["n1swordslasher",1675276374441,"hi"],["funny",1675281733510,"derek"],["funny",1675281734451,"f"],["funny",1675281734487,"ff"],["funny",1675281734907,"fff"],["funny",1675281736478,"ffff"],["username-pass",1675281748353,"a"],["WK",1675281977375,"(Fart)"],["Millencolin",1675356992479,"fart>"],["Millencolin",1675357001228,"<@:)"],["kittyguygaming",1675454019250,"എ"],["kittyguygaming",1675454021379,"ඞ"],["kittyguygaming",1675454023715,"࠹"],["ol1374",1675455468633,"☭"],["ol1374",1675455475058,"☭☭☭☭☭☭☭"],[" ",1675709491214,"﻿"],[" ",1675709496196,"﻿﻿﻿﻿﻿﻿"],[" ",1675709499176,"﻿﻿﻿﻿﻿"],[" ",1675709502868,"﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿"],[" ",1675709505566,"﻿﻿﻿﻿﻿﻿﻿"],[" ",1675709509169,"﻿﻿﻿"],["*lucasgames8957",1675710190363,"Fart Fart FAAAARRRD"],["kittyguygaming",1675887574780,"ඞ࠹ඞ"],["Fundin",1675952378167,"uwu daddy "],["Jake",1676419089952,"uwu"],["username-pass",1676608530139,"lol, everyone forgot about this"]]},"#requests":{"contentOfChat":[["m",1666835693099,"Uhhh make like a discord unblocker"],["m",1666835720658,"release your extension uninstaller for school chromebooks"],["m",1666835724163,"now"],["another",1666964398374,"its pretty cool"],["another",1666964404370,"i think it works on school chromebooks"],["elirob12",1666967302942,"this is fire im ngl"],["paragram",1666987575453,"it does work on school chromebooks"],["paragram",1666987583186,"if they can access repl"],["paragram",1666987609695,"ima probally deploy to other hosting services too"],["LeMarcus",1666991430078,"psx or ps2 emulator"],["paragram",1667084773655,"maybe..."],["paragram",1667232733746,"does anyone know who registered with the code realjoe? my logs kinda screwed over there"],["kittyguygaming",1674150138786,"resizable game hub"],["kittyguygaming",1674150142694,"would be amazing"],["username-pass",1674192662389,"what specifically would be resizeable?"],["DamienCool",1674229373868,"Don't let keys repeat input. Like if you hold down alt, It flashes on and off. Add a cool down to holding it or just disable it all together."],["Millencolin",1674237952881,"Make the wallpaper changeable, not as themes, but as your own picture or through a selection."],["Millencolin",1674498829814,"Make the icons moveable."],["Millencolin",1674498841233,"Make the taskbar coloration and transparency adjustable."],["Millencolin",1674498863240,"Make the layout changeable"],["Millencolin",1674576230915,"Add my father back"],["Millencolin",1674584637863,"Add an option to make apps close along with the UI"],["username-pass",1674588470119,"I added a minimize button, working on making apps close, but this is a good temp fix"],["username-pass",1674588536390,"https://xkcd.com/346/ for your father, hope it helps ;)"],["Millencolin",1674595884178,"h"],["DamienCool",1674741950061,"h"],["Millencolin",1674768962439,"Make a group dm option"],["jiojiojio",1675363130539,"group chat"],["kittyguygaming",1675699674875,"add phproxy to ProxBrowser"],["kittyguygaming",1675699683274,"https://www.rateavon.je/error.php"],["kittyguygaming",1675699698461,"it's not the best proxy but works well for simple websites"],["username-pass",1675702720182,"added"],["kittyguygaming",1675707255467,"add pings"],["kittyguygaming",1675707258256,"to chatbox"],["kittyguygaming",1675707277790,"like a little icon next to the chatbox logo"],["kittyguygaming",1675707320289,"when you get a ping"],["kittyguygaming",1675707624135,"and add https://vimm.net/vault/DS (it's where I get my roms for ds player)"],["kittyguygaming",1675707628628,"to game hub"],["kittyguygaming",1675708190958,"and a #questions channel maybe"],["winrin",1675779307783,"re-center the text under the icons"],["kittyguygaming",1675788477592,"add https://drive.google.com/file/d/1-7EDAxooBHX1dHaM3ccEBKwBsLAXwaE1/view?usp=sharing to game hub (a soundboard I made, although this is a depreciated version)"],["username-pass",1675798900797,"questions channel added"],["n1swordslasher",1675863496948,"Can we please add a built in web browser that isn't a proxy so I can type in my own proxies?"],["Capn_Nemo",1675865399941,"Can I redesign the interfaces for stuff like the gamehub and app store"],["Capn_Nemo",1675865916467,"We should do a collab or something with Clockwork. Here is their link."],["Capn_Nemo",1675865929795,"https://github.com/red-stone-network"],["test",1675873086548,"Op me "],["username-pass",1675877601269,"n1swordslasher, use injector cloud, just put your html code there"],["kittyguygaming",1675881324766,"can we add https://tinyurl.com/ultimatesoundboard to the app store? preferably it would open in an inject0r window but a seperate window works too"],["kittyguygaming",1675881345098,"I finally got the soundboard onto a link vs a file"],["kittyguygaming",1675881411202,"space stops all currently playing sounds and h goes back to main menu, you can also use arrow keys to navigate between the two miscellaneous windows"],["Calvin",1675964678896,"rn the right shift to hide thing doesn't really work btw"],["Xanderplayz16",1675966802308,"add movable window support for touchscreens"],["username-pass",1675969300668,"it's right alt or backslash now, right shift is out of date"],["username-pass",1675969334600,"I don't Have much experience with touchscreens, maybe later"],["Calvin",1676045709123,"oh"],["Calvin",1676045727031,"ty didn't know backslash worked"],["Calvin",1676046025650,"will there be an official minecraft/eaglercraft server for this?"],["Skully",1676046581181,"https://red.up.railway.app my school blocked it but its a really good proxy if its still up"],["Skully",1676046769638,"https://eclipse.parrotdev.repl.co/ not the best but its a working proxy just incase the others get blocked"],["username-pass",1676049332254,"There technically is a server, but somehow it died, and is down..."],["ol1374",1676050837124,"theoxymoron.xyz is a good one "],["ol1374",1676050840812,"so is punchable.xyz"],["Jake",1676056458175,"suck it sahej"],["lebronjames",1676056600133,"hi"],["Calvin",1676061606212,"sad"],["Calvin",1676061616513,"would love a small community server to play on"],["Calvin",1676061625208,"well small rn"],["Calvin",1676061630507,"this is pretty cool"],["Calvin",1676061637116,"so absolutely will grow"],["Calvin",1676061838013,"hey could I, on discord, get some extra authorization tokens for my friends that dont have discord, so I can make accounts for them? In like an hour or so from now"],["UltraWyatt",1676296759695,"hi"],["Capn_Nemo",1676296787360,"Can I get the same thing? I need two tokens."],["Capn_Nemo",1676296793989,"As Calvin I mean"],["Capn_Nemo",1676297315014,"Also, Can I make recreate the interfaces, like this one. Yanno, make it a little more modern. It'll be easy to code, just basic CCS but it would make this look a lot more professional."],["Capn_Nemo",1676297408897,"Probably the Chatbox, Exploit Hub, and the Game Hub. Also, the icons could be updated."],["Calvin",1676306868684,"tru it does feel very primative"],["username-pass",1676314493324,"give the css, and I will add it and see how it is"],["username-pass",1676314503054,"I can give you the code if you want"],["username-pass",1676326174356,"channel test"],["Capn_Nemo",1676383094194,"Aight, I'll get started"],["Capn_Nemo",1676383193277,"Also, we could add an app where people can just post some exploits and tutorials as to how to get around stuff"],["Capn_Nemo",1676383206372,"Yanno, bookmarklets and hacks and whatnot"],["Capn_Nemo",1676383222057,"Or a speical channel for it"],["Capn_Nemo",1676383225998,"in the chatbox"],["username-pass",1676403075087,"I could make one"],["n1swordslasher",1676403647920,"hi"],["n1swordslasher",1676403674223,"can you add my site inside the game hub?"],["n1swordslasher",1676403677618,"swordslasher.com"],["kittyguygaming",1676412124681,"just saw the website and it looks epic"],["kittyguygaming",1676412129206,"should def be added"],["Jake",1676419107226,"omgfg"],["Jake",1676419108799,"mg"],["cheslin23t",1676476487985,"Maybe add DM buttons, instead of searching, and notifications for the dms"],["Man",1676560904657,"there should be a thing to ask peopel for answers to stuff>:)"],["RiverdaleMasterCoder",1676568154007,"Can I have dev on discord server ( I am Tester123, formerly known as @Togi The Coder)"],["Skully",1676568437981,"https://pink.herokuapp.com/"],["ol1374",1676571611042,"not bad"],["ol1374",1676571621775,"https://theoxymoron.xyz"],["ol1374",1676571628686,"https://punchable.xyz"],["OfficialK74K3N",1676581035208,"I have 3 google docs filled with links for Game Sites and Proxy sites, do I put them here?"],["OfficialK74K3N",1676581091840,"https://docs.google.com/document/d/1_kUgCr1Sq1vHUJOhjwXtYLJMr0gbq4VTGJfcxE5BV6k/edit?usp=sharing"],["OfficialK74K3N",1676581095983,"here are my game sites"],["username-pass",1676583155697,"you could"],["OfficialK74K3N",1676586108268,"https://docs.google.com/document/d/1bMikRWrPLqEPyH5PAwA9yXYIuzVQ7MQdYp49nLOBkKs/edit?usp=sharing"],["OfficialK74K3N",1676586110822,"PROXIES ^"],["slider_on_the_black",1676593214445,"on the chat once you select a person to dm you cant select somebody else, and you can only use the mail channels until you close the chat"],["slider_on_the_black",1676593225497,"*main"],["username-pass",1676607828434,"OfficialK74K3N, are you sure you want all of these public?"],["username-pass",1676607879666,"it is a good collection, but a good portion may be blocked as a result"]]},"announcements":{"contentOfChat":[["paragram",1619300162570,"This is the Announcements channel.  Messsages with important information related to Injector or Chatbox will be posted here."],["paragram",1619300365086,"Chatbox update 2.1.0: Removed \"2\" in Chatbox2, added Channels and Important Channels, added Admin system, chatlog no longer cleared on server restart"],["paragram",1619386903329,"Chatbox update 2.1.1: Made the time indicators readable"],["paragram",1619559401897,"Chatbox update 2.2.0: We have Direct Messaging now! Use the black search bar on the left to search for a user, then click on their name to start or read your DMs with them."],["paragram",1666572835875,"Inject0r Cloud is released in early beta, this will be a way to save content to your account and read it later. basically a notepad that saves. Currently cant edit the content you have saved, you can just delete it"],["paragram",1666572985585,"BAP! has been rebranded to TAP (The App Programmer). If you want an app featured in the app store DM me using THIS chatbox."],["paragram",1666887242127,"⚠ WARNING ⚠ alt accounts will be purged, the account that clasify as an alt are accounts that have almost identical spelling in their usernames"],["paragram",1666887639078,"ACCOUNTS THAT ARE PURGED ARE THE FOLLOWING: test, n, tunafishchickenwings, kayhe, kaye"],["paragram",1666907719267,"I am working on a way to stop school installed extensions, I will also fix JuanAnime in the future, but I beleive that the anti-extension takes priority"],["paragram",1667071008478,"Added Ads to inject0r so that small time developers can advertise their small projects"],["paragram",1667492867152,"I am looking for developers with experiance in nodejs to help me maintain inject0r, if you wish to become a developer than please DM me (Paragram#0121 on discord)"],["paragram",1668732574001,"Server was rolled back, so messages where deleted. I'm very sorry this happened. And update on anti-extension. Im releasing it in closed beta. It will be open soon"],["paragram",1671000297806,"I should have made this more clear, but chrome has patched anti-extension"],["paragram",1674331878424,"Inject0r is updated now. Im never on so i forgo to announce it"],["username-pass",1675286569444,"Custom backgrounds have now been implemented in a beta. To use, create a cloud file called 'background' with just the url of the image inside. It can currently take up to 5 seconds to update, but that is subject to change."],["username-pass",1675477370254,"Alpha version of custom app support has been added. To make a custom app, in script hub, make a script with all your code, named APP_<your app name>. then click it. It should add an app to your desktop. currently, you need to click it every time to make the app, automatically adding it is in development. There are many bugs, report them in the bug report either in github or here in discord."]],"important":1},"#questions":{"contentOfChat":[["username-pass",1675748979316,"put all your questions here"],["kittyguygaming",1675876545491,"what language do the app store apps use?"],["kittyguygaming",1675876558175,"or is it also js"],["username-pass",1675877465034,"app store apps are in regular js"],["kittyguygaming",1675878901270,"alright"],["kittyguygaming",1675888162134,"typing anything in \"search users to dm\" makes the right ctrl command prompt say \"[ERROR]: Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')  Line:1774\""],["kittyguygaming",1675888182468,"this happens every time you type a character in that box"],["kittyguygaming",1675888277018,"also dms are invisible"],["kittyguygaming",1675888285993,"what causes this?"],["username-pass",1675910446812,"probably an event listener that got too enthusiastic :P"],["username-pass",1675910477197,"dms are not invisible"],["username-pass",1675910482289,"there is just nothing there yet"],["kittyguygaming",1676569324345,"ah ok"]]},"statuses":[["OfficialK74K3N",1676608987.296]]}
+{
+  "#general": {
+    "contentOfChat": [
+      [
+        "[SERVER]",
+        1,
+        "The chatroom will be periodically reset (about once every week). DO NOT SPAM! Backups are saved, in case you need something, but you need to contact a dev. Also, messages are now sent to discord, abuse of this system is bannable, and if it repeated, it will be removed (that includes @everyone mentions). Remember, do not share personal information here."
+      ],
+      [
+        "slider_on_the_black",
+        1676614648276,
+        "ok"
+      ],
+      [
+        "skyrocketer",
+        1676644191480,
+        "ok "
+      ],
+      [
+        "Sunset2775",
+        1676645062062,
+        "ok"
+      ],
+      [
+        "username-pass",
+        1676651232707,
+        "ok"
+      ],
+      [
+        "18008080115",
+        1676652912912,
+        "ok"
+      ],
+      [
+        "18008080115",
+        1676652975283,
+        "can i get a code?"
+      ],
+      [
+        "18008080115",
+        1676653009393,
+        "later"
+      ],
+      [
+        "18008080115",
+        1676653011318,
+        "thx"
+      ],
+      [
+        "Mercy",
+        1676653380420,
+        "btw the kahn academy proxy is labeled as a \"phishing scam\" and it won't let me access it"
+      ],
+      [
+        "Mercy",
+        1676653387986,
+        "idk if that happens for anyone else"
+      ],
+      [
+        "18008080115",
+        1676655254855,
+        "yeah"
+      ],
+      [
+        "18008080115",
+        1676655256194,
+        "lol"
+      ],
+      [
+        "Sunset2775",
+        1676655810777,
+        "guys none of the proxys work for me"
+      ],
+      [
+        "18008080115",
+        1676657435369,
+        "bozo"
+      ],
+      [
+        "18008080115",
+        1676657445082,
+        "they should"
+      ],
+      [
+        "cookie406",
+        1676657885086,
+        "hi"
+      ],
+      [
+        "18008080115",
+        1676658323690,
+        "can i get a code to make another account for a friend?"
+      ],
+      [
+        "18008080115",
+        1676658331730,
+        "token"
+      ],
+      [
+        "18008080115",
+        1676658368676,
+        "please????"
+      ],
+      [
+        "18008080115",
+        1676658370775,
+        "<>"
+      ],
+      [
+        "18008080115",
+        1676658373290,
+        "<><><><><>"
+      ],
+      [
+        "18008080115",
+        1676658437411,
+        ":)"
+      ],
+      [
+        "18008080115",
+        1676658456042,
+        "please"
+      ],
+      [
+        "kittyguygaming",
+        1676658477656,
+        "is there a way to change account password? "
+      ],
+      [
+        "18008080115",
+        1676658482606,
+        "idk"
+      ],
+      [
+        "18008080115",
+        1676658492740,
+        "you can change your username by asking mods"
+      ],
+      [
+        "18008080115",
+        1676658501718,
+        "im not sure about passcodes though"
+      ],
+      [
+        "kittyguygaming",
+        1676660514150,
+        "k"
+      ],
+      [
+        "kittyguygaming",
+        1676660518875,
+        "was just curious"
+      ],
+      [
+        "kittyguygaming",
+        1676660521658,
+        "they should add that"
+      ],
+      [
+        "18008080115",
+        1676661197683,
+        "can i get a code pls??"
+      ],
+      [
+        "18008080115",
+        1676661286866,
+        "someone??"
+      ],
+      [
+        "Cheese",
+        1676661293647,
+        "wdym"
+      ],
+      [
+        "18008080115",
+        1676661314226,
+        "..."
+      ],
+      [
+        "skyrocketer",
+        1676661322735,
+        "hello"
+      ],
+      [
+        "Cheese",
+        1676661329367,
+        "heya"
+      ],
+      [
+        "18008080115",
+        1676661329774,
+        "hi"
+      ],
+      [
+        "skyrocketer",
+        1676661330322,
+        "Cheese did u see my dm"
+      ],
+      [
+        "skyrocketer",
+        1676661364987,
+        "ok bye"
+      ],
+      [
+        "18008080115",
+        1676661365847,
+        "anyone?"
+      ],
+      [
+        "18008080115",
+        1676661376101,
+        "have registration code??"
+      ],
+      [
+        "18008080115",
+        1676661407169,
+        "ahhhhhhhhhhh"
+      ],
+      [
+        "Cheese",
+        1676661417364,
+        "bro"
+      ],
+      [
+        "Cheese",
+        1676661421255,
+        "how"
+      ],
+      [
+        "18008080115",
+        1676661446449,
+        "i need code for friend"
+      ],
+      [
+        "Cheese",
+        1676661464114,
+        "i cant remember mine"
+      ],
+      [
+        "18008080115",
+        1676661468396,
+        "oh"
+      ],
+      [
+        "18008080115",
+        1676661472559,
+        "its temp"
+      ],
+      [
+        "Cheese",
+        1676661478083,
+        "plus the codes are single use"
+      ],
+      [
+        "18008080115",
+        1676661480649,
+        "temperary"
+      ],
+      [
+        "18008080115",
+        1676661483170,
+        "yeah"
+      ],
+      [
+        "18008080115",
+        1676661516328,
+        "ok"
+      ],
+      [
+        "18008080115",
+        1676661523626,
+        "asdf]"
+      ],
+      [
+        "Cheese",
+        1676661529275,
+        "qwertyuiop"
+      ],
+      [
+        "18008080115",
+        1676661539856,
+        "qwertyuiopasdghjklzxcvbnm"
+      ],
+      [
+        "18008080115",
+        1676661699183,
+        "asdf"
+      ],
+      [
+        "18008080115",
+        1676661747209,
+        "school lunch here is 30  min"
+      ],
+      [
+        "username-pass",
+        1676661847709,
+        "I can change your password and/or username if you want"
+      ],
+      [
+        "username-pass",
+        1676661853272,
+        "please be patient though"
+      ],
+      [
+        "18008080115",
+        1676661863498,
+        "hey"
+      ],
+      [
+        "username-pass",
+        1676661864146,
+        "Not everyone is online 24/7"
+      ],
+      [
+        "18008080115",
+        1676661870711,
+        "I need a code for a friend"
+      ],
+      [
+        "username-pass",
+        1676661877447,
+        "I am working on the proxies"
+      ],
+      [
+        "username-pass",
+        1676661880733,
+        "a lot got blocked"
+      ],
+      [
+        "username-pass",
+        1676661889758,
+        "I'll give you the code in a moment"
+      ],
+      [
+        "username-pass",
+        1676661970634,
+        "existentialcrisis"
+      ]
+    ]
+  },
+  "#fart-channel": {
+    "contentOfChat": [
+      [
+        "paragram",
+        1666572744746,
+        "maybe i should delete this channel"
+      ],
+      [
+        "paragram",
+        1666572747817,
+        "idk"
+      ],
+      [
+        "m",
+        1666679288674,
+        "j"
+      ],
+      [
+        "m",
+        1666679291547,
+        "sure"
+      ],
+      [
+        "paragram",
+        1666887264896,
+        "⚠ WARNING ⚠ alt accounts will be purged, the account that clasify as an alt are accounts that have almost identical spelling in their usernames"
+      ],
+      [
+        "username-pass",
+        1676608530139,
+        "lol, everyone forgot about this"
+      ]
+    ]
+  },
+  "#requests": {
+    "contentOfChat": [
+      [
+        "m",
+        1666835693099,
+        "Uhhh make like a discord unblocker"
+      ],
+      [
+        "m",
+        1666835720658,
+        "release your extension uninstaller for school chromebooks"
+      ],
+      [
+        "m",
+        1666835724163,
+        "now"
+      ],
+      [
+        "another",
+        1666964398374,
+        "its pretty cool"
+      ],
+      [
+        "another",
+        1666964404370,
+        "i think it works on school chromebooks"
+      ],
+      [
+        "elirob12",
+        1666967302942,
+        "this is fire im ngl"
+      ],
+      [
+        "paragram",
+        1666987575453,
+        "it does work on school chromebooks"
+      ],
+      [
+        "paragram",
+        1666987583186,
+        "if they can access repl"
+      ],
+      [
+        "paragram",
+        1666987609695,
+        "ima probally deploy to other hosting services too"
+      ],
+      [
+        "LeMarcus",
+        1666991430078,
+        "psx or ps2 emulator"
+      ],
+      [
+        "paragram",
+        1667084773655,
+        "maybe..."
+      ],
+      [
+        "paragram",
+        1667232733746,
+        "does anyone know who registered with the code realjoe? my logs kinda screwed over there"
+      ],
+      [
+        "kittyguygaming",
+        1674150138786,
+        "resizable game hub"
+      ],
+      [
+        "kittyguygaming",
+        1674150142694,
+        "would be amazing"
+      ],
+      [
+        "username-pass",
+        1674192662389,
+        "what specifically would be resizeable?"
+      ],
+      [
+        "DamienCool",
+        1674229373868,
+        "Don't let keys repeat input. Like if you hold down alt, It flashes on and off. Add a cool down to holding it or just disable it all together."
+      ],
+      [
+        "Millencolin",
+        1674237952881,
+        "Make the wallpaper changeable, not as themes, but as your own picture or through a selection."
+      ],
+      [
+        "Millencolin",
+        1674498829814,
+        "Make the icons moveable."
+      ],
+      [
+        "Millencolin",
+        1674498841233,
+        "Make the taskbar coloration and transparency adjustable."
+      ],
+      [
+        "Millencolin",
+        1674498863240,
+        "Make the layout changeable"
+      ],
+      [
+        "Millencolin",
+        1674576230915,
+        "Add my father back"
+      ],
+      [
+        "Millencolin",
+        1674584637863,
+        "Add an option to make apps close along with the UI"
+      ],
+      [
+        "username-pass",
+        1674588470119,
+        "I added a minimize button, working on making apps close, but this is a good temp fix"
+      ],
+      [
+        "username-pass",
+        1674588536390,
+        "https://xkcd.com/346/ for your father, hope it helps ;)"
+      ],
+      [
+        "Millencolin",
+        1674595884178,
+        "h"
+      ],
+      [
+        "DamienCool",
+        1674741950061,
+        "h"
+      ],
+      [
+        "Millencolin",
+        1674768962439,
+        "Make a group dm option"
+      ],
+      [
+        "jiojiojio",
+        1675363130539,
+        "group chat"
+      ],
+      [
+        "kittyguygaming",
+        1675699674875,
+        "add phproxy to ProxBrowser"
+      ],
+      [
+        "kittyguygaming",
+        1675699683274,
+        "https://www.rateavon.je/error.php"
+      ],
+      [
+        "kittyguygaming",
+        1675699698461,
+        "it's not the best proxy but works well for simple websites"
+      ],
+      [
+        "username-pass",
+        1675702720182,
+        "added"
+      ],
+      [
+        "kittyguygaming",
+        1675707255467,
+        "add pings"
+      ],
+      [
+        "kittyguygaming",
+        1675707258256,
+        "to chatbox"
+      ],
+      [
+        "kittyguygaming",
+        1675707277790,
+        "like a little icon next to the chatbox logo"
+      ],
+      [
+        "kittyguygaming",
+        1675707320289,
+        "when you get a ping"
+      ],
+      [
+        "kittyguygaming",
+        1675707624135,
+        "and add https://vimm.net/vault/DS (it's where I get my roms for ds player)"
+      ],
+      [
+        "kittyguygaming",
+        1675707628628,
+        "to game hub"
+      ],
+      [
+        "kittyguygaming",
+        1675708190958,
+        "and a #questions channel maybe"
+      ],
+      [
+        "winrin",
+        1675779307783,
+        "re-center the text under the icons"
+      ],
+      [
+        "kittyguygaming",
+        1675788477592,
+        "add https://drive.google.com/file/d/1-7EDAxooBHX1dHaM3ccEBKwBsLAXwaE1/view?usp=sharing to game hub (a soundboard I made, although this is a depreciated version)"
+      ],
+      [
+        "username-pass",
+        1675798900797,
+        "questions channel added"
+      ],
+      [
+        "n1swordslasher",
+        1675863496948,
+        "Can we please add a built in web browser that isn't a proxy so I can type in my own proxies?"
+      ],
+      [
+        "Capn_Nemo",
+        1675865399941,
+        "Can I redesign the interfaces for stuff like the gamehub and app store"
+      ],
+      [
+        "Capn_Nemo",
+        1675865916467,
+        "We should do a collab or something with Clockwork. Here is their link."
+      ],
+      [
+        "Capn_Nemo",
+        1675865929795,
+        "https://github.com/red-stone-network"
+      ],
+      [
+        "test",
+        1675873086548,
+        "Op me "
+      ],
+      [
+        "username-pass",
+        1675877601269,
+        "n1swordslasher, use injector cloud, just put your html code there"
+      ],
+      [
+        "kittyguygaming",
+        1675881324766,
+        "can we add https://tinyurl.com/ultimatesoundboard to the app store? preferably it would open in an inject0r window but a seperate window works too"
+      ],
+      [
+        "kittyguygaming",
+        1675881345098,
+        "I finally got the soundboard onto a link vs a file"
+      ],
+      [
+        "kittyguygaming",
+        1675881411202,
+        "space stops all currently playing sounds and h goes back to main menu, you can also use arrow keys to navigate between the two miscellaneous windows"
+      ],
+      [
+        "Calvin",
+        1675964678896,
+        "rn the right shift to hide thing doesn't really work btw"
+      ],
+      [
+        "Xanderplayz16",
+        1675966802308,
+        "add movable window support for touchscreens"
+      ],
+      [
+        "username-pass",
+        1675969300668,
+        "it's right alt or backslash now, right shift is out of date"
+      ],
+      [
+        "username-pass",
+        1675969334600,
+        "I don't Have much experience with touchscreens, maybe later"
+      ],
+      [
+        "Calvin",
+        1676045709123,
+        "oh"
+      ],
+      [
+        "Calvin",
+        1676045727031,
+        "ty didn't know backslash worked"
+      ],
+      [
+        "Calvin",
+        1676046025650,
+        "will there be an official minecraft/eaglercraft server for this?"
+      ],
+      [
+        "Skully",
+        1676046581181,
+        "https://red.up.railway.app my school blocked it but its a really good proxy if its still up"
+      ],
+      [
+        "Skully",
+        1676046769638,
+        "https://eclipse.parrotdev.repl.co/ not the best but its a working proxy just incase the others get blocked"
+      ],
+      [
+        "username-pass",
+        1676049332254,
+        "There technically is a server, but somehow it died, and is down..."
+      ],
+      [
+        "ol1374",
+        1676050837124,
+        "theoxymoron.xyz is a good one "
+      ],
+      [
+        "ol1374",
+        1676050840812,
+        "so is punchable.xyz"
+      ],
+      [
+        "Jake",
+        1676056458175,
+        "suck it sahej"
+      ],
+      [
+        "lebronjames",
+        1676056600133,
+        "hi"
+      ],
+      [
+        "Calvin",
+        1676061606212,
+        "sad"
+      ],
+      [
+        "Calvin",
+        1676061616513,
+        "would love a small community server to play on"
+      ],
+      [
+        "Calvin",
+        1676061625208,
+        "well small rn"
+      ],
+      [
+        "Calvin",
+        1676061630507,
+        "this is pretty cool"
+      ],
+      [
+        "Calvin",
+        1676061637116,
+        "so absolutely will grow"
+      ],
+      [
+        "Calvin",
+        1676061838013,
+        "hey could I, on discord, get some extra authorization tokens for my friends that dont have discord, so I can make accounts for them? In like an hour or so from now"
+      ],
+      [
+        "UltraWyatt",
+        1676296759695,
+        "hi"
+      ],
+      [
+        "Capn_Nemo",
+        1676296787360,
+        "Can I get the same thing? I need two tokens."
+      ],
+      [
+        "Capn_Nemo",
+        1676296793989,
+        "As Calvin I mean"
+      ],
+      [
+        "Capn_Nemo",
+        1676297315014,
+        "Also, Can I make recreate the interfaces, like this one. Yanno, make it a little more modern. It'll be easy to code, just basic CCS but it would make this look a lot more professional."
+      ],
+      [
+        "Capn_Nemo",
+        1676297408897,
+        "Probably the Chatbox, Exploit Hub, and the Game Hub. Also, the icons could be updated."
+      ],
+      [
+        "Calvin",
+        1676306868684,
+        "tru it does feel very primative"
+      ],
+      [
+        "username-pass",
+        1676314493324,
+        "give the css, and I will add it and see how it is"
+      ],
+      [
+        "username-pass",
+        1676314503054,
+        "I can give you the code if you want"
+      ],
+      [
+        "username-pass",
+        1676326174356,
+        "channel test"
+      ],
+      [
+        "Capn_Nemo",
+        1676383094194,
+        "Aight, I'll get started"
+      ],
+      [
+        "Capn_Nemo",
+        1676383193277,
+        "Also, we could add an app where people can just post some exploits and tutorials as to how to get around stuff"
+      ],
+      [
+        "Capn_Nemo",
+        1676383206372,
+        "Yanno, bookmarklets and hacks and whatnot"
+      ],
+      [
+        "Capn_Nemo",
+        1676383222057,
+        "Or a speical channel for it"
+      ],
+      [
+        "Capn_Nemo",
+        1676383225998,
+        "in the chatbox"
+      ],
+      [
+        "username-pass",
+        1676403075087,
+        "I could make one"
+      ],
+      [
+        "n1swordslasher",
+        1676403647920,
+        "hi"
+      ],
+      [
+        "n1swordslasher",
+        1676403674223,
+        "can you add my site inside the game hub?"
+      ],
+      [
+        "n1swordslasher",
+        1676403677618,
+        "swordslasher.com"
+      ],
+      [
+        "kittyguygaming",
+        1676412124681,
+        "just saw the website and it looks epic"
+      ],
+      [
+        "kittyguygaming",
+        1676412129206,
+        "should def be added"
+      ],
+      [
+        "Jake",
+        1676419107226,
+        "omgfg"
+      ],
+      [
+        "Jake",
+        1676419108799,
+        "mg"
+      ],
+      [
+        "cheslin23t",
+        1676476487985,
+        "Maybe add DM buttons, instead of searching, and notifications for the dms"
+      ],
+      [
+        "Man",
+        1676560904657,
+        "there should be a thing to ask peopel for answers to stuff>:)"
+      ],
+      [
+        "RiverdaleMasterCoder",
+        1676568154007,
+        "Can I have dev on discord server ( I am Tester123, formerly known as @Togi The Coder)"
+      ],
+      [
+        "Skully",
+        1676568437981,
+        "https://pink.herokuapp.com/"
+      ],
+      [
+        "ol1374",
+        1676571611042,
+        "not bad"
+      ],
+      [
+        "ol1374",
+        1676571621775,
+        "https://theoxymoron.xyz"
+      ],
+      [
+        "ol1374",
+        1676571628686,
+        "https://punchable.xyz"
+      ],
+      [
+        "OfficialK74K3N",
+        1676581035208,
+        "I have 3 google docs filled with links for Game Sites and Proxy sites, do I put them here?"
+      ],
+      [
+        "OfficialK74K3N",
+        1676581091840,
+        "https://docs.google.com/document/d/1_kUgCr1Sq1vHUJOhjwXtYLJMr0gbq4VTGJfcxE5BV6k/edit?usp=sharing"
+      ],
+      [
+        "OfficialK74K3N",
+        1676581095983,
+        "here are my game sites"
+      ],
+      [
+        "username-pass",
+        1676583155697,
+        "you could"
+      ],
+      [
+        "OfficialK74K3N",
+        1676586108268,
+        "https://docs.google.com/document/d/1bMikRWrPLqEPyH5PAwA9yXYIuzVQ7MQdYp49nLOBkKs/edit?usp=sharing"
+      ],
+      [
+        "OfficialK74K3N",
+        1676586110822,
+        "PROXIES ^"
+      ],
+      [
+        "slider_on_the_black",
+        1676593214445,
+        "on the chat once you select a person to dm you cant select somebody else, and you can only use the mail channels until you close the chat"
+      ],
+      [
+        "slider_on_the_black",
+        1676593225497,
+        "*main"
+      ],
+      [
+        "username-pass",
+        1676607828434,
+        "OfficialK74K3N, are you sure you want all of these public?"
+      ],
+      [
+        "username-pass",
+        1676607879666,
+        "it is a good collection, but a good portion may be blocked as a result"
+      ],
+      [
+        "OfficialK74K3N",
+        1676609404395,
+        "Could you remove those hah, you can use those links haha I didn't really think about that."
+      ],
+      [
+        "username-pass",
+        1676609484243,
+        "sure, if there are any you are fine with discarding, tell me and I can add them. it is not a guarentee they will be blocked, I just wanted to let you know of the risks"
+      ],
+      [
+        "OfficialK74K3N",
+        1676609500923,
+        "kk"
+      ],
+      [
+        "username-pass",
+        1676609632440,
+        "anyway, the chatroom needed a reset"
+      ],
+      [
+        "n1swordslasher",
+        1676640857491,
+        "ok"
+      ],
+      [
+        "Sunset2775",
+        1676655921131,
+        "maybe make the inject0r able to be used on classroom if thats possible"
+      ],
+      [
+        "18008080115",
+        1676657460549,
+        "that would be nice"
+      ],
+      [
+        "skyrocketer",
+        1676660236678,
+        "can you please add a app to the app store that adds settings and options for startup, such as running scritps from script hub and opening files in cloud"
+      ],
+      [
+        "skyrocketer",
+        1676660263286,
+        "also please allow custom images for apps i create in script hub"
+      ],
+      [
+        "skyrocketer",
+        1676660277284,
+        "full screen windows are broken :("
+      ]
+    ]
+  },
+  "announcements": {
+    "contentOfChat": [
+      [
+        "paragram",
+        1619300162570,
+        "This is the Announcements channel.  Messsages with important information related to Injector or Chatbox will be posted here."
+      ],
+      [
+        "paragram",
+        1619300365086,
+        "Chatbox update 2.1.0: Removed \"2\" in Chatbox2, added Channels and Important Channels, added Admin system, chatlog no longer cleared on server restart"
+      ],
+      [
+        "paragram",
+        1619386903329,
+        "Chatbox update 2.1.1: Made the time indicators readable"
+      ],
+      [
+        "paragram",
+        1619559401897,
+        "Chatbox update 2.2.0: We have Direct Messaging now! Use the black search bar on the left to search for a user, then click on their name to start or read your DMs with them."
+      ],
+      [
+        "paragram",
+        1666572835875,
+        "Inject0r Cloud is released in early beta, this will be a way to save content to your account and read it later. basically a notepad that saves. Currently cant edit the content you have saved, you can just delete it"
+      ],
+      [
+        "paragram",
+        1666572985585,
+        "BAP! has been rebranded to TAP (The App Programmer). If you want an app featured in the app store DM me using THIS chatbox."
+      ],
+      [
+        "paragram",
+        1666887242127,
+        "⚠ WARNING ⚠ alt accounts will be purged, the account that clasify as an alt are accounts that have almost identical spelling in their usernames"
+      ],
+      [
+        "paragram",
+        1666887639078,
+        "ACCOUNTS THAT ARE PURGED ARE THE FOLLOWING: test, n, tunafishchickenwings, kayhe, kaye"
+      ],
+      [
+        "paragram",
+        1666907719267,
+        "I am working on a way to stop school installed extensions, I will also fix JuanAnime in the future, but I beleive that the anti-extension takes priority"
+      ],
+      [
+        "paragram",
+        1667071008478,
+        "Added Ads to inject0r so that small time developers can advertise their small projects"
+      ],
+      [
+        "paragram",
+        1667492867152,
+        "I am looking for developers with experiance in nodejs to help me maintain inject0r, if you wish to become a developer than please DM me (Paragram#0121 on discord)"
+      ],
+      [
+        "paragram",
+        1668732574001,
+        "Server was rolled back, so messages where deleted. I'm very sorry this happened. And update on anti-extension. Im releasing it in closed beta. It will be open soon"
+      ],
+      [
+        "paragram",
+        1671000297806,
+        "I should have made this more clear, but chrome has patched anti-extension"
+      ],
+      [
+        "paragram",
+        1674331878424,
+        "Inject0r is updated now. Im never on so i forgo to announce it"
+      ],
+      [
+        "username-pass",
+        1675286569444,
+        "Custom backgrounds have now been implemented in a beta. To use, create a cloud file called 'background' with just the url of the image inside. It can currently take up to 5 seconds to update, but that is subject to change."
+      ],
+      [
+        "username-pass",
+        1675477370254,
+        "Alpha version of custom app support has been added. To make a custom app, in script hub, make a script with all your code, named APP_<your app name>. then click it. It should add an app to your desktop. currently, you need to click it every time to make the app, automatically adding it is in development. There are many bugs, report them in the bug report either in github or here in discord."
+      ]
+    ],
+    "important": 1
+  },
+  "#questions": {
+    "contentOfChat": [
+      [
+        "username-pass",
+        1675748979316,
+        "put all your questions here"
+      ],
+      [
+        "kittyguygaming",
+        1675876545491,
+        "what language do the app store apps use?"
+      ],
+      [
+        "kittyguygaming",
+        1675876558175,
+        "or is it also js"
+      ],
+      [
+        "username-pass",
+        1675877465034,
+        "app store apps are in regular js"
+      ],
+      [
+        "kittyguygaming",
+        1675878901270,
+        "alright"
+      ],
+      [
+        "kittyguygaming",
+        1675888162134,
+        "typing anything in \"search users to dm\" makes the right ctrl command prompt say \"[ERROR]: Uncaught TypeError: Cannot read properties of undefined (reading 'toLowerCase')  Line:1774\""
+      ],
+      [
+        "kittyguygaming",
+        1675888182468,
+        "this happens every time you type a character in that box"
+      ],
+      [
+        "kittyguygaming",
+        1675888277018,
+        "also dms are invisible"
+      ],
+      [
+        "kittyguygaming",
+        1675888285993,
+        "what causes this?"
+      ],
+      [
+        "username-pass",
+        1675910446812,
+        "probably an event listener that got too enthusiastic :P"
+      ],
+      [
+        "username-pass",
+        1675910477197,
+        "dms are not invisible"
+      ],
+      [
+        "username-pass",
+        1675910482289,
+        "there is just nothing there yet"
+      ],
+      [
+        "kittyguygaming",
+        1676569324345,
+        "ah ok"
+      ]
+    ]
+  },
+  "statuses": []
+}
