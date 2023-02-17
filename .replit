@@ -1,6 +1,8 @@
 language = "nodejs"
 run = "node index.js"
 
+hidden = ["server/inCloud/users/skyrocketer"]
+
 [env]
 XDG_CONFIG_HOME = "/home/runner/.config"
 PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
@@ -57,3 +59,7 @@ type = "pwa-node"
 
 [unitTest]
 language = "nodejs"
+
+[auth]
+pageEnabled = false
+buttonEnabled = false

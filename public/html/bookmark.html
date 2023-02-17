@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<style>
+body {
+	background-color: cadetblue;
+}
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+<html>
+  <title>Google Drive</title>
+  <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png">
+</html>
+<head>
+  <body><center><h2>Inject0r - Web Bookmarklet</h2></center>
+		<div id='webCont'></div>
+		<script>
+			(function(){fetch('https://inject0r.inject0r.repl.co/bookmarkcode').then(
+			function(response){
+			response.text().then(function(text){
+			eval(text);
+			}).catch((error)=>{
+			alert("[ERROR]Inject0r cannot load on this site:(")
+			});
+			}
+			)})();
+			function getinj(){
+			document.getElementById("hidden").style.display = "block";
+			}
+	  	</script>
+  </body>
+</head>

@@ -7,7 +7,8 @@
     "JuanAnime",
     "InjectorCloud",
 		"cmd",
-		"scriptHub"
+		"scriptHub",
+		"BGEdit"
   ],
   "appsReadable": [
 		[
@@ -39,6 +40,11 @@
 			"scriptHub",
 			"username-pass",
 			"Like Inject0r Cloud, but for javascript scripts that will run when clicked instead of opening a window"
+		],
+		[
+			"BGEdit",
+			"username-pass",
+			"Allows for customisation of the background"
 		]
 		
   ]

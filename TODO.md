@@ -5,6 +5,10 @@
 3. Resize apps fix
 4. Get advertisers
 5. Deal with [issues](https://github.com/Paragramex/inject0r/issues)
+6. make save function for BGEdit faster
+7. improve custom apps
+8. add better settings
+9. 
 
 ---
 

@@ -8,7 +8,7 @@ createNewItem(`Injector Cloud`, `InjectorCloud`, `
 	let writeReq;
 function send (value) {writeReq.send(value)}
  
-let autoWin = openWindow(500, 325, 'Injector Cloud', false, 'https://wiki.teamfortress.com/w/images/thumb/7/77/Golden_Wrench_IMG.png/250px-Golden_Wrench_IMG.png');
+let autoWin = openWindow(500, 325, 'Injector Cloud', false, Injector.user.icons.Cloud);
 autoWin.style.backgroundColor = '#1f1f1f';
 let nameBar = newElement('input', autoWin, "autoObj");
 nameBar.placeholder = "File Name Here";
@@ -38,7 +38,7 @@ makeFileBtn.innerHTML = "Create";
 
 
 makeFileBtn.addEventListener("click", function(){
-  if(nameBar.value !== "" && nameBar.value !== null) {
+  if(nameBar.value !== "" && nameBar.value !== null && !nameBar.value.includes('/')) {
     writeReq = new XMLHttpRequest;
     writeReq.open('POST', Injector.serverURL + "/cloud");
     writeReq.setRequestHeader('token', Injector.user.token);
@@ -222,5 +222,5 @@ newFile:hover{
   background-color: #2f2f2f;
   cursor: pointer;
 }\`
-`, "https://Inject0r.repl.co/cloudlogo");
+`, Injector.user.icons.Cloud);
 

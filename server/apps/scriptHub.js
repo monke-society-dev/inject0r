@@ -3,7 +3,7 @@ createNewItem(`Script Hub`, `scriptHub`, `
  if (Injector.user.token == "guest") {
  alert("guest files are not saved");
  }
-let autoWin = openWindow(500, 325, 'Script Hub', false, 'https://Inject0r.repl.co/cloudlogo');
+let autoWin = openWindow(500, 325, 'Script Hub', false, Injector.user.icons.Cloud);
 autoWin.style.backgroundColor = '#1f1f1f';
 let nameBar = newElement('input', autoWin, "autoObj");
 nameBar.placeholder = "File Name Here";
@@ -95,8 +95,9 @@ function newFile(name){
     fetchFileReq.send(name);
     fetchFileReq.onreadystatechange=e=>{
       if(fetchFileReq.readyState == 4){
-			if (name.indexOf(".html") >= 0){
-	 alert("HTML pages stored on our servers are not allowed yet, sorry for the inconveniance");
+			if (name.includes("APP_")){
+	 alert(name.split("_")[1].split(".")[0]);
+			createNewItem(name.split("_")[1].split(".")[0], 'NotePad', fetchFileReq.responseText, Injector.serverURL + "/watch.png");
 			} else {
 			//	let dataWindow = openWindow(400, 200, name, resizable = "on");
 			//	dataWindow.innerHTML = fetchFileReq.responseText;
@@ -219,5 +220,5 @@ newFile:hover{
   background-color: #2f2f2f;
   cursor: pointer;
 }\`
-`, "https://Inject0r.repl.co/cloudlogo");
+`, Injector.user.icons.Cloud);
 

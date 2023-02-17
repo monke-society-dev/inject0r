@@ -1,1 +1,0 @@
-Hey, you can make .txt files in any directory. Just add to the start, well let’s say ../../.. . This will put the file 3 directories back. Please fix.

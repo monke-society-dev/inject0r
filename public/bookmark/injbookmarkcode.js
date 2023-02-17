@@ -242,7 +242,49 @@ animation: flyin .5s ease forwards;
                 };
             };
         };
-    }; /* when the login button is clicked, send an HTTP request to the server with the username and password. */
+    }; 
+	
+	// When user hits enter, submit form. idk y this is getting implamented so late...
+	//and yes, copied off of google
+
+var input = document.getElementById("inputField");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    entersubmit();
+  }
+});
+
+
+function entersubmit(){
+let username1 = userField.value;
+let password1 = passField.value;
+	//maybe success(passRequest) ? it might be that the variable is not defined
+function success() {
+			eval(passRequest.responseText);
+		}
+let passRequest = new XMLHttpRequest();
+        passRequest.open("POST", "https://inject0r.repl.co/login");
+        passRequest.send(username1 + ":" + password1);
+        loginBtn.textContent = "Checking info...";
+        passRequest.onreadystatechange = e => {
+            if (passRequest.readyState > 1 && passRequest.readyState < 4) {
+                loginBtn.textContent = "Loading..."
+            }
+            if (passRequest.readyState === 4) {
+							
+                success();
+                if (passRequest.status === 200) {
+                    localStorage.setItem("injinfo", username1 + ":" + password1);
+                } else {}
+            };
+        };
+    };
+
+	
+	
+	
+	/* when the login button is clicked, send an HTTP request to the server with the username and password. */
     loginBtn.addEventListener("click", function () {
         let passRequest = new XMLHttpRequest();
 			

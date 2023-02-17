@@ -1,16 +1,55 @@
 var Injector = {
-	serverURL: "https://inject0r.repl.co"
+	serverURL: "https://inject0r.repl.co",
+	serverURL_test: "https://02d36946-d9ad-4e8b-99d5-8b1dd3cde512.id.repl.co"
 };
 Injector.settings = {} // theme info goes here later
 Injector.user = {
 	token: token,
 	username: usernameTU,
 	settings: "",
-	background: Injector.serverURL + '/logo.png'
+	background: Injector.serverURL + '/logo.png',
+	//working towards advanced settings
+	bg: {
+		url: Injector.serverURL + '/logo.png',
+		color: "#06102b",
+		size: 'initial'
+		
+	},
+	icons: {
+		GUIBtn:"https://static.techspot.com/images2/downloads/topdownload/2021/08/2021-08-12-ts3_thumbs-9cf-p_256.webp",
+		AppStore: Injector.serverURL + "/app.png",
+		BGEdit: Injector.serverURL + "/bap.png",
+		Chat: Injector.serverURL + "/chat.png",
+		Cloud: Injector.serverURL + "/cloudlogo",
+		cmd: Injector.serverURL + "/exploithub.png",
+		ExpHub: Injector.serverURL + "/exploithub.png",
+		GameHub: Injector.serverURL + "/gamehub.png",
+		Logo: Injector.serverURL + "/logo.png",
+		Notepad: Injector.serverURL + "/notepad.png",
+		ProxB: Injector.serverURL + "/proxbrowser.png",
+		TAP: Injector.serverURL + "/bap.png",
+		UserAcc: Injector.serverURL + "/personalize.png",
+    Draw: Injector.serverURL + "/personalize.png" 
+	}
 }
 Injector.info = {
-	version: "3.4",
+	version: "4.1",
 	changelog: `
+
+	<h2> --- The App Update --- </h2>
+
+ 	<h3> General Changes v4.1</h3>
+	<p> - Added Background size to BGEdit </p>
+	<p> - Added Taskbar size to BGEdit </p>
+	<p> - Began work on a new bookmarklets app</p>
+ 	<p> - Began work on new general settings app</p>
+	<p> - Added about:blank version </p>
+ 
+	<h3> General Changes v4.0 </h3>
+ 	<p> - Added BGEdit app </p>
+	<p> - Began support for custom user apps </p>
+	<p> - Began work on major settings overhaul </p>
+ 
 	<h2> --- The Blizzard Update --- </h2>
  <h3> General Changes v3.3 </h3>
  <p> - Inject0r server filesystem sorted </p>
@@ -88,6 +127,47 @@ alert("Snow module couldn't load.")
 });
 }
 )}
+
+function updateBG() {
+	var taskBar = document.querySelector('injtaskbar');
+	var bgim = document.getElementById('backgroundImage');
+  files('background.txt', function(resp) {
+    //bg is the same
+    if (Injector.user.background != resp) {
+      Injector.user.background = resp.split(';');
+
+      bgim.style.backgroundImage = 'url(' + Injector.user.background[0] + ')';
+      bgim.style.backgroundColor = Injector.user.background[1];
+			bgim.style.backgroundSize = Injector.user.background[2];
+			taskBar.style.backgroundColor = Injector.user.background[3];
+    }
+
+  })
+}
+function updateCustomApps() {
+	alert('updating');
+	let cloudReq = new XMLHttpRequest;
+	cloudReq.open('GET', `'${Injector.serverURL}'` + "/cloud");
+	cloudReq.setRequestHeader('token', Injector.user.token);
+	cloudReq.send();
+	cloudReq.onreadystatechange = e => {
+		if (cloudReq.readyState == 4) {
+			let filesJson = JSON.parse(cloudReq.responseText);
+			for (i = 0; i < Object.keys(filesJson).length; i++) {
+				let curFile = Object.keys(filesJson)[i];
+				alert(curFile);
+				if (curFile !== "undefined") {
+					if (curFile.substring(0,4) == 'APP_') {
+						alert(curFile);
+						files(curFile,function (res){
+							createNewItem(curFile.split("_")[1].split(".")[0], 'NotePad', res, `'${Injector.serverURL}'` + "/watch.png");
+						})
+					}
+				}
+			}
+		}
+	}
+}
 async function fetchUserData() {
 	let dataFetch = await fetch('https://inject0r.repl.co/save', {
 		method: 'GET',
@@ -185,8 +265,16 @@ if (location.href == Injector.serverURL + "/" ) {
 		gerbil.id = id.toString();
 		return gerbil;
 	};
+  
+	let onload = newElement('script',document.body,'onload');
+	onload.setAttribute("defer", "defer");
+	onload.innerHTML = `
+ 		
+ 	`
 	let lib = newElement('script',document.body,'lib');
 	lib.innerHTML = `
+
+ 
 
  function files(filename,callback) {
  		let fetchFileReq = new XMLHttpRequest;
@@ -407,6 +495,14 @@ function disableProtRestriction(button2fix){
 	var windowPureClr = "rgba(0, 31, 51, 0.95);"
 	function refreshStyleSheet() {
 		style.textContent = `
+:root {
+	--app-size: 60px;
+}
+
+windowbordermark {
+	font-size: 75%;
+}
+
 img{
   user-select: none;
 }
@@ -414,7 +510,7 @@ img{
   position: fixed;
   background-color: #00011c;
   z-index: 2147681;
-  background-image: url("` + Injector.serverURL + `/logo.png");
+  background-image: url("${Injector.user.bg.url}");
   background-repeat: no-repeat;
   background-position: right center;
  width: 100%;
@@ -432,11 +528,11 @@ injTaskbar{
   position: absolute;
   z-index: 2147684;
 width: 100%;
-height: 50px;
-background-color: black;
+height: 45px;
+background-color: #000000bd;
 bottom: 0px;
 left: 0px;
-opacity: 0.75;
+opacity: 1;
 overflow-x: auto;
 }
 
@@ -454,10 +550,11 @@ taskbarDivider{
 }
 taskbarBtn{
   position: absolute;
-  width: 50px;
-  height: 48px;
+  width: 45px;
+  height: 45px;
   bottom: 1px;
   background-color: #002169;
+	background-size: 100% 100%;
   color: white;
   border-radius: 0px;
   opacity: 1;
@@ -487,8 +584,8 @@ app{
   margin-left: 30px;
   margin-top: 0px;
   margin-bottom: 120px;
-  width: 75px;
-  height: 75px;
+  width: var(--app-size);
+  height: var(--app-size);
   user-select: none;
   transition-duration: 0.25s;
 }
@@ -496,11 +593,14 @@ appName{
   position: absolute;
   z-index: 2147682;
   color: white;
-  top: 80px;
-  width: 75px;
+  top: 65px;
+  width: var(--app-size);
   text-align: center;
   font-family: Helvetica;
   user-select: none;
+}
+#appText{
+	
 }
 windowHeading{
   position: absolute;
@@ -801,7 +901,9 @@ customConsole{
 				consoleInput.value = "";
 			}
 		});
+    
 
+    
 		// change console.log's functionality to interact with custom console. this will help a lot in chromebook development
 		let numMessages = 0;
 		console.log = function(content, brand) {
@@ -841,23 +943,36 @@ customConsole{
 		// closed style left makes sure the taskbar button being moved is farther right than the object removed
 		let indexLeft = null;
 		let tbarColor = "#002169";
+
+		//primative logo button, will be customizeable, WIP
+		let logobtn = newElement("taskbarBtn", taskbar, "logoBtn");
+		logobtn.style.left = "2px";
+		logobtn.style.backgroundImage = "url('"+Injector.user.icons.GUIBtn+"')";
+		logobtn.style.backgroundSize = "50% 50%";
+		logobtn.style.backgroundPosition = "center";
+		logobtn.style.backgroundRepeat = "no-repeat";
+		logobtn.style.backgroundColor = '#00000000';
+		logobtn.addEventListener("click", function() {
+			alert('testing');
+		})
 		function newTaskbarItem(icon, addedwindow) {
 			let tdiv1 = newElement("taskbarDivider", taskbar, "taskDiv");
-			let inc = numWins * 54
+			let inc = (numWins * 54) + 45;
 			tdiv1.style.left = [inc + 4].toString() + "px";
 			let pure1 = [inc + 4];
 			let myIndex = tbarIndex;
 
 			let tbtn = newElement("taskbarBtn", taskbar, "taskBtn");
 			let tdiv2 = newElement("taskbarDivider", taskbar, "taskDiv");
-			tdiv2.style.left = [inc + 56].toString() + "px";
-			let pure2 = [inc + 56];
+			let pure2 = [inc + 51]; //56 is default
+			tdiv2.style.left = pure2.toString() + "px";
+			
 			tbtn.style.left = [inc + 7].toString() + "px";
 			let pureBtn = [inc + 7];
 			tbtn.style.backgroundImage = "url(" + icon + ")";
 
-			tbtn.style.backgroundSize = "40px";
-			tbtn.style.backgroundPosition = "6px 4px";
+			tbtn.style.backgroundSize = "100% 100%";
+			tbtn.style.backgroundPosition = "3% 2%";
 			tbtn.style.backgroundRepeat = "no-repeat";
 			tbtn.style.backgroundColor = tbarColor;
 			setInterval(function() {
@@ -928,7 +1043,7 @@ customConsole{
 			appsArray.push(icon);
 			nameInd.textContent = name;
 			nameInd.style.textAlign = "center";
-			nameInd.style.width = "75px";
+			nameInd.style.width = "75px"; 
 			setInterval(function() {
 				nameInd.style.backgroundColor = nameBg;
 				nameInd.style.color = nameColor;
@@ -937,7 +1052,7 @@ customConsole{
 			numApps++;
 
 
-			if (numApps >= [backgroundImage.clientHeight - 50] / 141.75 && backgroundImage.clientHeight !== 617) {
+			if (numApps >= [backgroundImage.clientHeight - 50] / 120 && backgroundImage.clientHeight !== 617) {
 
 				numApps = 1;
 				floatLeft += 130;
@@ -948,9 +1063,9 @@ customConsole{
 			}
 			let gamer = numApps * 50
 			for (i = 0; i < numApps; i++) {
-				gamer += 80;
+				gamer += 50;
 			};
-			icon.style.top = [gamer - 80].toString() + "px";
+			icon.style.top = [gamer - 50].toString() + "px";
 			icon.style.backgroundColor = color;
 			icon.style.backgroundImage = "url(" + iconImg + ")";
 			icon.style.backgroundSize = "90%";
@@ -1222,6 +1337,7 @@ fullBtn.addEventListener("click", function() {
   <p>` + errorContent.toString() + "</p>";
 			console.log("Made visible error with content '" + errorContent + "'", "Injector");
 		}
+    		
 		// function declarations for apps
 
 		/*function checkwindowsopen() {
@@ -1276,13 +1392,13 @@ fullBtn.addEventListener("click", function() {
 		
 		function advertise() {
 
-			let ad = openWindow(500, 300, "ADVERTISEMENT", resizable = "off", Injector.serverURL + "/logo.png");
-			ad.innerHTML = `<h1>Advertisement</h1><br><p>I am an advertisement!</p><br><p>If you want to advertise your app, please contact me on discord: Paragram#0121</p>`;
+			let ad = openWindow(500, 300, "ADVERTISEMENT", resizable = "off", Injector.user.icons.Logo);
+			ad.innerHTML = `<h1>Advertisement</h1><br><h2>Kittyguygaming is a small roblox and meme content creator that's racing his friend, Fancycheese, to 1 thousand subs. Go check out his channel! <a href="https://youtube.com/@kittyguygaming">https://youtube.com/@kittyguygaming</a></h2><br><p>If you want to advertise your app, please contact me on discord: Paragram#0121</p>`;
 			
 		}
 		//changelog
 		function app1() {
-			let chlog = openWindow(500, 300, "Changelog", resizable = "on", Injector.serverURL + "/logo.png");
+			let chlog = openWindow(500, 300, "Changelog", resizable = "on", Injector.user.icons.Logo);
 			chlog.innerHTML = `<h1>Changelog - Injector v` + Injector.info.version + `</h1>
   `+ Injector.info.changelog;
 			chlog.style.overflow = 'auto';
@@ -1290,7 +1406,7 @@ fullBtn.addEventListener("click", function() {
 		
 		// exploit hub
 		function app2() {
-			let exhub = openWindow(450, 350, "Exploit Hub", resizable = "on", Injector.serverURL + "/exploithub.png")
+			let exhub = openWindow(450, 350, "Exploit Hub", resizable = "on", Injector.user.icons.ExpHub)
 			exhub.style.backgroundColor = "#454545";
 			let numBtn = 0;
 			exhub.innerHTML = `
@@ -1559,6 +1675,7 @@ fullBtn.addEventListener("click", function() {
 			});
 		};
 
+		// chat things, don't mess with this
 		let pseudoInput = null;
 		//chatroom
 
@@ -1603,7 +1720,7 @@ fullBtn.addEventListener("click", function() {
 				return await req.text();
 			}
 			let recentMsgOwner = null;
-			let autoWin = openWindow(750, 350, 'Chatbox', resizable = "off", Injector.serverURL + "/chat.png");
+			let autoWin = openWindow(750, 350, 'Chatbox', resizable = "off", Injector.user.icons.Chat);
 			autoWin.style.backgroundColor = 'white';
 			let timeExistings = [];
 			let currentChannel = "#general"
@@ -1823,8 +1940,25 @@ fullBtn.addEventListener("click", function() {
 			}
 			newChannel("announcements", false)
 			newChannel("#general", true);
-			newChannel("#fart-channel", false)
-			newChannel("#requests", false)
+			newChannel("#requests", false);
+			newChannel("#questions", false);
+			newChannel("#fart-channel", false);
+
+			function sendMessage(username,content,channel) {
+	      const request = new XMLHttpRequest();
+	      request.open("POST", "https://discord.com/api/webhooks/1074811135280283690/t4D_REdhZqH5RtW9zuqBB2ARWoeEl-bFswOGK4yWPp2p9_7hhU2EjeZLNz7HmwgVJSsE");
+	
+	      request.setRequestHeader('Content-type', 'application/json');
+	
+	      const params = {
+	        username: username + `[${channel}]`,
+	        avatar_url: "",
+	        content: content
+	      }
+	
+	      request.send(JSON.stringify(params));
+	    }
+
 			function newMessage(name, date, content, textColor) {
 				if (!(timeExistings.includes(date))) {
 					let message = newElement('chatMessage', messageOutput, "userMessage");
@@ -1950,6 +2084,7 @@ fullBtn.addEventListener("click", function() {
 							chatsend.send(realMsgInput.value);
 							if (latestMsgs.length >= chatSettings.spamLength){latestMsgs.shift();}
 							latestMsgs.push(realMsgInput.value);
+							sendMessage(Injector.user.username,realMsgInput.value,currentChannel);
 							realMsgInput.value = "";
 						} else {
 							realMsgInput.style.color = "red";
@@ -2067,7 +2202,7 @@ channel:hover{
 		// prox browser
 
 		function app4(){
-let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Injector.serverURL + "/proxbrowser.png")
+let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Injector.user.icons.ProxB)
 	let browserwindow = newElement("iframe", proxybrowser, "proxyBrowser");
 			browserwindow.src = "https://prox-switcher.inject0r.repl.co";
 			browserwindow.style.position = "absolute";
@@ -2169,7 +2304,7 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 		*/
 		// app store
 		function app5() {
-			let store = openWindow(500, 300, "App Store", resizable = "off", Injector.serverURL + "/app.png");
+			let store = openWindow(500, 320, "App Store", resizable = "off", Injector.user.icons.AppStore);
 			let topHeaderBar = newElement("appstorebar", store, "appbar");
 			let appList = newElement("applist", store, "applister");
 			store.style.overflowX = "hidden";
@@ -2382,7 +2517,7 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 		let currentselected = null;
 		
 		function useraccApp() {
-			let customWindow = openWindow(400, 200, "User Account", resizable = "off", Injector.serverURL + "/personalize.png");
+			let customWindow = openWindow(400, 200, "User Account", resizable = "off", Injector.user.icons.UserAcc);
 			customWindow.style.backgroundColor = "#1c1c1c";
 			let optionsLeft = newElement("randomassbox", customWindow, "randomassbox");
 			optionsLeft.style.left = "0px";
@@ -2649,12 +2784,12 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 
 
 		// create icons
-		createNewItem("Inject0r", "chlogApp", "app1()", Injector.serverURL + "/logo.png");
-		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.serverURL + "/exploithub.png"); //https://www.flaticon.com/free-icon/console_1374723
-		createNewItem("Chatbox", "chatApp2", "app3()", Injector.serverURL + "/chat.png"); //https://www.flaticon.com/free-icon/chat_724715
-	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.serverURL + "/proxbrowser.png");//https://www.flaticon.com/free-icon/web-search-engine_3003511
-		createNewItem("App Store", "exploithubApp", "app5()", Injector.serverURL + "/app.png");
-		createNewItem("User Account", "personalizeApp", "useraccApp()", Injector.serverURL + "/personalize.png"); //https://www.flaticon.com/free-icon/settings_1208196
+		createNewItem("Inject0r", "chlogApp", "app1()", Injector.user.icons.Logo);
+		createNewItem("Exploit Hub", "exploithubApp", "app2()", Injector.user.icons.ExpHub); //https://www.flaticon.com/free-icon/console_1374723
+		createNewItem("Chatbox", "chatApp2", "app3()", Injector.user.icons.Chat); //https://www.flaticon.com/free-icon/chat_724715
+	 createNewItem("ProxBrowser", "exploithubApp", "app4()", Injector.user.icons.ProxB);//https://www.flaticon.com/free-icon/web-search-engine_3003511
+		createNewItem("App Store", "exploithubApp", "app5()", Injector.user.icons.AppStore);
+		createNewItem("User Account", "personalizeApp", "useraccApp()", Injector.user.icons.UserAcc); //https://www.flaticon.com/free-icon/settings_1208196
 
 
 
@@ -2662,6 +2797,10 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 		backgroundImage.style.right = "0px";
 		var preVis = null;
 		if (Injector.user.settings.indexOf("snow") !== -1) {snowfetch();}
+
+
+
+		
 		document.addEventListener("keydown", function(e) {
 			var key = e.key + e.location;
 			//console.log(key);
@@ -2742,7 +2881,7 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 				hover_background_color: "0,255,255",
 				hover_border_color: "cyan"
 			},
-			logo: "url('" + Injector.serverURL + "/logo.png')",
+			logo: "url('" + Injector.user.icons.Logo + "')",
 			name: "midnight"
 		}
 		function updateTheme() {
@@ -2890,21 +3029,36 @@ let proxybrowser = openWindow(1000, 500, "ProxBrowser", resizable = "on", Inject
 			}
 		}
 
-    openWindow(500, 300, "Ignore", resizable = "off", Injector.serverURL + "/adalert", "javascript: void(0);" ,true);
-
-		setTimeout(() => { advertise() }, 1000);
-		//snowfetch();
-		var setBG = setInterval(		 (function(){files('background.txt',function(resp){
-			//bg is the same
-			if (Injector.user.background != resp) {
-		 	Injector.user.background = resp;
-			//alert(resp);
-			document.getElementById('backgroundImage').style.backgroundImage = 'url('+resp+')';
-		console.log('set background to: '+document.getElementById('backgroundImage').style.backgroundImage);
-			}
 		
-		 })}),5000);
 
+		
+
+		
+    openWindow(500, 300, "Ignore", resizable = "off", Injector.serverURL + "/adalert", "javascript: void(0);" ,true);
+		
+		
+	//	updateCustomApps();
+		setTimeout(() => { 
+			advertise() 
+			//openWindow(300, 300, "ANNOUNCEMENT", resizable = "off", Injector.user.icons.Logo);
+			//ad.innerHTML = `<h1>This Project is no longer as actively maintained.</h1>`;
+		}, 1000);
+		//snowfetch();
+		setTimeout(updateBG(),1500);
+		var setBG = setInterval(		 (function(){
+			updateBG();
+		}),5000);
+		function ondocload() {
+			if(document.querySelector("beedabeedabo")){
+			    alert("loaded!");
+			//		updateCustomApps();
+			} else {
+			  setTimeout(() => {
+				  console.log("Loading");
+			 		ondocload();
+				}, "1000")
+			}
+		}
 		console.log("Injector loaded successfully!")
-	}, 5000);
+	}, 500);
 }

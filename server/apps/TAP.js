@@ -328,4 +328,4 @@ color: orange;
 }
 \`
 `,
-Injector.serverURL + "/bap.png");
+Injector.user.icons.TAP);

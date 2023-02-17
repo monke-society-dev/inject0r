@@ -1,0 +1,1 @@
+let autoWin = openWindow(1000, 500, 'calculator', false, 'https://static.vecteezy.com/system/resources/thumbnails/002/205/856/small/calculator-icon-free-vector.jpg'); autoWin.style.backgroundColor = 'gray'; let iframe = newElement('iframe', autoWin, "autoObj"); iframe.src = 'https://calculator.apps.chrome/'; iframe.style.width = '100%'; iframe.style.height = '100%';
