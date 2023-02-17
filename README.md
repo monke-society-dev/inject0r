@@ -2,18 +2,13 @@
 The official repository for Inject0r
 
 ***The bookmarklet is being worked on, the servers may be down now and then***
-<img src="images/logos/logo.png" width="50%" />
 
 *** 
-
-
 
 
 #### How to register???
 
 To register for Inject0r please join our public discord server / https://discord.gg/GSqDrERGze
-
-
 
 
 #### What is Injector? 
