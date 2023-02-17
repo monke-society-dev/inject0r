@@ -2,9 +2,14 @@
 The official repository for Inject0r
 
 ***The bookmarklet is being worked on, the servers may be down now and then***
-<img src="images/logos/logo.png" width="50%" />
 
 *** 
+
+
+#### How to register???
+
+To register for Inject0r please join our public discord server / https://discord.gg/GSqDrERGze
+
 
 #### What is Injector? 
 
@@ -41,5 +46,3 @@ Inject0r is free, but a token will be needed upon registering for it.
 If you have gotten your single-use code, go [here](https://inject0r.repl.co/register) to register.
 
 ***
-<img src="images/marketing/exdesktop.png" width="100%"/>
-<img src="images/marketing/exlogin.png" width="100%"/>
