@@ -496,6 +496,7 @@ function requestListener(req, res) {
 						.on('end', function () {
 							try {
 								if (req.headers.action !== "uninstall") {
+									
                                                       //server/apps/existingapps.json
 									if (JSON.parse(reader.readFileSync("./server/apps/existingapps.json", 'utf8')).existingApps.includes(__Data)) {
 										let sameCopy = false;

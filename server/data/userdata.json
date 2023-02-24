@@ -242,15 +242,12 @@
     "apps": [
       "Game Hub",
       "TAP",
-      "scriptHub",
       "InjectorCloud",
       "NotePad",
-      "BGEdit"
+      "BGEdit",
+      "scriptHub"
     ],
-    "personalize": [
-      "RightAltTransitionDisabled",
-      "snow"
-    ]
+    "personalize": []
   },
   "pi": {
     "theme": "green"
@@ -268,9 +265,7 @@
       "scriptHub",
       "BGEdit"
     ],
-    "personalize": [
-      "test"
-    ]
+    "personalize": []
   },
   "rouge": {
     "theme": "green",
@@ -570,7 +565,7 @@
       "BGEdit",
       "Game Hub",
       "TAP",
-      "Module2.0"
+      "bmlHub"
     ],
     "personalize": [
       "RightAltTransitionDisabled"
@@ -621,8 +616,9 @@
       "Game Hub",
       "TAP",
       "InjectorCloud",
-      "scriptHub",
-      "BGEdit"
+      "BGEdit",
+      "Module2.0",
+      "scriptHub"
     ]
   },
   "MMPlays": {
@@ -830,7 +826,7 @@
     ]
   },
   "cookie406": {
-    "theme": "crimson",
+    "theme": "green",
     "apps": [
       "Game Hub",
       "InjectorCloud",
@@ -972,11 +968,10 @@
       "scriptHub",
       "BGEdit",
       "Game Hub",
-      "NotePad"
+      "NotePad",
+      "bmlHub"
     ],
-    "personalize": [
-      "RightAltTransitionDisabled"
-    ]
+    "personalize": []
   },
   "TreeDefa123": {
     "theme": "midnight",
@@ -1218,7 +1213,8 @@
       "InjectorCloud",
       "scriptHub",
       "Game Hub"
-    ]
+    ],
+    "personalize": []
   },
   "elijah": {
     "theme": "crimson",
@@ -1298,7 +1294,7 @@
     ]
   },
   "vsqnix": {
-    "theme": "light",
+    "theme": "green",
     "apps": [
       "InjectorCloud",
       "scriptHub",
@@ -1351,9 +1347,12 @@
     "theme": "midnight",
     "apps": [
       "scriptHub",
-      "Game Hub",
       "NotePad",
-      "InjectorCloud"
+      "InjectorCloud",
+      "Module2.0",
+      "Game Hub",
+      "BGEdit",
+      "TAP"
     ],
     "personalize": []
   },
@@ -1489,9 +1488,12 @@
       "Game Hub",
       "scriptHub",
       "TAP",
+      "bmlHub",
       "BGEdit"
     ],
-    "personalize": []
+    "personalize": [
+      "RightAltTransitionDisabled"
+    ]
   },
   "username": {
     "theme": "midnight"
@@ -1543,7 +1545,8 @@
       "scriptHub",
       "BGEdit",
       "Game Hub",
-      "InjectorCloud"
+      "InjectorCloud",
+      "Module2.0"
     ],
     "personalize": [
       "snow"
@@ -1579,7 +1582,7 @@
     ]
   },
   "Man": {
-    "theme": "midnight",
+    "theme": "crimson",
     "apps": [
       "Game Hub",
       "NotePad",
@@ -1736,7 +1739,8 @@
       "scriptHub",
       "NotePad",
       "TAP"
-    ]
+    ],
+    "personalize": []
   },
   "skyrocketer": {
     "theme": "green",
@@ -1756,5 +1760,11 @@
       "Game Hub"
     ],
     "personalize": []
+  },
+  "2798344291378": {
+    "theme": "midnight"
+  },
+  "Vort3xed": {
+    "theme": "midnight"
   }
 }

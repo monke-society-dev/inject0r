@@ -1685,7 +1685,7 @@ fullBtn.addEventListener("click", function() {
 			let chatSettings = {
 				spamLength: 5
 			}
-			let chatBlacklist = ['nigga','nigge','gay ass','dick','blacklistTest','blacklist Test'];
+			let chatBlacklist = ['nigga','nigge','gay ass','dick','penis','blacklistTest','blacklist Test'];
 			function inBlacklist(item) {
 				item = item.toLowerCase();
 				for (i=0;i<chatBlacklist.length;i++) {
