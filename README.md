@@ -30,7 +30,7 @@ Guest account is :
 
 ##### Injector's currently included apps are as follows:
       Changelog: Lists most recent update's changes.
-      Exploit Hub: Basic general use exploits
+      Exploit Hub: Basic general use exploits.
       Chatbox2: A chatroom to talk to other Injector users, with indicators as to who is on the chatroom.
       ProxBrowser: A browser that proxies all sites you put into it, effectively unblocking sites.
       App Store: A place for 3rd party devs to upload apps.
