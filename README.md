@@ -38,7 +38,8 @@ Guest account is :
 
 ##### App Store 
 As mentioned in the Features tab, the App Store is a place for third party developers to upload their own apps. Apps downloaded on the App Store will save cross-site. Apps are not restricted to just windows, either; they can be libraries, themes, you name it. Apps are all verified through official Injector developers to ensure no malicious code is included. If you'd like to upload an app, make a issue and post your app code.
-
+###### Developer Docs
+In the discord, also check the github wiki.
 ##### Purchase Injector 
 
 Inject0r is free, but a token will be needed upon registering for it.
