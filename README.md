@@ -1,6 +1,7 @@
-# Inject0r
-The official repository for Inject0r
+# Platinome/Inject0r
+The official repository for Inject0r Platinome Version
 
+***Credits to bobthehairman#8820 for the original [Inject0r](https://injectorbackend.michaelalcott.repl.co/)***
 ***The bookmarklet is being worked on, the servers may be down now and then.***
 
 *** 
