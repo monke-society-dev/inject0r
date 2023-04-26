@@ -1,1 +1,0 @@
-createNewItem(`NotePad`, `NotePad`, `let ide = openWindow(450, 300, 'NotePad', true, Injector.user.icons.Notepad); ide.innerHTML = 'notepad doesn\\'t save your work, this may get implamented in the near future'; ide.contentEditable = true;`, Injector.user.icons.Notepad);
